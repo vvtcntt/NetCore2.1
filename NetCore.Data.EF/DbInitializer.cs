@@ -20,8 +20,7 @@ namespace NetCore.Data.EF
             _userManager = userManager;
             _roleManager = roleManager;
         }
-
-        public async Task Seed()
+                public async Task Seed()
         {
             if (!_roleManager.Roles.Any())
             {
