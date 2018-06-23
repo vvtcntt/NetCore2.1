@@ -6,8 +6,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NetCore.Application\NetCore.Application.csproj" />
+    <ProjectReference Include="..\NetCore.Data.EF\NetCore.Data.EF.csproj" />
+    <ProjectReference Include="..\NetCore.Data\NetCore.Data.csproj" />
+    <ProjectReference Include="..\NetCore.Infrastructure\NetCore.Infrastructure.csproj" />
+    <ProjectReference Include="..\NetCore.Utilities\NetCore.Utilities.csproj" />
   </ItemGroup>
 
 </Project>
