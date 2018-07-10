@@ -11,7 +11,7 @@ namespace NetCore.Data.Entites
     {
 
         public int ProductId { set; get; }
-        [StringLength(30)]
+        [StringLength(50)]
          public string TagId { set; get; }
         [ForeignKey("ProductId")]
 
