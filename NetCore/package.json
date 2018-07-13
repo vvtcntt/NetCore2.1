@@ -18,7 +18,8 @@
     "chart.js": "~2.7.2",
     "bootstrap-daterangepicker": "~3.0.3",
     "notifyjs": "~3.0.0",
-    "bootbox": "~4.4.0"
+    "bootbox": "~4.4.0",
+    "animate.css": "~3.6.1"
 
 
   }

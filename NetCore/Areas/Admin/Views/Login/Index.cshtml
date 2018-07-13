@@ -1,0 +1,73 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Đăng nhập vào hệ thống</title>
+    <!-- Bootstrap -->
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link href="~/vendor/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- NProgress -->
+    <link href="~/vendor/nprogress/nprogress.css" rel="stylesheet" />
+    <!-- Animate.css -->
+    <link href="~/vendor/animate.css/animate.css" rel="stylesheet" />
+    <!-- Custom Theme Style -->
+    <link href="~/admin-side/css/custom.css" rel="stylesheet" />
+</head>
+<<body class="login">
+    <div>
+        <div class="login_wrapper">
+            <div class="animate form login_form">
+                <section class="login_content">
+                    <form id="frmLogin">
+                        @Html.AntiForgeryToken()
+                        <h1>Form Login</h1>
+                        <div>
+                            <input type="text" data-required="true" id="txtUserName" value="admin" name="userName" class="form-control" placeholder="User Name" required="" />
+                        </div>
+                        <div>
+                            <input type="password" id="txtPassword" name="password" class="form-control" value="123654$" placeholder="Password" required="" />
+                        </div>
+                        <div>
+                            <a class="btn btn-default submit" href="#" id="btnLogin">Login</a>
+                            <a class="reset_pass" href="#">Quên mật khẩu?</a>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="separator">
+
+
+                            <div class="clearfix"></div>
+                            <br />
+
+                            <div>
+                                <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
+                                <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+
+
+        </div>
+    </div>
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/vendor/notifyjs/dist/notify.js"></script>
+    <script src="~/app/controllers/login/index.js"></script>
+    <script src="~/app/shared/netcore.js"></script>
+    <script src="~/app/controllers/login/index.js"></script>
+    <script>
+        var login = new loginController();
+        login.initialize();
+    </script>
+</body>
+</html>

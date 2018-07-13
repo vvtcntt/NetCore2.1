@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
+using Microsoft.Extensions.Logging;
 using NetCore.Application.Implementation;
 using NetCore.Application.Interfaces;
 using NetCore.Data.EF;
@@ -16,6 +17,7 @@ using NetCore.Data.EF.Repositories;
 using NetCore.Data.Entites;
 using NetCore.Data.iRepositories;
 using NETCORE.Data.EF;
+using Newtonsoft.Json.Serialization;
 using System;
 using System.IO;
 
@@ -75,13 +77,14 @@ namespace NetCore
 
             services.AddTransient<IProductCategoryService, ProductCategoryService>();
 
-            services.AddMvc();
+            services.AddMvc().AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
             //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory logerFactory)
         {
+            logerFactory.AddFile("Logs/Netcore-{Date}.txt");
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

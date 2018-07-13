@@ -7,6 +7,89 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="node_modules\animate.css\animate-config.json" />
+    <Content Include="node_modules\animate.css\animate.css" />
+    <Content Include="node_modules\animate.css\animate.min.css" />
+    <Content Include="node_modules\animate.css\bower.json" />
+    <Content Include="node_modules\animate.css\package.json" />
+    <Content Include="node_modules\animate.css\source\attention_seekers\bounce.css" />
+    <Content Include="node_modules\animate.css\source\attention_seekers\flash.css" />
+    <Content Include="node_modules\animate.css\source\attention_seekers\headShake.css" />
+    <Content Include="node_modules\animate.css\source\attention_seekers\jello.css" />
+    <Content Include="node_modules\animate.css\source\attention_seekers\pulse.css" />
+    <Content Include="node_modules\animate.css\source\attention_seekers\rubberBand.css" />
+    <Content Include="node_modules\animate.css\source\attention_seekers\shake.css" />
+    <Content Include="node_modules\animate.css\source\attention_seekers\swing.css" />
+    <Content Include="node_modules\animate.css\source\attention_seekers\tada.css" />
+    <Content Include="node_modules\animate.css\source\attention_seekers\wobble.css" />
+    <Content Include="node_modules\animate.css\source\bouncing_entrances\bounceIn.css" />
+    <Content Include="node_modules\animate.css\source\bouncing_entrances\bounceInDown.css" />
+    <Content Include="node_modules\animate.css\source\bouncing_entrances\bounceInLeft.css" />
+    <Content Include="node_modules\animate.css\source\bouncing_entrances\bounceInRight.css" />
+    <Content Include="node_modules\animate.css\source\bouncing_entrances\bounceInUp.css" />
+    <Content Include="node_modules\animate.css\source\bouncing_exits\bounceOut.css" />
+    <Content Include="node_modules\animate.css\source\bouncing_exits\bounceOutDown.css" />
+    <Content Include="node_modules\animate.css\source\bouncing_exits\bounceOutLeft.css" />
+    <Content Include="node_modules\animate.css\source\bouncing_exits\bounceOutRight.css" />
+    <Content Include="node_modules\animate.css\source\bouncing_exits\bounceOutUp.css" />
+    <Content Include="node_modules\animate.css\source\fading_entrances\fadeIn.css" />
+    <Content Include="node_modules\animate.css\source\fading_entrances\fadeInDown.css" />
+    <Content Include="node_modules\animate.css\source\fading_entrances\fadeInDownBig.css" />
+    <Content Include="node_modules\animate.css\source\fading_entrances\fadeInLeft.css" />
+    <Content Include="node_modules\animate.css\source\fading_entrances\fadeInLeftBig.css" />
+    <Content Include="node_modules\animate.css\source\fading_entrances\fadeInRight.css" />
+    <Content Include="node_modules\animate.css\source\fading_entrances\fadeInRightBig.css" />
+    <Content Include="node_modules\animate.css\source\fading_entrances\fadeInUp.css" />
+    <Content Include="node_modules\animate.css\source\fading_entrances\fadeInUpBig.css" />
+    <Content Include="node_modules\animate.css\source\fading_exits\fadeOut.css" />
+    <Content Include="node_modules\animate.css\source\fading_exits\fadeOutDown.css" />
+    <Content Include="node_modules\animate.css\source\fading_exits\fadeOutDownBig.css" />
+    <Content Include="node_modules\animate.css\source\fading_exits\fadeOutLeft.css" />
+    <Content Include="node_modules\animate.css\source\fading_exits\fadeOutLeftBig.css" />
+    <Content Include="node_modules\animate.css\source\fading_exits\fadeOutRight.css" />
+    <Content Include="node_modules\animate.css\source\fading_exits\fadeOutRightBig.css" />
+    <Content Include="node_modules\animate.css\source\fading_exits\fadeOutUp.css" />
+    <Content Include="node_modules\animate.css\source\fading_exits\fadeOutUpBig.css" />
+    <Content Include="node_modules\animate.css\source\flippers\flip.css" />
+    <Content Include="node_modules\animate.css\source\flippers\flipInX.css" />
+    <Content Include="node_modules\animate.css\source\flippers\flipInY.css" />
+    <Content Include="node_modules\animate.css\source\flippers\flipOutX.css" />
+    <Content Include="node_modules\animate.css\source\flippers\flipOutY.css" />
+    <Content Include="node_modules\animate.css\source\lightspeed\lightSpeedIn.css" />
+    <Content Include="node_modules\animate.css\source\lightspeed\lightSpeedOut.css" />
+    <Content Include="node_modules\animate.css\source\rotating_entrances\rotateIn.css" />
+    <Content Include="node_modules\animate.css\source\rotating_entrances\rotateInDownLeft.css" />
+    <Content Include="node_modules\animate.css\source\rotating_entrances\rotateInDownRight.css" />
+    <Content Include="node_modules\animate.css\source\rotating_entrances\rotateInUpLeft.css" />
+    <Content Include="node_modules\animate.css\source\rotating_entrances\rotateInUpRight.css" />
+    <Content Include="node_modules\animate.css\source\rotating_exits\rotateOut.css" />
+    <Content Include="node_modules\animate.css\source\rotating_exits\rotateOutDownLeft.css" />
+    <Content Include="node_modules\animate.css\source\rotating_exits\rotateOutDownRight.css" />
+    <Content Include="node_modules\animate.css\source\rotating_exits\rotateOutUpLeft.css" />
+    <Content Include="node_modules\animate.css\source\rotating_exits\rotateOutUpRight.css" />
+    <Content Include="node_modules\animate.css\source\sliding_entrances\slideInDown.css" />
+    <Content Include="node_modules\animate.css\source\sliding_entrances\slideInLeft.css" />
+    <Content Include="node_modules\animate.css\source\sliding_entrances\slideInRight.css" />
+    <Content Include="node_modules\animate.css\source\sliding_entrances\slideInUp.css" />
+    <Content Include="node_modules\animate.css\source\sliding_exits\slideOutDown.css" />
+    <Content Include="node_modules\animate.css\source\sliding_exits\slideOutLeft.css" />
+    <Content Include="node_modules\animate.css\source\sliding_exits\slideOutRight.css" />
+    <Content Include="node_modules\animate.css\source\sliding_exits\slideOutUp.css" />
+    <Content Include="node_modules\animate.css\source\specials\hinge.css" />
+    <Content Include="node_modules\animate.css\source\specials\jackInTheBox.css" />
+    <Content Include="node_modules\animate.css\source\specials\rollIn.css" />
+    <Content Include="node_modules\animate.css\source\specials\rollOut.css" />
+    <Content Include="node_modules\animate.css\source\zooming_entrances\zoomIn.css" />
+    <Content Include="node_modules\animate.css\source\zooming_entrances\zoomInDown.css" />
+    <Content Include="node_modules\animate.css\source\zooming_entrances\zoomInLeft.css" />
+    <Content Include="node_modules\animate.css\source\zooming_entrances\zoomInRight.css" />
+    <Content Include="node_modules\animate.css\source\zooming_entrances\zoomInUp.css" />
+    <Content Include="node_modules\animate.css\source\zooming_exits\zoomOut.css" />
+    <Content Include="node_modules\animate.css\source\zooming_exits\zoomOutDown.css" />
+    <Content Include="node_modules\animate.css\source\zooming_exits\zoomOutLeft.css" />
+    <Content Include="node_modules\animate.css\source\zooming_exits\zoomOutRight.css" />
+    <Content Include="node_modules\animate.css\source\zooming_exits\zoomOutUp.css" />
+    <Content Include="node_modules\animate.css\source\_base.css" />
     <Content Include="node_modules\bootbox\bower.json" />
     <Content Include="node_modules\bootbox\header.txt" />
     <Content Include="node_modules\bootbox\package.json" />
@@ -1196,6 +1279,7 @@
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="4.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" PrivateAssets="All" />
+    <PackageReference Include="Serilog.Extensions.Logging.File" Version="1.1.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -1211,6 +1295,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="node_modules\animate.css\.editorconfig" />
+    <None Include="node_modules\animate.css\.prettierignore" />
+    <None Include="node_modules\animate.css\.travis.yml" />
+    <None Include="node_modules\animate.css\gulpfile.js" />
+    <None Include="node_modules\animate.css\LICENSE" />
+    <None Include="node_modules\animate.css\README.md" />
     <None Include="node_modules\bootbox\.jshintrc" />
     <None Include="node_modules\bootbox\.npmignore" />
     <None Include="node_modules\bootbox\.travis.yml" />
