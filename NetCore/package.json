@@ -16,7 +16,9 @@
     "flot.curvedlines": "~1.1.1",
     "datejs": "~1.0.0-rc3",
     "chart.js": "~2.7.2",
-    "bootstrap-daterangepicker": "~3.0.3" 
+    "bootstrap-daterangepicker": "~3.0.3",
+    "notifyjs": "~3.0.0",
+    "bootbox": "~4.4.0"
 
 
   }
