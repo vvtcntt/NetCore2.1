@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using NetCore.Application.Implementation;
 using NetCore.Application.Interfaces;
 using NetCore.Data.EF;
@@ -16,6 +17,7 @@ using NetCore.Data.Entites;
 using NetCore.Data.iRepositories;
 using NETCORE.Data.EF;
 using System;
+using System.IO;
 
 namespace NetCore
 {
@@ -90,7 +92,19 @@ namespace NetCore
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
+            // For wwwroot directory
+            app.UseStaticFiles();
 
+            // Add support for node_modules but only during development **temporary**
+            if (env.IsDevelopment())
+            {
+                app.UseStaticFiles(new StaticFileOptions()
+                {
+                    FileProvider = new PhysicalFileProvider(
+                      Path.Combine(Directory.GetCurrentDirectory(), @"node_modules")),
+                    RequestPath = new PathString("/vendor")
+                });
+            }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();

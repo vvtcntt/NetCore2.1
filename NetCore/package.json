@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0",
+  "name": "asp.net",
+  "private": true,
+  "directory": "wwwroot/lib",
+  "devDependencies": {
+    "gentelella": "~1.4.0",
+    "font-awesome": "~4.7.0",
+    "nprogress": "~0.2.0",
+    "daterangepicker": "~3.0.3",
+    "moment": "~2.22.2",
+    "flot-spline": "~0.0.1",
+    "fastclick": "~1.0.6",
+    "jquery-sparkline": "~2.4.0",
+    "flot": "~0.8.0-alpha",
+    "flot.curvedlines": "~1.1.1",
+    "datejs": "~1.0.0-rc3",
+    "chart.js": "~2.7.2",
+    "bootstrap-daterangepicker": "~3.0.3" 
+
+
+  }
+}
