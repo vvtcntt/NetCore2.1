@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using NetCore.Application.ViewModels.Product;
+using NetCore.Application.ViewModels.System;
 using NetCore.Data.Entites;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace NetCore.Application.AutoMapper
         {
             CreateMap<Product, ProductViewModel>();
             CreateMap<ProductCategory, ProductCategoryViewModel>();
-           
+            CreateMap<Function, FunctionViewModel>();
 
         }
     }

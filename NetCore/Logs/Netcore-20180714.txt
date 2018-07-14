@@ -1171,3 +1171,706 @@ WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
 2018-07-14T11:16:38.8719880+07:00 0HLF97T0FEPGO:00000004 [INF] Request finished in 267.9867ms 200 image/x-icon (791a596a)
 2018-07-14T11:16:44.2860593+07:00 0HLF97T0FEPGO:00000005 [INF] Request starting HTTP/1.1 GET http://localhost:44357/js/jquery.min.map   (ca22a1cb)
 2018-07-14T11:16:44.4920966+07:00 0HLF97T0FEPGO:00000005 [INF] Request finished in 140.3964ms 404  (791a596a)
+2018-07-14T15:10:48.3931342+07:00 0HLF9C576ROK4:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:57363/  0 (ca22a1cb)
+2018-07-14T15:10:48.6424767+07:00 0HLF9C576ROK4:00000001 [INF] Request finished in 140.7207ms 200  (791a596a)
+2018-07-14T15:11:55.2704842+07:00 0HLF9C5R2SONV:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:57363/  0 (ca22a1cb)
+2018-07-14T15:11:55.4468823+07:00 0HLF9C5R2SONV:00000001 [INF] Request finished in 103.4183ms 200  (791a596a)
+2018-07-14T15:11:59.1969479+07:00 0HLF9C5R2SONV:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-07-14T15:11:59.9539151+07:00 0HLF9C5R2SONV:00000002 [WRN] No type was specified for the decimal column '"Balance"' on entity type '"AppUser"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-07-14T15:11:59.9996398+07:00 0HLF9C5R2SONV:00000002 [WRN] No type was specified for the decimal column '"Price"' on entity type '"BillDetail"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-07-14T15:12:00.0896685+07:00 0HLF9C5R2SONV:00000002 [WRN] No type was specified for the decimal column '"Price"' on entity type '"Product"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-07-14T15:12:00.1215679+07:00 0HLF9C5R2SONV:00000002 [WRN] No type was specified for the decimal column '"PriceSale"' on entity type '"Product"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-07-14T15:12:00.1520316+07:00 0HLF9C5R2SONV:00000002 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=NetCore.Data.EF " (9958f5bb)
+2018-07-14T15:12:00.5565992+07:00 0HLF9C5R2SONV:00000002 [INF] Executed DbCommand ("186"ms) [Parameters=["@__get_Item_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Avatar], [e].[Balance], [e].[BirthDay], [e].[ConcurrencyStamp], [e].[DateCreated], [e].[DateModified], [e].[Email], [e].[EmailConfirmed], [e].[FullName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[Status], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2018-07-14T15:12:02.3422402+07:00 0HLF9C5R2SONV:00000002 [INF] Executed DbCommand ("717"ms) [Parameters=["@__user_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2018-07-14T15:12:02.8577105+07:00 0HLF9C5R2SONV:00000002 [INF] Executed DbCommand ("275"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-07-14T15:12:02.9867701+07:00 0HLF9C5R2SONV:00000002 [INF] Executed DbCommand ("46"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-07-14T15:12:03.2219107+07:00 0HLF9C5R2SONV:00000002 [INF] Executed DbCommand ("68"ms) [Parameters=["@__role_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0" (0723d8ff)
+2018-07-14T15:12:03.2699556+07:00 0HLF9C5R2SONV:00000002 [INF] Executed DbCommand ("14"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-07-14T15:12:03.5192654+07:00 0HLF9C5R2SONV:00000002 [INF] Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing action "NetCore.Controllers.HomeController.Index (NetCore)" (a44c0341)
+2018-07-14T15:12:03.5724209+07:00 0HLF9C5R2SONV:00000002 [INF] Executing action method "NetCore.Controllers.HomeController.Index (NetCore)" - Validation state: Valid (dad538d7)
+2018-07-14T15:12:03.5942505+07:00 0HLF9C5R2SONV:00000002 [INF] Executed action method "NetCore.Controllers.HomeController.Index (NetCore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.7947ms. (50a9e262)
+2018-07-14T15:12:03.7902092+07:00 0HLF9C5R2SONV:00000002 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-07-14T15:12:04.2250745+07:00 0HLF9C5R2SONV:00000002 [INF] Executed ViewResult - view "Index" executed in 531.3265ms. (f66409e9)
+2018-07-14T15:12:04.4544671+07:00 0HLF9C5R2SONV:00000002 [INF] Executed action "NetCore.Controllers.HomeController.Index (NetCore)" in 705.6101ms (afa2e885)
+2018-07-14T15:12:04.5485200+07:00 0HLF9C5R2SONV:00000002 [INF] Request finished in 5303.3869ms 200 text/html; charset=utf-8 (791a596a)
+2018-07-14T15:13:47.1830302+07:00 0HLF9C5R2SOO0:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin   (ca22a1cb)
+2018-07-14T15:13:47.2565925+07:00 0HLF9C5R2SOO0:00000001 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Login\"}". Executing action "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" (a44c0341)
+2018-07-14T15:13:47.3029758+07:00 0HLF9C5R2SOO0:00000001 [INF] Executing action method "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" - Validation state: Valid (dad538d7)
+2018-07-14T15:13:47.3099548+07:00 0HLF9C5R2SOO0:00000001 [INF] Executed action method "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.3643ms. (50a9e262)
+2018-07-14T15:13:47.3398403+07:00 0HLF9C5R2SOO0:00000001 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-07-14T15:13:47.4168052+07:00 0HLF9C5R2SOO0:00000001 [INF] Executed ViewResult - view "Index" executed in 97.8991ms. (f66409e9)
+2018-07-14T15:13:47.4353557+07:00 0HLF9C5R2SOO0:00000001 [INF] Executed action "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" in 160.4729ms (afa2e885)
+2018-07-14T15:13:47.4712229+07:00 0HLF9C5R2SOO0:00000001 [INF] Request finished in 262.6351ms 200 text/html; charset=utf-8 (791a596a)
+2018-07-14T15:13:47.7746971+07:00 0HLF9C5R2SOO1:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/font-awesome/css/font-awesome.css   (ca22a1cb)
+2018-07-14T15:13:47.9684335+07:00 0HLF9C5R2SOO2:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/animate.css/animate.css   (ca22a1cb)
+2018-07-14T15:13:48.0222224+07:00 0HLF9C5R2SOO0:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/css/custom.css   (ca22a1cb)
+2018-07-14T15:13:48.0373552+07:00 0HLF9C5R2SOO1:00000001 [INF] The file "/font-awesome/css/font-awesome.css" was not modified (f1f8d725)
+2018-07-14T15:13:48.0434758+07:00 0HLF9C5R2SOO2:00000001 [INF] The file "/animate.css/animate.css" was not modified (f1f8d725)
+2018-07-14T15:13:48.0511499+07:00 0HLF9C5R2SOO1:00000001 [INF] Request finished in 379.0871ms 304 text/css (791a596a)
+2018-07-14T15:13:48.0548412+07:00 0HLF9C5R2SOO2:00000001 [INF] Request finished in 374.2254ms 304 text/css (791a596a)
+2018-07-14T15:13:48.0601169+07:00 0HLF9C5R2SOO0:00000002 [INF] The file "/admin-side/css/custom.css" was not modified (f1f8d725)
+2018-07-14T15:13:48.0723267+07:00 0HLF9C5R2SOO9:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/app/shared/netcore.js   (ca22a1cb)
+2018-07-14T15:13:48.0768185+07:00 0HLF9C5R2SOOA:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js   (ca22a1cb)
+2018-07-14T15:13:48.0803980+07:00 0HLF9C5R2SOO9:00000001 [INF] The file "/app/shared/netcore.js" was not modified (f1f8d725)
+2018-07-14T15:13:48.0868369+07:00 0HLF9C5R2SOOA:00000001 [INF] The file "/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js" was not modified (f1f8d725)
+2018-07-14T15:13:48.0889528+07:00 0HLF9C5R2SOO9:00000001 [INF] Request finished in 29.1892ms 304 application/javascript (791a596a)
+2018-07-14T15:13:48.0923619+07:00 0HLF9C5R2SOOA:00000001 [INF] Request finished in 30.725ms 304 application/javascript (791a596a)
+2018-07-14T15:13:48.1013186+07:00 0HLF9C5R2SOO0:00000002 [INF] Request finished in 374.7669ms 304 text/css (791a596a)
+2018-07-14T15:13:48.1488660+07:00 0HLF9C5R2SOOB:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/jquery-validation/dist/localization/messages_vi.js   (ca22a1cb)
+2018-07-14T15:13:48.1553723+07:00 0HLF9C5R2SOO4:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/app/controllers/login/index.js   (ca22a1cb)
+2018-07-14T15:13:48.1689717+07:00 0HLF9C5R2SOOB:00000001 [INF] The file "/jquery-validation/dist/localization/messages_vi.js" was not modified (f1f8d725)
+2018-07-14T15:13:48.2122756+07:00 0HLF9C5R2SOO4:00000001 [INF] The file "/app/controllers/login/index.js" was not modified (f1f8d725)
+2018-07-14T15:13:48.2434841+07:00 0HLF9C5R2SOO4:00000001 [INF] Request finished in 245.6064ms 304 application/javascript (791a596a)
+2018-07-14T15:13:48.2519454+07:00 0HLF9C5R2SOOB:00000001 [INF] Request finished in 76.9259ms 304 application/javascript (791a596a)
+2018-07-14T15:13:48.2742104+07:00 0HLF9C5R2SOO3:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/js/jquery.min.js   (ca22a1cb)
+2018-07-14T15:13:48.2899351+07:00 0HLF9C5R2SOO7:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/jquery-validation/dist/jquery.validate.js   (ca22a1cb)
+2018-07-14T15:13:48.2919542+07:00 0HLF9C5R2SOO3:00000001 [INF] The file "/js/jquery.min.js" was not modified (f1f8d725)
+2018-07-14T15:13:48.3094304+07:00 0HLF9C5R2SOO7:00000001 [INF] The file "/jquery-validation/dist/jquery.validate.js" was not modified (f1f8d725)
+2018-07-14T15:13:48.3374490+07:00 0HLF9C5R2SOO3:00000001 [INF] Request finished in 327.121ms 304 application/javascript (791a596a)
+2018-07-14T15:13:48.3593076+07:00 0HLF9C5R2SOO7:00000001 [INF] Request finished in 304.0821ms 304 application/javascript (791a596a)
+2018-07-14T15:13:48.3709022+07:00 0HLF9C5R2SOO6:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/jquery-validation/dist/additional-methods.js   (ca22a1cb)
+2018-07-14T15:13:48.3751441+07:00 0HLF9C5R2SOO5:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/notifyjs/dist/notify.js   (ca22a1cb)
+2018-07-14T15:13:48.3862314+07:00 0HLF9C5R2SOO6:00000001 [INF] The file "/jquery-validation/dist/additional-methods.js" was not modified (f1f8d725)
+2018-07-14T15:13:48.3956469+07:00 0HLF9C5R2SOO5:00000001 [INF] The file "/notifyjs/dist/notify.js" was not modified (f1f8d725)
+2018-07-14T15:13:48.4177627+07:00 0HLF9C5R2SOO6:00000001 [INF] Request finished in 376.0348ms 304 application/javascript (791a596a)
+2018-07-14T15:13:48.4235430+07:00 0HLF9C5R2SOO5:00000001 [INF] Request finished in 390.4796ms 304 application/javascript (791a596a)
+2018-07-14T15:13:48.4360716+07:00 0HLF9C5R2SOO8:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/nprogress/nprogress.css   (ca22a1cb)
+2018-07-14T15:13:48.5410231+07:00 0HLF9C5R2SOO8:00000001 [INF] The file "/nprogress/nprogress.css" was not modified (f1f8d725)
+2018-07-14T15:13:48.6349613+07:00 0HLF9C5R2SOO8:00000001 [INF] Request finished in 506.5631ms 304 text/css (791a596a)
+2018-07-14T15:13:48.6380591+07:00 0HLF9C5R2SOOA:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0   (ca22a1cb)
+2018-07-14T15:13:48.6678470+07:00 0HLF9C5R2SOOA:00000002 [INF] The file "/font-awesome/fonts/fontawesome-webfont.woff2" was not modified (f1f8d725)
+2018-07-14T15:13:48.8337684+07:00 0HLF9C5R2SOOA:00000002 [INF] Request finished in 41.4788ms 304 font/woff2 (791a596a)
+2018-07-14T15:13:49.8491574+07:00 0HLF9C5R2SOO0:00000003 [INF] Request starting HTTP/1.1 POST http://localhost:44357/admin/login/authen application/x-www-form-urlencoded; charset=UTF-8 33 (ca22a1cb)
+2018-07-14T15:13:49.9257398+07:00 0HLF9C5R2SOO0:00000003 [INF] Route matched with "{area = \"Admin\", action = \"Authen\", controller = \"Login\"}". Executing action "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)" (a44c0341)
+2018-07-14T15:13:50.0582503+07:00 0HLF9C5R2SOO0:00000003 [INF] Executing action method "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)" with arguments (["NetCore.Application.ViewModels.Login.LoginViewModel"]) - Validation state: Valid (4e3479ed)
+2018-07-14T15:13:50.1206836+07:00 0HLF9C5R2SOO0:00000003 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=NetCore.Data.EF " (9958f5bb)
+2018-07-14T15:13:50.2183905+07:00 0HLF9C5R2SOO0:00000003 [INF] Executed DbCommand ("36"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[Balance], [u].[BirthDay], [u].[ConcurrencyStamp], [u].[DateCreated], [u].[DateModified], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2018-07-14T15:13:50.3062073+07:00 0HLF9C5R2SOO0:00000003 [INF] Executed DbCommand ("4"ms) [Parameters=["@__user_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2018-07-14T15:13:50.3486455+07:00 0HLF9C5R2SOO0:00000003 [INF] Executed DbCommand ("12"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-07-14T15:13:50.3728160+07:00 0HLF9C5R2SOO0:00000003 [INF] Executed DbCommand ("16"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-07-14T15:13:50.4045027+07:00 0HLF9C5R2SOO0:00000003 [INF] Executed DbCommand ("6"ms) [Parameters=["@__role_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0" (0723d8ff)
+2018-07-14T15:13:50.4408550+07:00 0HLF9C5R2SOO0:00000003 [INF] Executed DbCommand ("26"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-07-14T15:13:50.4589881+07:00 0HLF9C5R2SOO0:00000003 [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2018-07-14T15:13:50.4690782+07:00 0HLF9C5R2SOO0:00000003 [INF] User logged in. (fdce0db4)
+2018-07-14T15:13:50.4840855+07:00 0HLF9C5R2SOO0:00000003 [INF] Executed action method "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 414.932ms. (50a9e262)
+2018-07-14T15:13:50.5039735+07:00 0HLF9C5R2SOO0:00000003 [INF] Executing ObjectResult, writing value of type '"NetCore.Utilities.Dtos.GenericResult"'. (8a1b66c8)
+2018-07-14T15:13:50.6055383+07:00 0HLF9C5R2SOO0:00000003 [INF] Executed action "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)" in 664.5767ms (afa2e885)
+2018-07-14T15:13:50.6680971+07:00 0HLF9C5R2SOO0:00000003 [INF] Request finished in 770.1972ms 200 application/json; charset=utf-8 (791a596a)
+2018-07-14T15:13:50.6698726+07:00 0HLF9C5R2SOO2:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/Admin/Home/Index   (ca22a1cb)
+2018-07-14T15:13:50.6827585+07:00 0HLF9C5R2SOO2:00000002 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Home\"}". Executing action "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)" (a44c0341)
+2018-07-14T15:13:50.7065681+07:00 0HLF9C5R2SOO2:00000002 [INF] Authorization was successful. (0d575a54)
+2018-07-14T15:13:50.7186794+07:00 0HLF9C5R2SOO2:00000002 [INF] Executing action method "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)" - Validation state: Valid (dad538d7)
+2018-07-14T15:13:50.7329860+07:00 0HLF9C5R2SOO2:00000002 [INF] Executed action method "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 2.2486ms. (50a9e262)
+2018-07-14T15:13:50.7407210+07:00 0HLF9C5R2SOO2:00000002 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-07-14T15:13:55.4232146+07:00 0HLF9C5R2SOO2:00000002 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=NetCore.Data.EF " (9958f5bb)
+2018-07-14T15:13:55.7204731+07:00 0HLF9C5R2SOO2:00000002 [INF] Executed DbCommand ("51"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [dtoFunction].[IconCss], [dtoFunction].[Id], [dtoFunction].[Name], [dtoFunction].[ParentId], [dtoFunction].[SorOrder], [dtoFunction].[Status], [dtoFunction].[URL]
+FROM [Functions] AS [dtoFunction]" (0723d8ff)
+2018-07-14T15:13:56.0595048+07:00 0HLF9C5R2SOO2:00000002 [INF] Executed action "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)" in 5372.0215ms (afa2e885)
+2018-07-14T15:13:56.2237557+07:00 0HLF9C5R2SOO2:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.InvalidOperationException: The view 'Components/SideBar/Default' was not found. The following locations were searched:
+/Areas/Admin/Views/Home/Components/SideBar/Default.cshtml
+/Areas/Admin/Views/Shared/Components/SideBar/Default.cshtml
+/Views/Shared/Components/SideBar/Default.cshtml
+/Pages/Shared/Components/SideBar/Default.cshtml
+   at Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable`1 originalLocations)
+   at Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult.ExecuteAsync(ViewComponentContext context)
+   at Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentInvoker.InvokeAsync(ViewComponentContext context)
+   at Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentHelper.InvokeCoreAsync(ViewComponentDescriptor descriptor, Object arguments)
+   at AspNetCore.Areas_Admin_Views_Shared__Layout.<ExecuteAsync>b__30_1() in D:\Githubs\NETCORE2.1\NetCore\NetCore\Areas\Admin\Views\Shared\_Layout.cshtml:line 45
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.SetOutputContentAsync()
+   at AspNetCore.Areas_Admin_Views_Shared__Layout.ExecuteAsync()
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderLayoutAsync(ViewContext context, ViewBufferTextWriter bodyWriter)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-07-14T15:13:56.6514046+07:00 0HLF9C5R2SOO2:00000002 [INF] Request finished in 5676.3893ms 500 text/html; charset=utf-8 (791a596a)
+2018-07-14T15:18:12.2719365+07:00 0HLF9C9BHAFM2:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:57363/  0 (ca22a1cb)
+2018-07-14T15:18:12.2721078+07:00 0HLF9C9BHAFM1:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-07-14T15:18:12.3514918+07:00 0HLF9C9BHAFM2:00000001 [INF] Request finished in 94.1828ms 200  (791a596a)
+2018-07-14T15:18:12.6733549+07:00 0HLF9C9BHAFM1:00000001 [INF] Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing action "NetCore.Controllers.HomeController.Index (NetCore)" (a44c0341)
+2018-07-14T15:18:12.7921904+07:00 0HLF9C9BHAFM1:00000001 [INF] Executing action method "NetCore.Controllers.HomeController.Index (NetCore)" - Validation state: Valid (dad538d7)
+2018-07-14T15:18:12.8103912+07:00 0HLF9C9BHAFM1:00000001 [INF] Executed action method "NetCore.Controllers.HomeController.Index (NetCore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.7191ms. (50a9e262)
+2018-07-14T15:18:12.9253618+07:00 0HLF9C9BHAFM1:00000001 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-07-14T15:18:13.5505716+07:00 0HLF9C9BHAFM1:00000001 [INF] Executed ViewResult - view "Index" executed in 516.2256ms. (f66409e9)
+2018-07-14T15:18:13.6639973+07:00 0HLF9C9BHAFM1:00000001 [INF] Executed action "NetCore.Controllers.HomeController.Index (NetCore)" in 877.3551ms (afa2e885)
+2018-07-14T15:18:13.8486956+07:00 0HLF9C9BHAFM1:00000001 [INF] Request finished in 1468.0408ms 200 text/html; charset=utf-8 (791a596a)
+2018-07-14T15:18:50.2411077+07:00 0HLF9C9MQ7MV1:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-07-14T15:18:50.2411060+07:00 0HLF9C9MQ7MV2:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:57363/  0 (ca22a1cb)
+2018-07-14T15:18:50.3247715+07:00 0HLF9C9MQ7MV2:00000001 [INF] Request finished in 76.2854ms 200  (791a596a)
+2018-07-14T15:18:50.5475046+07:00 0HLF9C9MQ7MV1:00000001 [INF] Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing action "NetCore.Controllers.HomeController.Index (NetCore)" (a44c0341)
+2018-07-14T15:18:50.5884449+07:00 0HLF9C9MQ7MV1:00000001 [INF] Executing action method "NetCore.Controllers.HomeController.Index (NetCore)" - Validation state: Valid (dad538d7)
+2018-07-14T15:18:50.6095680+07:00 0HLF9C9MQ7MV1:00000001 [INF] Executed action method "NetCore.Controllers.HomeController.Index (NetCore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.7136ms. (50a9e262)
+2018-07-14T15:18:50.6514649+07:00 0HLF9C9MQ7MV1:00000001 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-07-14T15:18:50.9314025+07:00 0HLF9C9MQ7MV1:00000001 [INF] Executed ViewResult - view "Index" executed in 270.571ms. (f66409e9)
+2018-07-14T15:18:50.9433765+07:00 0HLF9C9MQ7MV1:00000001 [INF] Executed action "NetCore.Controllers.HomeController.Index (NetCore)" in 384.1321ms (afa2e885)
+2018-07-14T15:18:51.0930012+07:00 0HLF9C9MQ7MV1:00000001 [INF] Request finished in 749.0864ms 200 text/html; charset=utf-8 (791a596a)
+2018-07-14T15:18:54.5591085+07:00 0HLF9C9MQ7MV2:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin   (ca22a1cb)
+2018-07-14T15:18:54.6014730+07:00 0HLF9C9MQ7MV2:00000002 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Login\"}". Executing action "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" (a44c0341)
+2018-07-14T15:18:54.6150349+07:00 0HLF9C9MQ7MV2:00000002 [INF] Executing action method "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" - Validation state: Valid (dad538d7)
+2018-07-14T15:18:54.6318936+07:00 0HLF9C9MQ7MV2:00000002 [INF] Executed action method "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.406ms. (50a9e262)
+2018-07-14T15:18:54.6498525+07:00 0HLF9C9MQ7MV2:00000002 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-07-14T15:18:54.7200837+07:00 0HLF9C9MQ7MV2:00000002 [INF] Executed ViewResult - view "Index" executed in 75.3186ms. (f66409e9)
+2018-07-14T15:18:54.7354987+07:00 0HLF9C9MQ7MV2:00000002 [INF] Executed action "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" in 118.7098ms (afa2e885)
+2018-07-14T15:18:54.8392308+07:00 0HLF9C9MQ7MV2:00000002 [INF] Request finished in 197.6993ms 200 text/html; charset=utf-8 (791a596a)
+2018-07-14T15:18:56.0764737+07:00 0HLF9C9MQ7MV1:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:44357/admin/login/authen application/x-www-form-urlencoded; charset=UTF-8 33 (ca22a1cb)
+2018-07-14T15:18:56.1195276+07:00 0HLF9C9MQ7MV1:00000002 [INF] Route matched with "{area = \"Admin\", action = \"Authen\", controller = \"Login\"}". Executing action "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)" (a44c0341)
+2018-07-14T15:18:56.2735656+07:00 0HLF9C9MQ7MV1:00000002 [INF] Executing action method "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)" with arguments (["NetCore.Application.ViewModels.Login.LoginViewModel"]) - Validation state: Valid (4e3479ed)
+2018-07-14T15:18:56.5348935+07:00 0HLF9C9MQ7MV1:00000002 [WRN] No type was specified for the decimal column '"Balance"' on entity type '"AppUser"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-07-14T15:18:56.5419669+07:00 0HLF9C9MQ7MV1:00000002 [WRN] No type was specified for the decimal column '"Price"' on entity type '"BillDetail"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-07-14T15:18:56.5501460+07:00 0HLF9C9MQ7MV1:00000002 [WRN] No type was specified for the decimal column '"Price"' on entity type '"Product"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-07-14T15:18:56.5567426+07:00 0HLF9C9MQ7MV1:00000002 [WRN] No type was specified for the decimal column '"PriceSale"' on entity type '"Product"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-07-14T15:18:56.5724315+07:00 0HLF9C9MQ7MV1:00000002 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=NetCore.Data.EF " (9958f5bb)
+2018-07-14T15:18:56.8035333+07:00 0HLF9C9MQ7MV1:00000002 [INF] Executed DbCommand ("72"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[Balance], [u].[BirthDay], [u].[ConcurrencyStamp], [u].[DateCreated], [u].[DateModified], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2018-07-14T15:18:57.1822041+07:00 0HLF9C9MQ7MV1:00000002 [INF] Executed DbCommand ("10"ms) [Parameters=["@__user_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2018-07-14T15:18:57.3675722+07:00 0HLF9C9MQ7MV1:00000002 [INF] Executed DbCommand ("59"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-07-14T15:18:57.4651313+07:00 0HLF9C9MQ7MV1:00000002 [INF] Executed DbCommand ("9"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-07-14T15:18:57.5747592+07:00 0HLF9C9MQ7MV1:00000002 [INF] Executed DbCommand ("54"ms) [Parameters=["@__role_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0" (0723d8ff)
+2018-07-14T15:18:57.6005905+07:00 0HLF9C9MQ7MV1:00000002 [INF] Executed DbCommand ("4"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-07-14T15:18:57.6286320+07:00 0HLF9C9MQ7MV1:00000002 [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2018-07-14T15:18:57.6402444+07:00 0HLF9C9MQ7MV1:00000002 [INF] User logged in. (fdce0db4)
+2018-07-14T15:18:57.6537956+07:00 0HLF9C9MQ7MV1:00000002 [INF] Executed action method "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1373.3379ms. (50a9e262)
+2018-07-14T15:18:57.6785922+07:00 0HLF9C9MQ7MV1:00000002 [INF] Executing ObjectResult, writing value of type '"NetCore.Utilities.Dtos.GenericResult"'. (8a1b66c8)
+2018-07-14T15:18:57.7824964+07:00 0HLF9C9MQ7MV1:00000002 [INF] Executed action "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)" in 1648.6827ms (afa2e885)
+2018-07-14T15:18:57.8571484+07:00 0HLF9C9MQ7MV1:00000002 [INF] Request finished in 1727.4276ms 200 application/json; charset=utf-8 (791a596a)
+2018-07-14T15:18:57.8720694+07:00 0HLF9C9MQ7MV2:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/Admin/Home/Index   (ca22a1cb)
+2018-07-14T15:18:57.8853339+07:00 0HLF9C9MQ7MV2:00000003 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Home\"}". Executing action "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)" (a44c0341)
+2018-07-14T15:18:57.9100176+07:00 0HLF9C9MQ7MV2:00000003 [INF] Authorization was successful. (0d575a54)
+2018-07-14T15:18:57.9241870+07:00 0HLF9C9MQ7MV2:00000003 [INF] Executing action method "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)" - Validation state: Valid (dad538d7)
+2018-07-14T15:18:57.9367762+07:00 0HLF9C9MQ7MV2:00000003 [INF] Executed action method "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1.4306ms. (50a9e262)
+2018-07-14T15:18:57.9529572+07:00 0HLF9C9MQ7MV2:00000003 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-07-14T15:19:01.2255156+07:00 0HLF9C9MQ7MV2:00000003 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=NetCore.Data.EF " (9958f5bb)
+2018-07-14T15:19:01.5527005+07:00 0HLF9C9MQ7MV2:00000003 [INF] Executed DbCommand ("115"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [dtoFunction].[IconCss], [dtoFunction].[Id], [dtoFunction].[Name], [dtoFunction].[ParentId], [dtoFunction].[SorOrder], [dtoFunction].[Status], [dtoFunction].[URL]
+FROM [Functions] AS [dtoFunction]" (0723d8ff)
+2018-07-14T15:19:01.8308352+07:00 0HLF9C9MQ7MV2:00000003 [INF] Executed action "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)" in 3937.0844ms (afa2e885)
+2018-07-14T15:19:02.0390842+07:00 0HLF9C9MQ7MV2:00000003 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.InvalidOperationException: The view 'Components/SideBar/Default' was not found. The following locations were searched:
+/Areas/Admin/Views/Home/Components/SideBar/Default.cshtml
+/Areas/Admin/Views/Shared/Components/SideBar/Default.cshtml
+/Views/Shared/Components/SideBar/Default.cshtml
+/Pages/Shared/Components/SideBar/Default.cshtml
+   at Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable`1 originalLocations)
+   at Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult.ExecuteAsync(ViewComponentContext context)
+   at Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentInvoker.InvokeAsync(ViewComponentContext context)
+   at Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentHelper.InvokeCoreAsync(ViewComponentDescriptor descriptor, Object arguments)
+   at AspNetCore.Areas_Admin_Views_Shared__Layout.<ExecuteAsync>b__30_1() in D:\Githubs\NETCORE2.1\NetCore\NetCore\Areas\Admin\Views\Shared\_Layout.cshtml:line 45
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.SetOutputContentAsync()
+   at AspNetCore.Areas_Admin_Views_Shared__Layout.ExecuteAsync()
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderLayoutAsync(ViewContext context, ViewBufferTextWriter bodyWriter)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-07-14T15:19:02.4592201+07:00 0HLF9C9MQ7MV2:00000003 [INF] Request finished in 4289.9435ms 500 text/html; charset=utf-8 (791a596a)
+2018-07-14T15:20:23.4795761+07:00 0HLF9CAII40RN:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:57363/  0 (ca22a1cb)
+2018-07-14T15:20:23.4806657+07:00 0HLF9CAII40RM:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-07-14T15:20:23.5543639+07:00 0HLF9CAII40RN:00000001 [INF] Request finished in 94.8427ms 200  (791a596a)
+2018-07-14T15:20:23.8397365+07:00 0HLF9CAII40RM:00000001 [INF] Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing action "NetCore.Controllers.HomeController.Index (NetCore)" (a44c0341)
+2018-07-14T15:20:23.9080834+07:00 0HLF9CAII40RM:00000001 [INF] Executing action method "NetCore.Controllers.HomeController.Index (NetCore)" - Validation state: Valid (dad538d7)
+2018-07-14T15:20:23.9255432+07:00 0HLF9CAII40RM:00000001 [INF] Executed action method "NetCore.Controllers.HomeController.Index (NetCore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.7642ms. (50a9e262)
+2018-07-14T15:20:24.1036141+07:00 0HLF9CAII40RM:00000001 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-07-14T15:20:24.5376122+07:00 0HLF9CAII40RM:00000001 [INF] Executed ViewResult - view "Index" executed in 529.2561ms. (f66409e9)
+2018-07-14T15:20:24.5919088+07:00 0HLF9CAII40RM:00000001 [INF] Executed action "NetCore.Controllers.HomeController.Index (NetCore)" in 697.9605ms (afa2e885)
+2018-07-14T15:20:24.7058599+07:00 0HLF9CAII40RM:00000001 [INF] Request finished in 1171.5165ms 200 text/html; charset=utf-8 (791a596a)
+2018-07-14T15:20:31.0346179+07:00 0HLF9CAII40RN:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin   (ca22a1cb)
+2018-07-14T15:20:31.0875439+07:00 0HLF9CAII40RN:00000002 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Login\"}". Executing action "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" (a44c0341)
+2018-07-14T15:20:31.1083260+07:00 0HLF9CAII40RN:00000002 [INF] Executing action method "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" - Validation state: Valid (dad538d7)
+2018-07-14T15:20:31.1241864+07:00 0HLF9CAII40RN:00000002 [INF] Executed action method "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.4012ms. (50a9e262)
+2018-07-14T15:20:31.1407646+07:00 0HLF9CAII40RN:00000002 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-07-14T15:20:31.2254139+07:00 0HLF9CAII40RN:00000002 [INF] Executed ViewResult - view "Index" executed in 90.2263ms. (f66409e9)
+2018-07-14T15:20:31.2384934+07:00 0HLF9CAII40RN:00000002 [INF] Executed action "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" in 137.9664ms (afa2e885)
+2018-07-14T15:20:31.3434574+07:00 0HLF9CAII40RN:00000002 [INF] Request finished in 222.5302ms 200 text/html; charset=utf-8 (791a596a)
+2018-07-14T15:20:32.7323073+07:00 0HLF9CAII40RM:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:44357/admin/login/authen application/x-www-form-urlencoded; charset=UTF-8 33 (ca22a1cb)
+2018-07-14T15:20:32.7807725+07:00 0HLF9CAII40RM:00000002 [INF] Route matched with "{area = \"Admin\", action = \"Authen\", controller = \"Login\"}". Executing action "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)" (a44c0341)
+2018-07-14T15:20:32.9543914+07:00 0HLF9CAII40RM:00000002 [INF] Executing action method "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)" with arguments (["NetCore.Application.ViewModels.Login.LoginViewModel"]) - Validation state: Valid (4e3479ed)
+2018-07-14T15:20:33.4263099+07:00 0HLF9CAII40RM:00000002 [WRN] No type was specified for the decimal column '"Balance"' on entity type '"AppUser"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-07-14T15:20:33.4555310+07:00 0HLF9CAII40RM:00000002 [WRN] No type was specified for the decimal column '"Price"' on entity type '"BillDetail"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-07-14T15:20:33.4649886+07:00 0HLF9CAII40RM:00000002 [WRN] No type was specified for the decimal column '"Price"' on entity type '"Product"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-07-14T15:20:33.4807557+07:00 0HLF9CAII40RM:00000002 [WRN] No type was specified for the decimal column '"PriceSale"' on entity type '"Product"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-07-14T15:20:33.5210642+07:00 0HLF9CAII40RM:00000002 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=NetCore.Data.EF " (9958f5bb)
+2018-07-14T15:20:34.0420769+07:00 0HLF9CAII40RM:00000002 [INF] Executed DbCommand ("62"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[Balance], [u].[BirthDay], [u].[ConcurrencyStamp], [u].[DateCreated], [u].[DateModified], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2018-07-14T15:20:35.0744406+07:00 0HLF9CAII40RM:00000002 [INF] Executed DbCommand ("354"ms) [Parameters=["@__user_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2018-07-14T15:20:36.1198659+07:00 0HLF9CAII40RM:00000002 [INF] Executed DbCommand ("577"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-07-14T15:20:36.1910277+07:00 0HLF9CAII40RM:00000002 [INF] Executed DbCommand ("21"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-07-14T15:20:36.3056419+07:00 0HLF9CAII40RM:00000002 [INF] Executed DbCommand ("13"ms) [Parameters=["@__role_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0" (0723d8ff)
+2018-07-14T15:20:36.4107591+07:00 0HLF9CAII40RM:00000002 [INF] Executed DbCommand ("77"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-07-14T15:20:36.4361203+07:00 0HLF9CAII40RM:00000002 [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2018-07-14T15:20:36.4557743+07:00 0HLF9CAII40RM:00000002 [INF] User logged in. (fdce0db4)
+2018-07-14T15:20:36.4998565+07:00 0HLF9CAII40RM:00000002 [INF] Executed action method "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 3505.3582ms. (50a9e262)
+2018-07-14T15:20:36.5548773+07:00 0HLF9CAII40RM:00000002 [INF] Executing ObjectResult, writing value of type '"NetCore.Utilities.Dtos.GenericResult"'. (8a1b66c8)
+2018-07-14T15:20:36.6403379+07:00 0HLF9CAII40RM:00000002 [INF] Executed action "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)" in 3854.3098ms (afa2e885)
+2018-07-14T15:20:36.6834574+07:00 0HLF9CAII40RM:00000002 [INF] Request finished in 3961.4506ms 200 application/json; charset=utf-8 (791a596a)
+2018-07-14T15:20:36.6972412+07:00 0HLF9CAII40RN:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/Admin/Home/Index   (ca22a1cb)
+2018-07-14T15:20:36.7244969+07:00 0HLF9CAII40RN:00000003 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Home\"}". Executing action "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)" (a44c0341)
+2018-07-14T15:20:36.8510869+07:00 0HLF9CAII40RN:00000003 [INF] Authorization was successful. (0d575a54)
+2018-07-14T15:20:36.8584573+07:00 0HLF9CAII40RN:00000003 [INF] Executing action method "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)" - Validation state: Valid (dad538d7)
+2018-07-14T15:20:36.8729965+07:00 0HLF9CAII40RN:00000003 [INF] Executed action method "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1.431ms. (50a9e262)
+2018-07-14T15:20:36.8883462+07:00 0HLF9CAII40RN:00000003 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-07-14T15:20:40.7542271+07:00 0HLF9CAII40RN:00000003 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=NetCore.Data.EF " (9958f5bb)
+2018-07-14T15:20:41.1013193+07:00 0HLF9CAII40RN:00000003 [INF] Executed DbCommand ("233"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [dtoFunction].[IconCss], [dtoFunction].[Id], [dtoFunction].[Name], [dtoFunction].[ParentId], [dtoFunction].[SorOrder], [dtoFunction].[Status], [dtoFunction].[URL]
+FROM [Functions] AS [dtoFunction]" (0723d8ff)
+2018-07-14T15:20:41.2984682+07:00 0HLF9CAII40RN:00000003 [INF] Executed ViewResult - view "Index" executed in 4414.0638ms. (f66409e9)
+2018-07-14T15:20:41.3097345+07:00 0HLF9CAII40RN:00000003 [INF] Executed action "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)" in 4581.2694ms (afa2e885)
+2018-07-14T15:20:41.3300837+07:00 0HLF9CAII40RN:00000003 [INF] Request finished in 4623.91ms 200 text/html; charset=utf-8 (791a596a)
+2018-07-14T15:20:41.5240418+07:00 0HLF9CAII40RM:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/images/img.jpg   (ca22a1cb)
+2018-07-14T15:20:41.5313636+07:00 0HLF9CAII40RS:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/chart.js/dist/Chart.js   (ca22a1cb)
+2018-07-14T15:20:41.5330629+07:00 0HLF9CAII40RN:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/daterangepicker/daterangepicker.css   (ca22a1cb)
+2018-07-14T15:20:41.5374466+07:00 0HLF9CAII40RO:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/nprogress/nprogress.js   (ca22a1cb)
+2018-07-14T15:20:41.5637027+07:00 0HLF9CAII40RP:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/fastclick/lib/fastclick.js   (ca22a1cb)
+2018-07-14T15:20:41.5679287+07:00 0HLF9CAII40RQ:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/jquery-sparkline/jquery.sparkline.js   (ca22a1cb)
+2018-07-14T15:20:41.5761205+07:00 0HLF9CAII40RR:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/moment/moment.js   (ca22a1cb)
+2018-07-14T15:20:41.5815083+07:00 0HLF9CAII40RT:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/bootbox/bootbox.js   (ca22a1cb)
+2018-07-14T15:20:41.5917945+07:00 0HLF9CAII40RS:00000001 [INF] The file "/chart.js/dist/Chart.js" was not modified (f1f8d725)
+2018-07-14T15:20:41.6205982+07:00 0HLF9CAII40RN:00000004 [INF] The file "/daterangepicker/daterangepicker.css" was not modified (f1f8d725)
+2018-07-14T15:20:41.6353643+07:00 0HLF9CAII40RO:00000001 [INF] The file "/nprogress/nprogress.js" was not modified (f1f8d725)
+2018-07-14T15:20:41.6417264+07:00 0HLF9CAII40RP:00000001 [INF] The file "/fastclick/lib/fastclick.js" was not modified (f1f8d725)
+2018-07-14T15:20:41.6631910+07:00 0HLF9CAII40RQ:00000001 [INF] The file "/jquery-sparkline/jquery.sparkline.js" was not modified (f1f8d725)
+2018-07-14T15:20:41.7548093+07:00 0HLF9CAII40RR:00000001 [INF] The file "/moment/moment.js" was not modified (f1f8d725)
+2018-07-14T15:20:41.7661793+07:00 0HLF9CAII40RT:00000001 [INF] The file "/bootbox/bootbox.js" was not modified (f1f8d725)
+2018-07-14T15:20:41.7740875+07:00 0HLF9CAII40RT:00000001 [INF] Request finished in 246.7551ms 304 application/javascript (791a596a)
+2018-07-14T15:20:41.7799416+07:00 0HLF9CAII40RM:00000003 [INF] The file "/admin-side/images/img.jpg" was not modified (f1f8d725)
+2018-07-14T15:20:41.7924384+07:00 0HLF9CAII40RS:00000001 [INF] Request finished in 224.2609ms 304 application/javascript (791a596a)
+2018-07-14T15:20:41.7997342+07:00 0HLF9CAII40RM:00000003 [INF] Request finished in 344.9232ms 304 image/jpeg (791a596a)
+2018-07-14T15:20:41.8043161+07:00 0HLF9CAII40RV:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/js/custom.js   (ca22a1cb)
+2018-07-14T15:20:41.9180021+07:00 0HLF9CAII40RN:00000004 [INF] Request finished in 236.8744ms 304 text/css (791a596a)
+2018-07-14T15:20:41.9903106+07:00 0HLF9CAII40RV:00000001 [INF] The file "/admin-side/js/custom.js" was not modified (f1f8d725)
+2018-07-14T15:20:42.0245159+07:00 0HLF9CAII40RO:00000001 [INF] Request finished in 234.1249ms 304 application/javascript (791a596a)
+2018-07-14T15:20:42.1254800+07:00 0HLF9CAII40RV:00000001 [INF] Request finished in 191.693ms 304 application/javascript (791a596a)
+2018-07-14T15:20:42.1518222+07:00 0HLF9CAII40RP:00000001 [INF] Request finished in 234.1266ms 304 application/javascript (791a596a)
+2018-07-14T15:20:42.1544581+07:00 0HLF9CAII40RQ:00000001 [INF] Request finished in 233.0691ms 304 application/javascript (791a596a)
+2018-07-14T15:20:42.1571023+07:00 0HLF9CAII40RR:00000001 [INF] Request finished in 242.838ms 304 application/javascript (791a596a)
+2018-07-14T15:20:42.1585011+07:00 0HLF9CAII40RU:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/bootstrap-daterangepicker/daterangepicker.js   (ca22a1cb)
+2018-07-14T15:20:42.1684664+07:00 0HLF9CAII40RU:00000001 [INF] The file "/bootstrap-daterangepicker/daterangepicker.js" was not modified (f1f8d725)
+2018-07-14T15:20:42.1812667+07:00 0HLF9CAII40RU:00000001 [INF] Request finished in 392.3126ms 304 application/javascript (791a596a)
+2018-07-14T15:20:57.0205327+07:00 0HLF9CAII40RT:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin/blog/index   (ca22a1cb)
+2018-07-14T15:20:57.0913906+07:00 0HLF9CAII40RT:00000002 [INF] Request finished in 16.1419ms 404  (791a596a)
+2018-07-14T15:37:30.7251247+07:00 0HLF9CK4PSOK7:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:57363/  0 (ca22a1cb)
+2018-07-14T15:37:30.7251247+07:00 0HLF9CK4PSOK8:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-07-14T15:37:30.8299901+07:00 0HLF9CK4PSOK7:00000001 [INF] Request finished in 97.8748ms 200  (791a596a)
+2018-07-14T15:37:31.2734848+07:00 0HLF9CK4PSOK8:00000001 [INF] Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing action "NetCore.Controllers.HomeController.Index (NetCore)" (a44c0341)
+2018-07-14T15:37:31.5177255+07:00 0HLF9CK4PSOK8:00000001 [INF] Executing action method "NetCore.Controllers.HomeController.Index (NetCore)" - Validation state: Valid (dad538d7)
+2018-07-14T15:37:31.5921195+07:00 0HLF9CK4PSOK8:00000001 [INF] Executed action method "NetCore.Controllers.HomeController.Index (NetCore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 2.8774ms. (50a9e262)
+2018-07-14T15:37:31.7227399+07:00 0HLF9CK4PSOK8:00000001 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-07-14T15:37:31.9658465+07:00 0HLF9CK4PSOK8:00000001 [INF] Executed ViewResult - view "Index" executed in 335.5087ms. (f66409e9)
+2018-07-14T15:37:32.1079537+07:00 0HLF9CK4PSOK8:00000001 [INF] Executed action "NetCore.Controllers.HomeController.Index (NetCore)" in 692.5679ms (afa2e885)
+2018-07-14T15:37:32.3731605+07:00 0HLF9CK4PSOK8:00000001 [INF] Request finished in 1470.4622ms 200 text/html; charset=utf-8 (791a596a)
+2018-07-14T15:37:35.1373422+07:00 0HLF9CK4PSOK7:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin   (ca22a1cb)
+2018-07-14T15:37:35.1710852+07:00 0HLF9CK4PSOK7:00000002 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Login\"}". Executing action "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" (a44c0341)
+2018-07-14T15:37:35.1828928+07:00 0HLF9CK4PSOK7:00000002 [INF] Executing action method "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" - Validation state: Valid (dad538d7)
+2018-07-14T15:37:35.1916937+07:00 0HLF9CK4PSOK7:00000002 [INF] Executed action method "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1.2982ms. (50a9e262)
+2018-07-14T15:37:35.2142667+07:00 0HLF9CK4PSOK7:00000002 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-07-14T15:37:35.3079015+07:00 0HLF9CK4PSOK7:00000002 [INF] Executed ViewResult - view "Index" executed in 105.6362ms. (f66409e9)
+2018-07-14T15:37:35.3209111+07:00 0HLF9CK4PSOK7:00000002 [INF] Executed action "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" in 136.899ms (afa2e885)
+2018-07-14T15:37:35.3380193+07:00 0HLF9CK4PSOK7:00000002 [INF] Request finished in 190.967ms 200 text/html; charset=utf-8 (791a596a)
+2018-07-14T15:37:36.7375408+07:00 0HLF9CK4PSOK8:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:44357/admin/login/authen application/x-www-form-urlencoded; charset=UTF-8 33 (ca22a1cb)
+2018-07-14T15:37:36.7916420+07:00 0HLF9CK4PSOK8:00000002 [INF] Route matched with "{area = \"Admin\", action = \"Authen\", controller = \"Login\"}". Executing action "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)" (a44c0341)
+2018-07-14T15:37:36.9496108+07:00 0HLF9CK4PSOK8:00000002 [INF] Executing action method "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)" with arguments (["NetCore.Application.ViewModels.Login.LoginViewModel"]) - Validation state: Valid (4e3479ed)
+2018-07-14T15:37:37.2786369+07:00 0HLF9CK4PSOK8:00000002 [WRN] No type was specified for the decimal column '"Balance"' on entity type '"AppUser"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-07-14T15:37:37.2884828+07:00 0HLF9CK4PSOK8:00000002 [WRN] No type was specified for the decimal column '"Price"' on entity type '"BillDetail"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-07-14T15:37:37.3016067+07:00 0HLF9CK4PSOK8:00000002 [WRN] No type was specified for the decimal column '"Price"' on entity type '"Product"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-07-14T15:37:37.3126537+07:00 0HLF9CK4PSOK8:00000002 [WRN] No type was specified for the decimal column '"PriceSale"' on entity type '"Product"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-07-14T15:37:37.3538298+07:00 0HLF9CK4PSOK8:00000002 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=NetCore.Data.EF " (9958f5bb)
+2018-07-14T15:37:37.6171036+07:00 0HLF9CK4PSOK8:00000002 [INF] Executed DbCommand ("55"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[Balance], [u].[BirthDay], [u].[ConcurrencyStamp], [u].[DateCreated], [u].[DateModified], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2018-07-14T15:37:38.2050657+07:00 0HLF9CK4PSOK8:00000002 [INF] Executed DbCommand ("59"ms) [Parameters=["@__user_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2018-07-14T15:37:38.2988867+07:00 0HLF9CK4PSOK8:00000002 [INF] Executed DbCommand ("14"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-07-14T15:37:38.3690552+07:00 0HLF9CK4PSOK8:00000002 [INF] Executed DbCommand ("12"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-07-14T15:37:38.4582043+07:00 0HLF9CK4PSOK8:00000002 [INF] Executed DbCommand ("6"ms) [Parameters=["@__role_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0" (0723d8ff)
+2018-07-14T15:37:38.5984249+07:00 0HLF9CK4PSOK8:00000002 [INF] Executed DbCommand ("56"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-07-14T15:37:38.6377607+07:00 0HLF9CK4PSOK8:00000002 [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2018-07-14T15:37:38.6542886+07:00 0HLF9CK4PSOK8:00000002 [INF] User logged in. (fdce0db4)
+2018-07-14T15:37:38.6690054+07:00 0HLF9CK4PSOK8:00000002 [INF] Executed action method "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1711.5983ms. (50a9e262)
+2018-07-14T15:37:38.6965060+07:00 0HLF9CK4PSOK8:00000002 [INF] Executing ObjectResult, writing value of type '"NetCore.Utilities.Dtos.GenericResult"'. (8a1b66c8)
+2018-07-14T15:37:38.8071767+07:00 0HLF9CK4PSOK8:00000002 [INF] Executed action "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)" in 2007.5407ms (afa2e885)
+2018-07-14T15:37:38.8904522+07:00 0HLF9CK4PSOK8:00000002 [INF] Request finished in 2091.1774ms 200 application/json; charset=utf-8 (791a596a)
+2018-07-14T15:37:38.8998249+07:00 0HLF9CK4PSOK7:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/Admin/Home/Index   (ca22a1cb)
+2018-07-14T15:37:38.9209829+07:00 0HLF9CK4PSOK7:00000003 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Home\"}". Executing action "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)" (a44c0341)
+2018-07-14T15:37:38.9534390+07:00 0HLF9CK4PSOK7:00000003 [INF] Authorization was successful. (0d575a54)
+2018-07-14T15:37:38.9676914+07:00 0HLF9CK4PSOK7:00000003 [INF] Executing action method "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)" - Validation state: Valid (dad538d7)
+2018-07-14T15:37:38.9838160+07:00 0HLF9CK4PSOK7:00000003 [INF] Executed action method "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 2.4176ms. (50a9e262)
+2018-07-14T15:37:38.9973836+07:00 0HLF9CK4PSOK7:00000003 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-07-14T15:37:39.1192847+07:00 0HLF9CK4PSOK7:00000003 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=NetCore.Data.EF " (9958f5bb)
+2018-07-14T15:37:39.3859824+07:00 0HLF9CK4PSOK7:00000003 [INF] Executed DbCommand ("31"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [dtoFunction].[IconCss], [dtoFunction].[Id], [dtoFunction].[Name], [dtoFunction].[ParentId], [dtoFunction].[SorOrder], [dtoFunction].[Status], [dtoFunction].[URL]
+FROM [Functions] AS [dtoFunction]" (0723d8ff)
+2018-07-14T15:37:39.5348955+07:00 0HLF9CK4PSOK7:00000003 [INF] Executed ViewResult - view "Index" executed in 522.7472ms. (f66409e9)
+2018-07-14T15:37:39.5622908+07:00 0HLF9CK4PSOK7:00000003 [INF] Executed action "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)" in 621.4804ms (afa2e885)
+2018-07-14T15:37:39.7321310+07:00 0HLF9CK4PSOK7:00000003 [INF] Request finished in 678.1368ms 200 text/html; charset=utf-8 (791a596a)
+2018-07-14T15:37:43.1008691+07:00 0HLF9CK4PSOK8:00000003 [INF] Request starting HTTP/1.1 POST http://localhost:44357/admin/account/logout application/x-www-form-urlencoded 0 (ca22a1cb)
+2018-07-14T15:37:43.1190281+07:00 0HLF9CK4PSOK8:00000003 [INF] Route matched with "{area = \"Admin\", action = \"Logout\", controller = \"Account\"}". Executing action "NetCore.Areas.Admin.Controllers.AccountController.Logout (NetCore)" (a44c0341)
+2018-07-14T15:37:43.1345503+07:00 0HLF9CK4PSOK8:00000003 [INF] Executing action method "NetCore.Areas.Admin.Controllers.AccountController.Logout (NetCore)" - Validation state: Valid (dad538d7)
+2018-07-14T15:37:43.1683819+07:00 0HLF9CK4PSOK8:00000003 [INF] AuthenticationScheme: "Identity.Application" signed out. (d3f50c8d)
+2018-07-14T15:37:43.2081512+07:00 0HLF9CK4PSOK8:00000003 [INF] AuthenticationScheme: "Identity.External" signed out. (d3f50c8d)
+2018-07-14T15:37:43.2216237+07:00 0HLF9CK4PSOK8:00000003 [INF] AuthenticationScheme: "Identity.TwoFactorUserId" signed out. (d3f50c8d)
+2018-07-14T15:37:43.2356823+07:00 0HLF9CK4PSOK8:00000003 [INF] Executed action method "NetCore.Areas.Admin.Controllers.AccountController.Logout (NetCore)", returned result "Microsoft.AspNetCore.Mvc.RedirectToActionResult" in 89.4296ms. (50a9e262)
+2018-07-14T15:37:43.2508260+07:00 0HLF9CK4PSOK8:00000003 [INF] Executing RedirectResult, redirecting to "/login". (d98d540e)
+2018-07-14T15:37:43.2592723+07:00 0HLF9CK4PSOK8:00000003 [INF] Executed action "NetCore.Areas.Admin.Controllers.AccountController.Logout (NetCore)" in 131.7472ms (afa2e885)
+2018-07-14T15:37:43.2911064+07:00 0HLF9CK4PSOK8:00000003 [INF] Request finished in 169.8436ms 302  (791a596a)
+2018-07-14T15:37:43.2972548+07:00 0HLF9CK4PSOK7:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:44357/login   (ca22a1cb)
+2018-07-14T15:37:43.4524387+07:00 0HLF9CK4PSOK7:00000004 [INF] Request finished in 14.3965ms 404  (791a596a)
+2018-07-14T15:37:56.2189916+07:00 0HLF9CK4PSOK8:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:44357/js/jquery.min.map   (ca22a1cb)
+2018-07-14T15:37:56.2573541+07:00 0HLF9CK4PSOK8:00000004 [INF] Request finished in 140.3368ms 404  (791a596a)
+2018-07-14T15:38:05.7830143+07:00 0HLF9CK4PSOK7:00000005 [INF] Request starting HTTP/1.1 POST http://localhost:44357/admin/account/logout application/x-www-form-urlencoded 0 (ca22a1cb)
+2018-07-14T15:38:05.8525750+07:00 0HLF9CK4PSOK7:00000005 [INF] Route matched with "{area = \"Admin\", action = \"Logout\", controller = \"Account\"}". Executing action "NetCore.Areas.Admin.Controllers.AccountController.Logout (NetCore)" (a44c0341)
+2018-07-14T15:38:05.8594080+07:00 0HLF9CK4PSOK7:00000005 [INF] Executing action method "NetCore.Areas.Admin.Controllers.AccountController.Logout (NetCore)" - Validation state: Valid (dad538d7)
+2018-07-14T15:38:05.8756020+07:00 0HLF9CK4PSOK7:00000005 [INF] AuthenticationScheme: "Identity.Application" signed out. (d3f50c8d)
+2018-07-14T15:38:05.9064758+07:00 0HLF9CK4PSOK7:00000005 [INF] AuthenticationScheme: "Identity.External" signed out. (d3f50c8d)
+2018-07-14T15:38:05.9397758+07:00 0HLF9CK4PSOK7:00000005 [INF] AuthenticationScheme: "Identity.TwoFactorUserId" signed out. (d3f50c8d)
+2018-07-14T15:38:05.9566889+07:00 0HLF9CK4PSOK7:00000005 [INF] Executed action method "NetCore.Areas.Admin.Controllers.AccountController.Logout (NetCore)", returned result "Microsoft.AspNetCore.Mvc.RedirectToActionResult" in 80.466ms. (50a9e262)
+2018-07-14T15:38:05.9696076+07:00 0HLF9CK4PSOK7:00000005 [INF] Executing RedirectResult, redirecting to "/login". (d98d540e)
+2018-07-14T15:38:05.9730400+07:00 0HLF9CK4PSOK7:00000005 [INF] Executed action "NetCore.Areas.Admin.Controllers.AccountController.Logout (NetCore)" in 117.5042ms (afa2e885)
+2018-07-14T15:38:05.9836984+07:00 0HLF9CK4PSOK7:00000005 [INF] Request finished in 206.3519ms 302  (791a596a)
+2018-07-14T15:38:06.0410735+07:00 0HLF9CK4PSOK8:00000005 [INF] Request starting HTTP/1.1 GET http://localhost:44357/login   (ca22a1cb)
+2018-07-14T15:38:06.0647716+07:00 0HLF9CK4PSOK8:00000005 [INF] Request finished in 25.8793ms 404  (791a596a)
+2018-07-14T15:40:28.0392248+07:00 0HLF9CLPKN8P1:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:57363/  0 (ca22a1cb)
+2018-07-14T15:40:28.0408802+07:00 0HLF9CLPKN8P0:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-07-14T15:40:28.2177651+07:00 0HLF9CLPKN8P1:00000001 [INF] Request finished in 149.0513ms 200  (791a596a)
+2018-07-14T15:40:28.4267311+07:00 0HLF9CLPKN8P0:00000001 [INF] Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing action "NetCore.Controllers.HomeController.Index (NetCore)" (a44c0341)
+2018-07-14T15:40:28.4573272+07:00 0HLF9CLPKN8P0:00000001 [INF] Executing action method "NetCore.Controllers.HomeController.Index (NetCore)" - Validation state: Valid (dad538d7)
+2018-07-14T15:40:28.4764691+07:00 0HLF9CLPKN8P0:00000001 [INF] Executed action method "NetCore.Controllers.HomeController.Index (NetCore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.7758ms. (50a9e262)
+2018-07-14T15:40:28.5193660+07:00 0HLF9CLPKN8P0:00000001 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-07-14T15:40:28.8924083+07:00 0HLF9CLPKN8P0:00000001 [INF] Executed ViewResult - view "Index" executed in 325.9304ms. (f66409e9)
+2018-07-14T15:40:28.9324420+07:00 0HLF9CLPKN8P0:00000001 [INF] Executed action "NetCore.Controllers.HomeController.Index (NetCore)" in 468.2703ms (afa2e885)
+2018-07-14T15:40:29.1384260+07:00 0HLF9CLPKN8P0:00000001 [INF] Request finished in 963.1608ms 200 text/html; charset=utf-8 (791a596a)
+2018-07-14T15:40:33.2069983+07:00 0HLF9CLPKN8P1:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin   (ca22a1cb)
+2018-07-14T15:40:33.2575549+07:00 0HLF9CLPKN8P1:00000002 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Login\"}". Executing action "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" (a44c0341)
+2018-07-14T15:40:33.3620759+07:00 0HLF9CLPKN8P1:00000002 [INF] Executing action method "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" - Validation state: Valid (dad538d7)
+2018-07-14T15:40:33.3830689+07:00 0HLF9CLPKN8P1:00000002 [INF] Executed action method "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.4095ms. (50a9e262)
+2018-07-14T15:40:33.4521178+07:00 0HLF9CLPKN8P1:00000002 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-07-14T15:40:33.5399430+07:00 0HLF9CLPKN8P1:00000002 [INF] Executed ViewResult - view "Index" executed in 136.7758ms. (f66409e9)
+2018-07-14T15:40:33.5754677+07:00 0HLF9CLPKN8P1:00000002 [INF] Executed action "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" in 282.5321ms (afa2e885)
+2018-07-14T15:40:33.7005604+07:00 0HLF9CLPKN8P1:00000002 [INF] Request finished in 378.0108ms 200 text/html; charset=utf-8 (791a596a)
+2018-07-14T15:40:36.1298165+07:00 0HLF9CLPKN8P0:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:44357/admin/login/authen application/x-www-form-urlencoded; charset=UTF-8 33 (ca22a1cb)
+2018-07-14T15:40:36.1728434+07:00 0HLF9CLPKN8P0:00000002 [INF] Route matched with "{area = \"Admin\", action = \"Authen\", controller = \"Login\"}". Executing action "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)" (a44c0341)
+2018-07-14T15:40:36.2959733+07:00 0HLF9CLPKN8P0:00000002 [INF] Executing action method "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)" with arguments (["NetCore.Application.ViewModels.Login.LoginViewModel"]) - Validation state: Valid (4e3479ed)
+2018-07-14T15:40:36.5476975+07:00 0HLF9CLPKN8P0:00000002 [WRN] No type was specified for the decimal column '"Balance"' on entity type '"AppUser"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-07-14T15:40:36.5554812+07:00 0HLF9CLPKN8P0:00000002 [WRN] No type was specified for the decimal column '"Price"' on entity type '"BillDetail"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-07-14T15:40:36.5653766+07:00 0HLF9CLPKN8P0:00000002 [WRN] No type was specified for the decimal column '"Price"' on entity type '"Product"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-07-14T15:40:36.5727315+07:00 0HLF9CLPKN8P0:00000002 [WRN] No type was specified for the decimal column '"PriceSale"' on entity type '"Product"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-07-14T15:40:36.5853194+07:00 0HLF9CLPKN8P0:00000002 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=NetCore.Data.EF " (9958f5bb)
+2018-07-14T15:40:36.8474295+07:00 0HLF9CLPKN8P0:00000002 [INF] Executed DbCommand ("106"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[Balance], [u].[BirthDay], [u].[ConcurrencyStamp], [u].[DateCreated], [u].[DateModified], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2018-07-14T15:40:37.2509943+07:00 0HLF9CLPKN8P0:00000002 [INF] Executed DbCommand ("7"ms) [Parameters=["@__user_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2018-07-14T15:40:37.4195835+07:00 0HLF9CLPKN8P0:00000002 [INF] Executed DbCommand ("33"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-07-14T15:40:37.6562694+07:00 0HLF9CLPKN8P0:00000002 [INF] Executed DbCommand ("175"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-07-14T15:40:37.7139969+07:00 0HLF9CLPKN8P0:00000002 [INF] Executed DbCommand ("5"ms) [Parameters=["@__role_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0" (0723d8ff)
+2018-07-14T15:40:37.7393573+07:00 0HLF9CLPKN8P0:00000002 [INF] Executed DbCommand ("7"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-07-14T15:40:37.7811516+07:00 0HLF9CLPKN8P0:00000002 [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2018-07-14T15:40:37.8022599+07:00 0HLF9CLPKN8P0:00000002 [INF] User logged in. (fdce0db4)
+2018-07-14T15:40:37.8338666+07:00 0HLF9CLPKN8P0:00000002 [INF] Executed action method "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1520.5184ms. (50a9e262)
+2018-07-14T15:40:37.8636467+07:00 0HLF9CLPKN8P0:00000002 [INF] Executing ObjectResult, writing value of type '"NetCore.Utilities.Dtos.GenericResult"'. (8a1b66c8)
+2018-07-14T15:40:37.9759523+07:00 0HLF9CLPKN8P0:00000002 [INF] Executed action "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)" in 1793.5111ms (afa2e885)
+2018-07-14T15:40:38.0402685+07:00 0HLF9CLPKN8P0:00000002 [INF] Request finished in 1869.877ms 200 application/json; charset=utf-8 (791a596a)
+2018-07-14T15:40:38.0757443+07:00 0HLF9CLPKN8P1:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/Admin/Home/Index   (ca22a1cb)
+2018-07-14T15:40:38.0998903+07:00 0HLF9CLPKN8P1:00000003 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Home\"}". Executing action "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)" (a44c0341)
+2018-07-14T15:40:38.1307576+07:00 0HLF9CLPKN8P1:00000003 [INF] Authorization was successful. (0d575a54)
+2018-07-14T15:40:38.1407899+07:00 0HLF9CLPKN8P1:00000003 [INF] Executing action method "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)" - Validation state: Valid (dad538d7)
+2018-07-14T15:40:38.1640651+07:00 0HLF9CLPKN8P1:00000003 [INF] Executed action method "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 6.9704ms. (50a9e262)
+2018-07-14T15:40:38.2402426+07:00 0HLF9CLPKN8P1:00000003 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-07-14T15:40:38.4147998+07:00 0HLF9CLPKN8P1:00000003 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=NetCore.Data.EF " (9958f5bb)
+2018-07-14T15:40:38.6010666+07:00 0HLF9CLPKN8P1:00000003 [INF] Executed DbCommand ("69"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [dtoFunction].[IconCss], [dtoFunction].[Id], [dtoFunction].[Name], [dtoFunction].[ParentId], [dtoFunction].[SorOrder], [dtoFunction].[Status], [dtoFunction].[URL]
+FROM [Functions] AS [dtoFunction]" (0723d8ff)
+2018-07-14T15:40:38.7642505+07:00 0HLF9CLPKN8P1:00000003 [INF] Executed ViewResult - view "Index" executed in 582.0611ms. (f66409e9)
+2018-07-14T15:40:38.7832333+07:00 0HLF9CLPKN8P1:00000003 [INF] Executed action "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)" in 672.7955ms (afa2e885)
+2018-07-14T15:40:39.0753414+07:00 0HLF9CLPKN8P1:00000003 [INF] Request finished in 717.8866ms 200 text/html; charset=utf-8 (791a596a)
+2018-07-14T15:40:46.7181457+07:00 0HLF9CLPKN8P0:00000003 [INF] Request starting HTTP/1.1 POST http://localhost:44357/admin/account/logout application/x-www-form-urlencoded 0 (ca22a1cb)
+2018-07-14T15:40:46.7510917+07:00 0HLF9CLPKN8P0:00000003 [INF] Route matched with "{area = \"Admin\", action = \"Logout\", controller = \"Account\"}". Executing action "NetCore.Areas.Admin.Controllers.AccountController.Logout (NetCore)" (a44c0341)
+2018-07-14T15:40:46.7812823+07:00 0HLF9CLPKN8P0:00000003 [INF] Executing action method "NetCore.Areas.Admin.Controllers.AccountController.Logout (NetCore)" - Validation state: Valid (dad538d7)
+2018-07-14T15:40:46.7969987+07:00 0HLF9CLPKN8P0:00000003 [INF] AuthenticationScheme: "Identity.Application" signed out. (d3f50c8d)
+2018-07-14T15:40:46.8028357+07:00 0HLF9CLPKN8P0:00000003 [INF] AuthenticationScheme: "Identity.External" signed out. (d3f50c8d)
+2018-07-14T15:40:46.8141756+07:00 0HLF9CLPKN8P0:00000003 [INF] AuthenticationScheme: "Identity.TwoFactorUserId" signed out. (d3f50c8d)
+2018-07-14T15:40:46.8188012+07:00 0HLF9CLPKN8P0:00000003 [INF] Executed action method "NetCore.Areas.Admin.Controllers.AccountController.Logout (NetCore)", returned result "Microsoft.AspNetCore.Mvc.RedirectResult" in 33.0116ms. (50a9e262)
+2018-07-14T15:40:46.8252396+07:00 0HLF9CLPKN8P0:00000003 [INF] Executing RedirectResult, redirecting to "/admin/login". (d98d540e)
+2018-07-14T15:40:46.8333962+07:00 0HLF9CLPKN8P0:00000003 [INF] Executed action "NetCore.Areas.Admin.Controllers.AccountController.Logout (NetCore)" in 74.8212ms (afa2e885)
+2018-07-14T15:40:46.8489843+07:00 0HLF9CLPKN8P0:00000003 [INF] Request finished in 126.801ms 302  (791a596a)
+2018-07-14T15:40:46.8533879+07:00 0HLF9CLPKN8P1:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin/login   (ca22a1cb)
+2018-07-14T15:40:46.8585585+07:00 0HLF9CLPKN8P1:00000004 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Login\"}". Executing action "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" (a44c0341)
+2018-07-14T15:40:46.8661444+07:00 0HLF9CLPKN8P1:00000004 [INF] Executing action method "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" - Validation state: Valid (dad538d7)
+2018-07-14T15:40:46.8714789+07:00 0HLF9CLPKN8P1:00000004 [INF] Executed action method "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.041ms. (50a9e262)
+2018-07-14T15:40:46.8807130+07:00 0HLF9CLPKN8P1:00000004 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-07-14T15:40:46.8878258+07:00 0HLF9CLPKN8P1:00000004 [INF] Executed ViewResult - view "Index" executed in 8.8622ms. (f66409e9)
+2018-07-14T15:40:46.8974811+07:00 0HLF9CLPKN8P1:00000004 [INF] Executed action "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" in 29.2758ms (afa2e885)
+2018-07-14T15:40:47.0484494+07:00 0HLF9CLPKN8P1:00000004 [INF] Request finished in 48.013ms 200 text/html; charset=utf-8 (791a596a)
+2018-07-14T15:40:48.3426227+07:00 0HLF9CLPKN8P0:00000004 [INF] Request starting HTTP/1.1 POST http://localhost:44357/admin/login/authen application/x-www-form-urlencoded; charset=UTF-8 33 (ca22a1cb)
+2018-07-14T15:40:48.3526745+07:00 0HLF9CLPKN8P0:00000004 [INF] Route matched with "{area = \"Admin\", action = \"Authen\", controller = \"Login\"}". Executing action "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)" (a44c0341)
+2018-07-14T15:40:48.3601734+07:00 0HLF9CLPKN8P0:00000004 [INF] Executing action method "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)" with arguments (["NetCore.Application.ViewModels.Login.LoginViewModel"]) - Validation state: Valid (4e3479ed)
+2018-07-14T15:40:48.3670508+07:00 0HLF9CLPKN8P0:00000004 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=NetCore.Data.EF " (9958f5bb)
+2018-07-14T15:40:48.3866748+07:00 0HLF9CLPKN8P0:00000004 [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[Balance], [u].[BirthDay], [u].[ConcurrencyStamp], [u].[DateCreated], [u].[DateModified], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2018-07-14T15:40:48.4132308+07:00 0HLF9CLPKN8P0:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__user_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2018-07-14T15:40:48.4197846+07:00 0HLF9CLPKN8P0:00000004 [INF] Executed DbCommand ("2"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-07-14T15:40:48.4298976+07:00 0HLF9CLPKN8P0:00000004 [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-07-14T15:40:48.4375424+07:00 0HLF9CLPKN8P0:00000004 [INF] Executed DbCommand ("2"ms) [Parameters=["@__role_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0" (0723d8ff)
+2018-07-14T15:40:48.4506366+07:00 0HLF9CLPKN8P0:00000004 [INF] Executed DbCommand ("2"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-07-14T15:40:48.4547685+07:00 0HLF9CLPKN8P0:00000004 [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2018-07-14T15:40:48.4628714+07:00 0HLF9CLPKN8P0:00000004 [INF] User logged in. (fdce0db4)
+2018-07-14T15:40:48.4677053+07:00 0HLF9CLPKN8P0:00000004 [INF] Executed action method "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 102.7608ms. (50a9e262)
+2018-07-14T15:40:48.4730541+07:00 0HLF9CLPKN8P0:00000004 [INF] Executing ObjectResult, writing value of type '"NetCore.Utilities.Dtos.GenericResult"'. (8a1b66c8)
+2018-07-14T15:40:48.4817980+07:00 0HLF9CLPKN8P0:00000004 [INF] Executed action "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)" in 121.2394ms (afa2e885)
+2018-07-14T15:40:48.5150116+07:00 0HLF9CLPKN8P0:00000004 [INF] Request finished in 144.503ms 200 application/json; charset=utf-8 (791a596a)
+2018-07-14T15:40:48.5318669+07:00 0HLF9CLPKN8P1:00000005 [INF] Request starting HTTP/1.1 GET http://localhost:44357/Admin/Home/Index   (ca22a1cb)
+2018-07-14T15:40:48.5474212+07:00 0HLF9CLPKN8P1:00000005 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Home\"}". Executing action "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)" (a44c0341)
+2018-07-14T15:40:48.5706786+07:00 0HLF9CLPKN8P1:00000005 [INF] Authorization was successful. (0d575a54)
+2018-07-14T15:40:48.5848517+07:00 0HLF9CLPKN8P1:00000005 [INF] Executing action method "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)" - Validation state: Valid (dad538d7)
+2018-07-14T15:40:48.5920945+07:00 0HLF9CLPKN8P1:00000005 [INF] Executed action method "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.029ms. (50a9e262)
+2018-07-14T15:40:48.5989723+07:00 0HLF9CLPKN8P1:00000005 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-07-14T15:40:48.6048743+07:00 0HLF9CLPKN8P1:00000005 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=NetCore.Data.EF " (9958f5bb)
+2018-07-14T15:40:48.6185842+07:00 0HLF9CLPKN8P1:00000005 [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [dtoFunction].[IconCss], [dtoFunction].[Id], [dtoFunction].[Name], [dtoFunction].[ParentId], [dtoFunction].[SorOrder], [dtoFunction].[Status], [dtoFunction].[URL]
+FROM [Functions] AS [dtoFunction]" (0723d8ff)
+2018-07-14T15:40:48.6649839+07:00 0HLF9CLPKN8P1:00000005 [INF] Executed ViewResult - view "Index" executed in 60.1458ms. (f66409e9)
+2018-07-14T15:40:48.6709041+07:00 0HLF9CLPKN8P1:00000005 [INF] Executed action "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)" in 117.6698ms (afa2e885)
+2018-07-14T15:40:48.7501731+07:00 0HLF9CLPKN8P1:00000005 [INF] Request finished in 155.9725ms 200 text/html; charset=utf-8 (791a596a)
+2018-07-14T15:40:51.5668032+07:00 0HLF9CLPKN8P0:00000005 [INF] Request starting HTTP/1.1 POST http://localhost:44357/admin/account/logout application/x-www-form-urlencoded 0 (ca22a1cb)
+2018-07-14T15:40:51.5817663+07:00 0HLF9CLPKN8P0:00000005 [INF] Route matched with "{area = \"Admin\", action = \"Logout\", controller = \"Account\"}". Executing action "NetCore.Areas.Admin.Controllers.AccountController.Logout (NetCore)" (a44c0341)
+2018-07-14T15:40:51.5858733+07:00 0HLF9CLPKN8P0:00000005 [INF] Executing action method "NetCore.Areas.Admin.Controllers.AccountController.Logout (NetCore)" - Validation state: Valid (dad538d7)
+2018-07-14T15:40:51.5934876+07:00 0HLF9CLPKN8P0:00000005 [INF] AuthenticationScheme: "Identity.Application" signed out. (d3f50c8d)
+2018-07-14T15:40:51.6202544+07:00 0HLF9CLPKN8P0:00000005 [INF] AuthenticationScheme: "Identity.External" signed out. (d3f50c8d)
+2018-07-14T15:40:51.6311581+07:00 0HLF9CLPKN8P0:00000005 [INF] AuthenticationScheme: "Identity.TwoFactorUserId" signed out. (d3f50c8d)
+2018-07-14T15:40:51.6357772+07:00 0HLF9CLPKN8P0:00000005 [INF] Executed action method "NetCore.Areas.Admin.Controllers.AccountController.Logout (NetCore)", returned result "Microsoft.AspNetCore.Mvc.RedirectResult" in 45.3528ms. (50a9e262)
+2018-07-14T15:40:51.6467759+07:00 0HLF9CLPKN8P0:00000005 [INF] Executing RedirectResult, redirecting to "/admin/login". (d98d540e)
+2018-07-14T15:40:51.6510684+07:00 0HLF9CLPKN8P0:00000005 [INF] Executed action "NetCore.Areas.Admin.Controllers.AccountController.Logout (NetCore)" in 65.0537ms (afa2e885)
+2018-07-14T15:40:51.6713823+07:00 0HLF9CLPKN8P0:00000005 [INF] Request finished in 92.5075ms 302  (791a596a)
+2018-07-14T15:40:51.6863957+07:00 0HLF9CLPKN8P1:00000006 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin/login   (ca22a1cb)
+2018-07-14T15:40:51.6969658+07:00 0HLF9CLPKN8P1:00000006 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Login\"}". Executing action "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" (a44c0341)
+2018-07-14T15:40:51.7006523+07:00 0HLF9CLPKN8P1:00000006 [INF] Executing action method "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" - Validation state: Valid (dad538d7)
+2018-07-14T15:40:51.7083477+07:00 0HLF9CLPKN8P1:00000006 [INF] Executed action method "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.0136ms. (50a9e262)
+2018-07-14T15:40:51.7151522+07:00 0HLF9CLPKN8P1:00000006 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-07-14T15:40:51.7216160+07:00 0HLF9CLPKN8P1:00000006 [INF] Executed ViewResult - view "Index" executed in 7.9115ms. (f66409e9)
+2018-07-14T15:40:51.7258920+07:00 0HLF9CLPKN8P1:00000006 [INF] Executed action "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" in 24.6437ms (afa2e885)
+2018-07-14T15:40:51.7927179+07:00 0HLF9CLPKN8P1:00000006 [INF] Request finished in 43.6231ms 200 text/html; charset=utf-8 (791a596a)
+2018-07-14T15:40:53.5318087+07:00 0HLF9CLPKN8P0:00000006 [INF] Request starting HTTP/1.1 POST http://localhost:44357/admin/login/authen application/x-www-form-urlencoded; charset=UTF-8 33 (ca22a1cb)
+2018-07-14T15:40:53.5362459+07:00 0HLF9CLPKN8P0:00000006 [INF] Route matched with "{area = \"Admin\", action = \"Authen\", controller = \"Login\"}". Executing action "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)" (a44c0341)
+2018-07-14T15:40:53.5418543+07:00 0HLF9CLPKN8P0:00000006 [INF] Executing action method "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)" with arguments (["NetCore.Application.ViewModels.Login.LoginViewModel"]) - Validation state: Valid (4e3479ed)
+2018-07-14T15:40:53.5494932+07:00 0HLF9CLPKN8P0:00000006 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=NetCore.Data.EF " (9958f5bb)
+2018-07-14T15:40:53.5642333+07:00 0HLF9CLPKN8P0:00000006 [INF] Executed DbCommand ("4"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[Balance], [u].[BirthDay], [u].[ConcurrencyStamp], [u].[DateCreated], [u].[DateModified], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2018-07-14T15:40:53.6309959+07:00 0HLF9CLPKN8P0:00000006 [INF] Executed DbCommand ("22"ms) [Parameters=["@__user_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2018-07-14T15:40:53.6482248+07:00 0HLF9CLPKN8P0:00000006 [INF] Executed DbCommand ("4"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-07-14T15:40:53.6643004+07:00 0HLF9CLPKN8P0:00000006 [INF] Executed DbCommand ("5"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-07-14T15:40:53.6777507+07:00 0HLF9CLPKN8P0:00000006 [INF] Executed DbCommand ("3"ms) [Parameters=["@__role_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0" (0723d8ff)
+2018-07-14T15:40:53.6910614+07:00 0HLF9CLPKN8P0:00000006 [INF] Executed DbCommand ("4"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-07-14T15:40:53.7005846+07:00 0HLF9CLPKN8P0:00000006 [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2018-07-14T15:40:53.7123052+07:00 0HLF9CLPKN8P0:00000006 [INF] User logged in. (fdce0db4)
+2018-07-14T15:40:53.7202586+07:00 0HLF9CLPKN8P0:00000006 [INF] Executed action method "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 170.4385ms. (50a9e262)
+2018-07-14T15:40:53.7282242+07:00 0HLF9CLPKN8P0:00000006 [INF] Executing ObjectResult, writing value of type '"NetCore.Utilities.Dtos.GenericResult"'. (8a1b66c8)
+2018-07-14T15:40:53.7366037+07:00 0HLF9CLPKN8P0:00000006 [INF] Executed action "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)" in 192.5038ms (afa2e885)
+2018-07-14T15:40:53.7710526+07:00 0HLF9CLPKN8P0:00000006 [INF] Request finished in 211.0504ms 200 application/json; charset=utf-8 (791a596a)
+2018-07-14T15:40:53.7752300+07:00 0HLF9CLPKN8P1:00000007 [INF] Request starting HTTP/1.1 GET http://localhost:44357/Admin/Home/Index   (ca22a1cb)
+2018-07-14T15:40:53.7871997+07:00 0HLF9CLPKN8P1:00000007 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Home\"}". Executing action "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)" (a44c0341)
+2018-07-14T15:40:53.8080310+07:00 0HLF9CLPKN8P1:00000007 [INF] Authorization was successful. (0d575a54)
+2018-07-14T15:40:53.8190496+07:00 0HLF9CLPKN8P1:00000007 [INF] Executing action method "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)" - Validation state: Valid (dad538d7)
+2018-07-14T15:40:53.8254696+07:00 0HLF9CLPKN8P1:00000007 [INF] Executed action method "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.0236ms. (50a9e262)
+2018-07-14T15:40:53.8348974+07:00 0HLF9CLPKN8P1:00000007 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-07-14T15:40:53.8402322+07:00 0HLF9CLPKN8P1:00000007 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=NetCore.Data.EF " (9958f5bb)
+2018-07-14T15:40:53.8558713+07:00 0HLF9CLPKN8P1:00000007 [INF] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [dtoFunction].[IconCss], [dtoFunction].[Id], [dtoFunction].[Name], [dtoFunction].[ParentId], [dtoFunction].[SorOrder], [dtoFunction].[Status], [dtoFunction].[URL]
+FROM [Functions] AS [dtoFunction]" (0723d8ff)
+2018-07-14T15:40:53.8698385+07:00 0HLF9CLPKN8P1:00000007 [INF] Executed ViewResult - view "Index" executed in 32.6534ms. (f66409e9)
+2018-07-14T15:40:53.8815280+07:00 0HLF9CLPKN8P1:00000007 [INF] Executed action "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)" in 82.7106ms (afa2e885)
+2018-07-14T15:40:54.0195337+07:00 0HLF9CLPKN8P1:00000007 [INF] Request finished in 116.609ms 200 text/html; charset=utf-8 (791a596a)
