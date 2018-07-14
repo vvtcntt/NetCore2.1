@@ -4,13 +4,28 @@
     }
 
     var registerEvents = function () {
-        $('#btnLogin').on('click', function (e) {
-           
+        $("#frmLogin").validate({
+            errorClass: 'red',
+            ignore: [],
+            lang: 'vi',
+            rules: {
+                userName: {
+                    required: true
+                },
+                password: {
+                    required: true
+                }
+            }
+        });
+        $('#btnLogin').on('click', function (e) {      
+            if ($("#frmLogin").valid()) {
+
                 e.preventDefault();
                 var user = $('#txtUserName').val();
                 var password = $('#txtPassword').val();
-                login(user, password);
-           
+                login(user, password);   
+            }
+                        
 
         });
        
@@ -30,7 +45,7 @@
                     window.location.href = "/Admin/Home/Index";
                 }
                 else {
-                    thiepvu.notify('Login failed', 'error');
+                    netcore.notify('Login failed', 'error');
                 }
             }
         })

@@ -19,7 +19,9 @@
     "bootstrap-daterangepicker": "~3.0.3",
     "notifyjs": "~3.0.0",
     "bootbox": "~4.4.0",
-    "animate.css": "~3.6.1"
+    "animate.css": "~3.6.1",
+    "jquery-validation": "~1.17.0",
+    "jquery-validation-unobtrusive": "~3.2.10"
 
 
   }

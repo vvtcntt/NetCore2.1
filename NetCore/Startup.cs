@@ -31,8 +31,6 @@ namespace NetCore
         }
 
         public IConfiguration Configuration { get; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             Mapper.Reset();
@@ -120,7 +118,7 @@ namespace NetCore
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
                 routes.MapRoute(name: "areaRoute",
-                  template: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+                  template: "{area:exists}/{controller=login}/{action=Index}/{id?}");
             });
         }
     }
