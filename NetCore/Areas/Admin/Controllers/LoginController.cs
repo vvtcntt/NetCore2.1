@@ -44,6 +44,7 @@ namespace NetCore.Areas.Admin.Controllers
                 var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
+                    
                     _logger.LogInformation("User logged in.");
                     return new OkObjectResult(new GenericResult(true));
                 }

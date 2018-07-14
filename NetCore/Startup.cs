@@ -16,6 +16,7 @@ using NetCore.Data.EF;
 using NetCore.Data.EF.Repositories;
 using NetCore.Data.Entites;
 using NetCore.Data.iRepositories;
+using NetCore.Helpers;
 using NETCORE.Data.EF;
 using Newtonsoft.Json.Serialization;
 using System;
@@ -64,17 +65,12 @@ namespace NetCore
             // Add application services.
             services.AddScoped<UserManager<AppUser>, UserManager<AppUser>>();
             services.AddScoped<RoleManager<AppRole>, RoleManager<AppRole>>();
-
             services.AddSingleton(Mapper.Configuration);
             services.AddScoped<IMapper>(sp => new Mapper(sp.GetRequiredService<AutoMapper.IConfigurationProvider>(), sp.GetService));
-
-
             services.AddTransient<DbInitializer>();
-
+            services.AddScoped<IUserClaimsPrincipalFactory<AppUser>, CustomClaimPrincipalFactory>();
             services.AddTransient<IProductCategoryRepository, ProductCategoryRepository>();
-
             services.AddTransient<IProductCategoryService, ProductCategoryService>();
-
             services.AddMvc().AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
             //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
