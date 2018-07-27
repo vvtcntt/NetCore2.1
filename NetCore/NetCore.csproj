@@ -1267,6 +1267,7 @@
     <Content Include="node_modules\jquery\package.json" />
     <Content Include="node_modules\jquery\src\.eslintrc.json" />
     <Content Include="node_modules\moment\package.json" />
+    <Content Include="node_modules\mustache\package.json" />
     <Content Include="node_modules\notifyjs\jspm_packages\.dependencies.json" />
     <Content Include="node_modules\notifyjs\jspm_packages\npm\systemjs-plugin-babel%400.0.9.json" />
     <Content Include="node_modules\notifyjs\package.json" />
@@ -1291,10 +1292,6 @@
     <ProjectReference Include="..\NetCore.Data\NetCore.Data.csproj" />
     <ProjectReference Include="..\NetCore.Infrastructure\NetCore.Infrastructure.csproj" />
     <ProjectReference Include="..\NetCore.Utilities\NetCore.Utilities.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Areas\Admin\NewFolder\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -5429,6 +5426,22 @@
     <None Include="node_modules\moment\src\locale\zh-hk.js" />
     <None Include="node_modules\moment\src\locale\zh-tw.js" />
     <None Include="node_modules\moment\src\moment.js" />
+    <None Include="node_modules\mustache\bin\mustache" />
+    <None Include="node_modules\mustache\CHANGELOG.md" />
+    <None Include="node_modules\mustache\LICENSE" />
+    <None Include="node_modules\mustache\mustache.js" />
+    <None Include="node_modules\mustache\mustache.min.js" />
+    <None Include="node_modules\mustache\README.md" />
+    <None Include="node_modules\mustache\wrappers\dojo\mustache.js.post" />
+    <None Include="node_modules\mustache\wrappers\dojo\mustache.js.pre" />
+    <None Include="node_modules\mustache\wrappers\jquery\mustache.js.post" />
+    <None Include="node_modules\mustache\wrappers\jquery\mustache.js.pre" />
+    <None Include="node_modules\mustache\wrappers\mootools\mustache.js.post" />
+    <None Include="node_modules\mustache\wrappers\mootools\mustache.js.pre" />
+    <None Include="node_modules\mustache\wrappers\qooxdoo\mustache.js.post" />
+    <None Include="node_modules\mustache\wrappers\qooxdoo\mustache.js.pre" />
+    <None Include="node_modules\mustache\wrappers\yui3\mustache.js.post" />
+    <None Include="node_modules\mustache\wrappers\yui3\mustache.js.pre" />
     <None Include="node_modules\notifyjs\.npmignore" />
     <None Include="node_modules\notifyjs\dist\notify.js" />
     <None Include="node_modules\notifyjs\jspm_packages\.loaderversions" />

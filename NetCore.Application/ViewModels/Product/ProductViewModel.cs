@@ -16,7 +16,7 @@ namespace NetCore.Application.ViewModels.Product
         public int CategoryId { set; get; }
 
        
-        public virtual ProductCategory ProductCategory { set; get; }
+        public  ProductCategoryViewModel ProductCategory { set; get; }
 
    
         public string Code { get; set; }
