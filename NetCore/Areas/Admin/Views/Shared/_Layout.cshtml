@@ -72,11 +72,11 @@
                         </div>
                         <ul class="nav navbar-nav navbar-right">
                             <li class="">
-                                @{ 
+                                @{
                                     await Html.RenderPartialAsync("_LoginPartial");
                                 }
-                                
-                             </li>
+
+                            </li>
                             <li role="presentation" class="dropdown">
                                 <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-envelope-o"></i>
@@ -192,12 +192,13 @@
     <script src="~/vendor/moment/moment.js"></script>
     <script src="~/vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
     <script src="~/vendor/mustache/mustache.js"></script>
+    <script src="~/vendor/twbs-pagination/jquery.twbsPagination.js"></script>
     <script src="~/vendor/bootbox/bootbox.js"></script>
     <script src="~/vendor/notifyjs/dist/notify.js"></script>
     <script src="~/app/shared/netcore.js"></script>
 
     <!-- Custom Theme Scripts -->
     <script src="~/admin-side/js/custom.js"></script>
-    @RenderSection("Scripts",required:false)
+    @RenderSection("Scripts", required: false)
 </body>
 </html>

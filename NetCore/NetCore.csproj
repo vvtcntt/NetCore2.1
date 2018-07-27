@@ -1276,6 +1276,14 @@
     <Content Include="node_modules\nprogress\nprogress.css" />
     <Content Include="node_modules\nprogress\package.json" />
     <Content Include="node_modules\nprogress\test\component.html" />
+    <Content Include="node_modules\twbs-pagination\bower.json" />
+    <Content Include="node_modules\twbs-pagination\examples\bootstrap-v4.html" />
+    <Content Include="node_modules\twbs-pagination\examples\index.html" />
+    <Content Include="node_modules\twbs-pagination\package.json" />
+    <Content Include="node_modules\twbs-pagination\tests\index.html" />
+    <Content Include="node_modules\twbs-pagination\tests\run-test-jquery-1.8.1.html" />
+    <Content Include="node_modules\twbs-pagination\tests\run-test-jquery-latest.html" />
+    <Content Include="node_modules\twbs-pagination\twbs-pagination.jquery.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -5495,6 +5503,13 @@
     <None Include="node_modules\nprogress\nprogress.js" />
     <None Include="node_modules\nprogress\Readme.md" />
     <None Include="node_modules\nprogress\test\test.js" />
+    <None Include="node_modules\twbs-pagination\.npmignore" />
+    <None Include="node_modules\twbs-pagination\Gruntfile.js" />
+    <None Include="node_modules\twbs-pagination\jquery.twbsPagination.js" />
+    <None Include="node_modules\twbs-pagination\jquery.twbsPagination.min.js" />
+    <None Include="node_modules\twbs-pagination\LICENSE" />
+    <None Include="node_modules\twbs-pagination\README.md" />
+    <None Include="node_modules\twbs-pagination\tests\test.js" />
   </ItemGroup>
 
   <ItemGroup>
