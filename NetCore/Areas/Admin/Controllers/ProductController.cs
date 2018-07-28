@@ -10,10 +10,12 @@ namespace NetCore.Areas.Admin.Controllers
     public class ProductController : BaseController
     {
         IProductService _productService;
-        public ProductController(IProductService productService)
+        IProductCategoryService _productCategoryService;
+        public ProductController(IProductService productService, IProductCategoryService productCategoryService)
         {
             _productService = productService;
-        }
+            _productCategoryService=productCategoryService;
+    }
         public IActionResult Index()
         {
             
@@ -29,6 +31,11 @@ namespace NetCore.Areas.Admin.Controllers
         public IActionResult GetAllPaging(int? categoryId,string keyword,int page,int pageSize)
         {
             var model = _productService.GetAllPaging(categoryId, keyword, page, pageSize);
+            return new OkObjectResult(model);
+        }
+        public IActionResult GetAllCategories()
+        {
+            var model = _productCategoryService.GetAll();
             return new OkObjectResult(model);
         }
         #endregion

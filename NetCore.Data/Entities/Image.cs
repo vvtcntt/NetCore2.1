@@ -21,6 +21,6 @@ namespace NetCore.Data.Entites
         public Status Status { set; get; }
         [ForeignKey("CategoryId")]
         public virtual ImageCategory ImageCategories { set; get; }
-        public int SorOrder { set; get; }
+        public int SortOrder { set; get; }
     }
 }

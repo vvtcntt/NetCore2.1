@@ -65,7 +65,7 @@ namespace NetCore.Application.Implementation
         {
             var query = _productCategoryRepository
                 .FindAll(x => x.HomeFlag == true, c => c.Products)
-                  .OrderBy(x => x.SorOrder)
+                  .OrderBy(x => x.SortOrder)
                   .Take(top).ProjectTo<ProductCategoryViewModel>();
 
             var categories = query.ToList();
@@ -84,9 +84,9 @@ namespace NetCore.Application.Implementation
         {
             var source = _productCategoryRepository.FindById(sourceId);
             var target = _productCategoryRepository.FindById(targetId);
-            int temOrd = source.SorOrder;
-            source.SorOrder = target.SorOrder;
-            target.SorOrder = temOrd;
+            int temOrd = source.SortOrder;
+            source.SortOrder = target.SortOrder;
+            target.SortOrder = temOrd;
             _productCategoryRepository.Update(source);
             _productCategoryRepository.Update(target);
         }
@@ -110,7 +110,7 @@ namespace NetCore.Application.Implementation
             var sibling = _productCategoryRepository.FindAll(p => items.ContainsKey(p.Id));
             foreach(var child in sibling)
             {
-                child.SorOrder = items[child.Id];
+                child.SortOrder = items[child.Id];
                 _productCategoryRepository.Update(child);
 
             }

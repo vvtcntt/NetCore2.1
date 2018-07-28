@@ -23,7 +23,7 @@ namespace NetCore.Application.ViewModels.Product
         public string DescriptionMeta { set; get; }
         public int LanguageId { set; get; }
         public Status Status { set; get; }
-        public int SorOrder { set; get; }
+        public int SortOrder { set; get; }
         public string SeoTitle { set; get; }
         public string SeoAlias { set; get; }
         public string SeoKeyWords { set; get; }

@@ -18,6 +18,6 @@ namespace NetCore.Application.ViewModels.System
 
         public string IconCss { get; set; }
         public Status Status { set; get; }
-        public int SorOrder { get; set; }
+        public int SortOrder { get; set; }
     }
 }

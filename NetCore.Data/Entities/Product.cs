@@ -40,7 +40,7 @@ namespace NetCore.Data.Entites
             New = news;
             ProductSale = productSale;
             HomeFlag = homeFlag;
-            SorOrder = sortOrder;
+            SortOrder = sortOrder;
             DateCreated = dateCreate;
             DateModified = dateModifire;
             SeoTitle = seoTitle;
@@ -78,7 +78,7 @@ namespace NetCore.Data.Entites
             New = news;
             ProductSale = productSale;
             HomeFlag = homeFlag;
-            SorOrder = sortOrder;
+            SortOrder = sortOrder;
             DateCreated = dateCreate;
             DateModified = dateModifire;
             SeoTitle = seoTitle;
@@ -162,7 +162,7 @@ namespace NetCore.Data.Entites
         public string SeoAlias  { set; get; }
         public string SeoKeyWords  { set; get; }
         public string SeoDescription  { set; get; }
-        public int SorOrder  { set; get; }
+        public int SortOrder  { set; get; }
         int IMultiLanguage<int>.LanguageId  { set; get; }
     }
 }

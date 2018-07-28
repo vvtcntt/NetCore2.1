@@ -28,7 +28,7 @@ namespace NetCore.Data.Entites
             Image = image;
             Icon = icon;
             HomeFlag = homeFlag;
-            SorOrder = sortOder;
+            SortOrder = sortOder;
             DateCreated = dateCreated;
             DateModified = dateModified;
             TitleMeta = tileMeta;
@@ -61,7 +61,7 @@ namespace NetCore.Data.Entites
          public int LanguageId { set; get; }
         public Status Status { set; get; }
         public virtual ICollection<Product> Products { set; get; }
-        public int SorOrder  { set; get; }
+        public int SortOrder  { set; get; }
         public string SeoTitle  { set; get; }
         public string SeoAlias  { set; get; }
         public string SeoKeyWords  { set; get; }

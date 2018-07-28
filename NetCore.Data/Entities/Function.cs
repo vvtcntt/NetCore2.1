@@ -22,7 +22,7 @@ namespace NetCore.Data.Entites
             this.URL = url;
             this.ParentId = parentId;
             this.IconCss = iconCss;
-            this.SorOrder = sorOrder;
+            this.SortOrder = sorOrder;
             this.Status = Status.Active;
         }
      
@@ -38,6 +38,6 @@ namespace NetCore.Data.Entites
 
         public string IconCss { get; set; }
         public Status Status { set; get; }
-        public int SorOrder { get; set; }
+        public int SortOrder { get; set; }
     }
 }

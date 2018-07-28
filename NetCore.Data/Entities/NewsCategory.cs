@@ -21,7 +21,7 @@ namespace NetCore.Data.Entites
 
         public string Description { set; get; }
         public virtual ICollection<News> News { set; get; }
-        public int SorOrder { set; get; }
+        public int SortOrder { set; get; }
         public string SeoTitle  { set; get; }
         public string SeoAlias  { set; get; }
         public string SeoKeyWords  { set; get; }

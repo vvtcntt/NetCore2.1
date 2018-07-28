@@ -1,6 +1,6 @@
 ﻿var productController = function () {
     this.initialize = function () {
-        loadData(); registerEvents();
+        loadCategories(); loadData(); registerEvents();
     }
     function registerEvents() {
         $('#ddlShowPage').on('change', function () {
@@ -8,14 +8,49 @@
             netcore.config.pageIndex = 1;
             loadData(true);
         });
+        $('#btnSearch').on('click', function () {
+            loadData(true);
+        })
+        $('#txtKeyword').on('keypress', function (e) {
+            if (e.which === 13) {
+                 loadData(true);
+
+
+        }
+    });
     }
-    function loadData(isPageChanged) {
-        var template = $('#table-template').html();
-        var render = "";
+    function loadCategories() {
         $.ajax({
             type: 'GET',
             data: {
                 categoryId: $("#ddlCategory").val(),
+                keyword: $('#txtKeyword').val(),
+                page: netcore.config.pageIndex,
+                pageSize: netcore.config.pageSize
+            },
+            url: '/admin/product/GetAllCategories',
+            dataType: 'json',
+            success: function (response) {
+                var render = "<option value='' >--Chọn danh mục--</option>";
+                $.each(response, function (i, item) {
+                    render += "<option value='" + item.id + "'> " + item.Name + "</option>";
+                });
+                $('#ddlCategory').html(render);
+            },
+            error: function (status) {
+                console.log(status);
+                netcore.notify('Cannot loading data', 'error');
+            }
+        });
+    }
+    function loadData(isPageChanged) {
+        var template = $('#table-template').html();
+        var render = "";
+        var ddlCategory = $("#ddlCategory").val();
+        $.ajax({
+            type: 'GET',
+            data: {
+                categoryId: null,
                 keyword: $('#txtKeyword').val(),
                 page: netcore.config.pageIndex,
                 pageSize: netcore.config.pageSize
@@ -33,8 +68,8 @@
                         Status: netcore.getStatus(item.Status)
                     });
                    
-                   
                 });
+               
                 $('#lblTotalRecords').text(response.RowCount);
                 if (render != '') {
                     $('#tbl-content').html(render);
@@ -42,7 +77,6 @@
                 wrapPaging(response.RowCount, function () {
                     loadData();
                 }, isPageChanged);
-
             },
             error: function (status) {
                 console.log(status);

@@ -15,6 +15,6 @@ namespace NetCore.Data.Entites
         string INameable.Name { set; get; }
 
         public virtual ICollection<Image> Images { set; get; }
-        public int SorOrder { set; get; }
+        public int SortOrder { set; get; }
     }
 }

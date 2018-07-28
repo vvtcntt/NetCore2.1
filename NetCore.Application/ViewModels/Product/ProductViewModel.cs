@@ -73,7 +73,7 @@ namespace NetCore.Application.ViewModels.Product
         public string SeoAlias { set; get; }
         public string SeoKeyWords { set; get; }
         public string SeoDescription { set; get; }
-        public int SorOrder { set; get; }
+        public int SortOrder { set; get; }
         public ICollection<ProductTagViewModel> ProductTags { set; get; }
     }
 }

@@ -571,7 +571,7 @@ namespace NetCore.Data.EF.Migrations
                     b.Property<string>("ParentId")
                         .HasMaxLength(128);
 
-                    b.Property<int>("SorOrder");
+                    b.Property<int>("SortOrder");
 
                     b.Property<int>("Status");
 
@@ -697,7 +697,7 @@ namespace NetCore.Data.EF.Migrations
                     b.Property<string>("Size")
                         .HasMaxLength(250);
 
-                    b.Property<int>("SorOrder");
+                    b.Property<int>("SortOrder");
 
                     b.Property<int>("Status");
 
@@ -762,7 +762,7 @@ namespace NetCore.Data.EF.Migrations
 
                     b.Property<string>("SeoTitle");
 
-                    b.Property<int>("SorOrder");
+                    b.Property<int>("SortOrder");
 
                     b.Property<int>("Status");
 

@@ -33,6 +33,6 @@ namespace NetCore.Data.Entites
         public string SeoAlias  { set; get; }
         public string SeoKeyWords  { set; get; }
         public string SeoDescription  { set; get; }
-        public int SorOrder  { set; get; }
+        public int SortOrder  { set; get; }
     }
 }

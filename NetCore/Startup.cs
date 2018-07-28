@@ -18,6 +18,7 @@ using NetCore.Data.Entites;
 using NetCore.Data.iRepositories;
 using NetCore.Data.IRepositories;
 using NetCore.Helpers;
+using NetCore.Infrastructure.Interfaces;
 using NETCORE.Data.EF;
 using Newtonsoft.Json.Serialization;
 using System;
@@ -71,6 +72,8 @@ namespace NetCore
             services.AddTransient<DbInitializer>();
             services.AddScoped<IUserClaimsPrincipalFactory<AppUser>, CustomClaimPrincipalFactory>();
             //respository
+            services.AddTransient(typeof(IUnitOfWork), typeof(EFUnitOfWork));
+            services.AddTransient(typeof(IRepository<,>), typeof(EFRepository<,>));
             services.AddTransient<IProductCategoryRepository, ProductCategoryRepository>();
             services.AddTransient<IFunctionRepository, FunctionRepository>();
             services.AddTransient<IProductRepository, ProductRepository>();
