@@ -16,8 +16,15 @@ namespace NetCore.Data.Entites
         {
             ProductTags = new List<ProductTag>();
         }
-        public Product(string name, int catelogyId, string code, string description, string info, string content, string parameter, string imageDetail, string imageThumb, decimal price, decimal priceSale,
-          string notePrice, int warranty, int age, string sale, string size, bool vat, bool news, bool productSale, bool homeFlag, int sortOrder, DateTime dateCreate, DateTime dateModifire, string seoTitle, string seoKeywords, string seoDescription, string seoAlias, Status status, int languageId, int viewCount, Status Active, string tag)
+        public Product(
+            string name, int catelogyId, string code, string description, 
+            string info, string content, string parameter, string imageDetail, 
+            string imageThumb, decimal price, decimal priceSale,string notePrice, 
+            int warranty, int age, string sale, string size, 
+            bool vat, bool news, bool productSale, bool homeFlag,
+            int sortOrder, DateTime dateCreate, DateTime dateModifire, string seoTitle,
+            string seoKeywords, string seoDescription, string seoAlias, Status status, 
+            int languageId, int viewCount, Status Active, string tag)
         {
 
             Name = name;

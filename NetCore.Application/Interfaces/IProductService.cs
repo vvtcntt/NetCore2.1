@@ -10,5 +10,11 @@ namespace NetCore.Application.Interfaces
     {
         List<ProductViewModel> GetAll();
         PagedResult<ProductViewModel> GetAllPaging(int? categoryId,string keyword,int page, int pageSize);
+        ProductViewModel GetById(int id);
+        ProductViewModel Add(ProductViewModel productVm);
+        void delete(int id);
+        void Save();
+        //void ImportExcel(string filePath, int categoryId);
+        void Update(ProductViewModel productVm);
     }
 }

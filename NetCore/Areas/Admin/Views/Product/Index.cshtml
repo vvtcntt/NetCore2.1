@@ -3,19 +3,23 @@
 }
 @section Scripts{
     <script src="~/app/controllers/product/index.js"></script>
+    <script src="~/vendor/jquery-easyui/js/jquery.easyui.min.js"></script>
+
     <script>
         var product = new productController();
         product.initialize();
     </script>
 }
+@section Styles{
+    <link href="~/vendor/jquery-easyui/css/easyui.css" rel="stylesheet" />
+}
+
 <div class="page-title">
     <div class="title_left">
         <h3>Product <small>List Products</small></h3>
     </div>
     <div class="title_right">
         <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-
-
             <div class="input-group">
                 <input type="text" id="txtKeyword" class="form-control" placeholder="Search for...">
                 <span class="input-group-btn">
@@ -28,7 +32,9 @@
                 <option value="1">Chọn danh mục</option>
             </select>
         </div>
-
+        <div class="col-md-2 col-sm-2 col-xs-12 form-group pull-right top_search ">
+            <button class="btn btn-success" id="btnCreate" type="button">Create</button>
+        </div>
 
     </div>
 </div>
@@ -103,9 +109,9 @@
 <script id="table-template" type="x-tmpl-mastache">
 
     <tr>
-        <th scope="row">
-            <button class="btn btn-default btn-sm"><i class="fa fa-pencil"></i></button>
-            <button class="btn btn-danger btn-sm"><i class="fa fa-pencil"></i></button>
+        <th>
+            <button class="btn btn-default btn-sm btnEdit" data-id="{{Id}}"><i class="fa fa-pencil"></i></button>
+            <button class="btn btn-danger btn-sm btnDelele"  data-id="{{Id}}"><i class="fa fa-trash"></i></button>
         </th>
         <td>{{{ImageThumbs}}}</td>
         <td>{{Name}}</td>
@@ -115,3 +121,5 @@
         <td>{{{Status}}}</td>
     </tr>
 </script>
+
+<partial name="_AddEditModal.cshtml" />
