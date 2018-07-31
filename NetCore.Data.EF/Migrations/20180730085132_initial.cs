@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace NetCore.Data.EF.Migrations
 {
-    public partial class inital : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -262,9 +262,6 @@ namespace NetCore.Data.EF.Migrations
                     HomeFlag = table.Column<bool>(nullable: true),
                     DateCreated = table.Column<DateTime>(nullable: false),
                     DateModified = table.Column<DateTime>(nullable: false),
-                    TitleMeta = table.Column<string>(maxLength: 255, nullable: true),
-                    KeywordMeta = table.Column<string>(maxLength: 255, nullable: true),
-                    DescriptionMeta = table.Column<string>(maxLength: 255, nullable: true),
                     LanguageId = table.Column<int>(maxLength: 255, nullable: false),
                     Status = table.Column<int>(nullable: false),
                     SortOrder = table.Column<int>(nullable: false),

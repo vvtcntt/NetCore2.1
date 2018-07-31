@@ -733,18 +733,12 @@ namespace NetCore.Data.EF.Migrations
                         .IsRequired()
                         .HasMaxLength(255);
 
-                    b.Property<string>("DescriptionMeta")
-                        .HasMaxLength(255);
-
                     b.Property<bool?>("HomeFlag");
 
                     b.Property<string>("Icon")
                         .HasMaxLength(255);
 
                     b.Property<string>("Image")
-                        .HasMaxLength(255);
-
-                    b.Property<string>("KeywordMeta")
                         .HasMaxLength(255);
 
                     b.Property<int>("LanguageId")
@@ -765,9 +759,6 @@ namespace NetCore.Data.EF.Migrations
                     b.Property<int>("SortOrder");
 
                     b.Property<int>("Status");
-
-                    b.Property<string>("TitleMeta")
-                        .HasMaxLength(255);
 
                     b.HasKey("Id");
 

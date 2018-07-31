@@ -31,9 +31,9 @@ namespace NetCore.Data.Entites
             SortOrder = sortOder;
             DateCreated = dateCreated;
             DateModified = dateModified;
-            TitleMeta = tileMeta;
-            KeywordMeta = keyworkMeta;
-            DescriptionMeta = descriptionMeta;
+            SeoTitle = tileMeta;
+            SeoKeyWords = keyworkMeta;
+            SeoDescription = descriptionMeta;
             SeoAlias = seoAlias;
             LanguageId = languageId;
             Status = status;
@@ -51,12 +51,7 @@ namespace NetCore.Data.Entites
         public bool? HomeFlag { get; set; }
          public DateTime DateCreated { set; get; }
         public DateTime DateModified { set; get; }
-        [StringLength(255)]
-        public string TitleMeta { set; get; }
-        [StringLength(255)]
-        public string KeywordMeta { set; get; }
-        [StringLength(255)]
-        public string DescriptionMeta { set; get; }
+       
         [StringLength(255)]
          public int LanguageId { set; get; }
         public Status Status { set; get; }

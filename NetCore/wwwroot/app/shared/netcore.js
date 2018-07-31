@@ -1,12 +1,10 @@
 ﻿var netcore = {
     config: {
         pageSize: 10,
-        pageIndex:1
+        pageIndex: 1
     },
     notify: function (message, type) {
         $.notify(message, {
-
-            // whether to hide the notification on click
             clickToHide: true,
             // whether to auto-hide the notification
             autoHide: true,
@@ -19,7 +17,7 @@
             // position defines the notification position though uses the defaults below
             position: '...',
             // default positions
-            elementPosition: 'top left',
+            elementPosition: 'top right',
             globalPosition: 'top right',
             // default style
             style: 'bootstrap',
@@ -35,9 +33,9 @@
             hideDuration: 200,
             // padding between element and notification
             gap: 2
-        })
+        });
     },
-    confirm: function (message,okeCallback) {
+    confirm: function (message, okCallback) {
         bootbox.confirm({
             message: message,
             buttons: {
@@ -52,12 +50,11 @@
             },
             callback: function (result) {
                 if (result === true) {
-                    okeCallback();
+                    okCallback();
                 }
             }
         });
-    },
-    dateFormatJson: function (datetime) {
+    }, dateFormatJson: function (datetime) {
         if (datetime == null || datetime == '')
             return '';
         var newdate = new Date(parseInt(datetime.substr(6)));
@@ -102,10 +99,10 @@
         if ($('.dv-loading').length > 0)
             $('.dv-loading').removeClass('hide');
     },
-   stopLoading: function () {
-       if ($('.dv-loading').length > 0)
-           $('.dv-loading')
-               .addClass('hide');
+    stopLoading: function () {
+        if ($('.dv-loading').length > 0)
+            $('.dv-loading')
+                .addClass('hide');
     },
     getStatus: function (status) {
         if (status == 1)
@@ -113,7 +110,7 @@
         else
             return '<span class="badge bg-red">Khoá</span>';
     },
-    formatNumber: function (number,precision) {
+    formatNumber: function (number, precision) {
         if (!isFinite(number)) {
             return number.toString();
         }

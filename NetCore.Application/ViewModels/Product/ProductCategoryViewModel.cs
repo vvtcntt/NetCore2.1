@@ -18,9 +18,7 @@ namespace NetCore.Application.ViewModels.Product
         public bool? HomeFlag { get; set; }
         public DateTime DateCreated { set; get; }
         public DateTime DateModified { set; get; }
-        public string TitleMeta { set; get; }
-        public string KeywordMeta { set; get; }
-        public string DescriptionMeta { set; get; }
+   
         public int LanguageId { set; get; }
         public Status Status { set; get; }
         public int SortOrder { set; get; }

@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using NetCore.Application.Implementation;
 using NetCore.Application.Interfaces;
+using NetCore.Application.ViewModels.Product;
+using NetCore.Utilities.Helpers;
 
 namespace NetCore.Areas.Admin.Controllers
 {
@@ -24,6 +27,50 @@ namespace NetCore.Areas.Admin.Controllers
         {
             var model = _productCategoryService.GetAll();
             return new OkObjectResult(model);
+        }
+        public IActionResult GetById(int id)
+        {
+            var model = _productCategoryService.GetById(id);
+            return new OkObjectResult(model);
+        }
+        [HttpPost]
+        public IActionResult SaveEntity(ProductCategoryViewModel productVm)
+        {
+            if (!ModelState.IsValid)
+            {
+                IEnumerable<ModelError> allErrors = ModelState.Values.SelectMany(v => v.Errors);
+                return new BadRequestObjectResult(allErrors);
+            }
+            else
+            {
+                productVm.SeoAlias = TextHelper.ToUnsignString(productVm.Name);
+                if (productVm.Id == 0)
+                {
+                    _productCategoryService.Add(productVm);
+                }
+                else
+                {
+                    _productCategoryService.Update(productVm);
+                }
+                _productCategoryService.Save();
+                return new OkObjectResult(productVm);
+
+            }
+        }
+
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            if (id == 0)
+            {
+                return new BadRequestResult();
+            }
+            else
+            {
+                _productCategoryService.Delete(id);
+                _productCategoryService.Save();
+                return new OkObjectResult(id);
+            }
         }
         [HttpPost]
         public IActionResult UpdateParentId(int sourceId, int targetId, Dictionary<int, int> items)
