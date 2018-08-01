@@ -24,7 +24,8 @@
     "jquery-validation-unobtrusive": "~3.2.10",
     "mustache": "~2.3.0",
     "twbs-pagination": "~1.4.1",
-    "jquery-easyui": "~1.5.21"
+    "jquery-easyui": "~1.5.21",
+    "ckeditor": "~4.10.0"
  
   }
 }

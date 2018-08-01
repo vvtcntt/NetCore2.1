@@ -1,6 +1,26 @@
 ﻿var productController = function () {
     this.initialize = function () {
-        loadCategories(); loadData(); registerEvents();
+        loadCategories(); loadData(); registerEvents(); registerControls();
+    }
+    function registerControls() {
+        CKEDITOR.replace('txtContM', {});
+
+        //Fix: cannot click on element ck in modal
+        $.fn.modal.Constructor.prototype.enforceFocus = function () {
+            $(document)
+                .off('focusin.bs.modal') // guard against infinite focus loop
+                .on('focusin.bs.modal', $.proxy(function (e) {
+                    if (
+                        this.$element[0] !== e.target && !this.$element.has(e.target).length
+                        // CKEditor compatibility fix start.
+                        && !$(e.target).closest('.cke_dialog, .cke').length
+                        // CKEditor compatibility fix end.
+                    ) {
+                        this.$element.trigger('focus');
+                    }
+                }, this));
+        };
+
     }
     function registerEvents() {
         $('#ddlShowPage').on('change', function () {
@@ -44,7 +64,7 @@
                     $('#txtOrderM').val(data.sortOrder);
                     $('#txtImageM').val(data.imageDetail);
                     $('#txtInfoM').val(data.Info);
-                    //CKEDITOR.instances.txtContM.setData(data.Content);
+                    CKEDITOR.instances.txtContM.setData(data.Content);
                     $('#txtMetakeywordM').val(data.SeoKeyword);
                     $('#txtMetaDescriptionM').val(data.SeoDescription);
                     $('#txtSeoPageTitleM').val(data.SeoTitle);
@@ -104,8 +124,7 @@
                 var id = parseInt($('#hidIdM').val());
                 var name = $('#txtNameM').val();
                 var info = $('#txtInfoM').val();
-            var content = $('#txtContM').val();
-
+            var content = CKEDITOR.instances.txtContM.getData();
                 var code = $('#txtCodeM').val();
                 var description = $('#txtDescM').val();
                 var ord = $('#txtOrderM').val();
@@ -187,6 +206,8 @@
          $('#txtCodeM').val('');
         $('#txtDescM').val('');
         $('#txtOrderM').val('');
+        CKEDITOR.instances.txtContM.setData('');
+
         $('#txtImageM').val('');
         $('#txtInfoM').val('');
         $('#txtMetakeywordM').val('');

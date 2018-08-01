@@ -1,0 +1,426 @@
+2018-08-01T08:41:33.0874345+07:00 0HLFN9VKG2I3B:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:57363/  0 (ca22a1cb)
+2018-08-01T08:41:33.0871981+07:00 0HLFN9VKG2I3C:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-08-01T08:41:33.3576747+07:00 0HLFN9VKG2I3B:00000001 [INF] Request finished in 214.6467ms 200  (791a596a)
+2018-08-01T08:41:33.9593851+07:00 0HLFN9VKG2I3C:00000001 [WRN] No type was specified for the decimal column '"Balance"' on entity type '"AppUser"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-08-01T08:41:33.9656324+07:00 0HLFN9VKG2I3C:00000001 [WRN] No type was specified for the decimal column '"Price"' on entity type '"BillDetail"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-08-01T08:41:33.9753004+07:00 0HLFN9VKG2I3C:00000001 [WRN] No type was specified for the decimal column '"Price"' on entity type '"Product"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-08-01T08:41:33.9815072+07:00 0HLFN9VKG2I3C:00000001 [WRN] No type was specified for the decimal column '"PriceSale"' on entity type '"Product"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-08-01T08:41:33.9979172+07:00 0HLFN9VKG2I3C:00000001 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=NetCore.Data.EF " (9958f5bb)
+2018-08-01T08:41:34.3133476+07:00 0HLFN9VKG2I3C:00000001 [INF] Executed DbCommand ("130"ms) [Parameters=["@__get_Item_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Avatar], [e].[Balance], [e].[BirthDay], [e].[ConcurrencyStamp], [e].[DateCreated], [e].[DateModified], [e].[Email], [e].[EmailConfirmed], [e].[FullName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[Status], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2018-08-01T08:41:34.6467299+07:00 0HLFN9VKG2I3C:00000001 [INF] Executed DbCommand ("19"ms) [Parameters=["@__user_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2018-08-01T08:41:34.7418988+07:00 0HLFN9VKG2I3C:00000001 [INF] Executed DbCommand ("13"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-08-01T08:41:34.7905987+07:00 0HLFN9VKG2I3C:00000001 [INF] Executed DbCommand ("14"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-08-01T08:41:34.8487901+07:00 0HLFN9VKG2I3C:00000001 [INF] Executed DbCommand ("17"ms) [Parameters=["@__role_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0" (0723d8ff)
+2018-08-01T08:41:34.8651350+07:00 0HLFN9VKG2I3C:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-08-01T08:41:35.1390413+07:00 0HLFN9VKG2I3C:00000001 [INF] Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing action "NetCore.Controllers.HomeController.Index (NetCore)" (a44c0341)
+2018-08-01T08:41:35.1657368+07:00 0HLFN9VKG2I3C:00000001 [INF] Executing action method "NetCore.Controllers.HomeController.Index (NetCore)" - Validation state: Valid (dad538d7)
+2018-08-01T08:41:35.1875359+07:00 0HLFN9VKG2I3C:00000001 [INF] Executed action method "NetCore.Controllers.HomeController.Index (NetCore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 4.6058ms. (50a9e262)
+2018-08-01T08:41:35.2232334+07:00 0HLFN9VKG2I3C:00000001 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-08-01T08:41:35.5590956+07:00 0HLFN9VKG2I3C:00000001 [INF] Executed ViewResult - view "Index" executed in 341.3397ms. (f66409e9)
+2018-08-01T08:41:35.5926322+07:00 0HLFN9VKG2I3C:00000001 [INF] Executed action "NetCore.Controllers.HomeController.Index (NetCore)" in 420.9998ms (afa2e885)
+2018-08-01T08:41:35.8908063+07:00 0HLFN9VKG2I3C:00000001 [INF] Request finished in 2575.773ms 200 text/html; charset=utf-8 (791a596a)
+2018-08-01T08:41:35.9409701+07:00 0HLFN9VKG2I3B:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/lib/bootstrap/dist/css/bootstrap.css   (ca22a1cb)
+2018-08-01T08:41:36.1147218+07:00 0HLFN9VKG2I3B:00000002 [INF] Sending file. Request path: '"/lib/bootstrap/dist/css/bootstrap.css"'. Physical path: '"D:\Githubs\NETCORE2.1\NetCore\NetCore\wwwroot\lib\bootstrap\dist\css\bootstrap.css"' (27b0a520)
+2018-08-01T08:41:36.2953670+07:00 0HLFN9VKG2I3B:00000002 [INF] Request finished in 202.0085ms 200 text/css (791a596a)
+2018-08-01T08:41:36.5227642+07:00 0HLFN9VKG2I3C:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2   (ca22a1cb)
+2018-08-01T08:41:36.5545715+07:00 0HLFN9VKG2I3C:00000002 [INF] Sending file. Request path: '"/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2"'. Physical path: '"D:\Githubs\NETCORE2.1\NetCore\NetCore\wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2"' (27b0a520)
+2018-08-01T08:41:37.1246409+07:00 0HLFN9VKG2I3C:00000002 [INF] Request finished in 114.6729ms 200 font/woff2 (791a596a)
+2018-08-01T08:41:42.2708203+07:00 0HLFN9VKG2I3B:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin   (ca22a1cb)
+2018-08-01T08:41:42.9222994+07:00 0HLFN9VKG2I3B:00000003 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Login\"}". Executing action "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" (a44c0341)
+2018-08-01T08:41:43.1606287+07:00 0HLFN9VKG2I3B:00000003 [INF] Executing action method "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" - Validation state: Valid (dad538d7)
+2018-08-01T08:41:43.3440167+07:00 0HLFN9VKG2I3B:00000003 [INF] Executed action method "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.3588ms. (50a9e262)
+2018-08-01T08:41:43.3810934+07:00 0HLFN9VKG2I3B:00000003 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-08-01T08:41:43.7416518+07:00 0HLFN9VKG2I3B:00000003 [INF] Executed ViewResult - view "Index" executed in 162.8928ms. (f66409e9)
+2018-08-01T08:41:44.0783221+07:00 0HLFN9VKG2I3B:00000003 [INF] Executed action "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" in 819.4481ms (afa2e885)
+2018-08-01T08:41:44.6100031+07:00 0HLFN9VKG2I3B:00000003 [INF] Request finished in 2122.267ms 200 text/html; charset=utf-8 (791a596a)
+2018-08-01T08:41:45.0886678+07:00 0HLFN9VKG2I3C:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin   (ca22a1cb)
+2018-08-01T08:41:45.1817683+07:00 0HLFN9VKG2I3C:00000003 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Login\"}". Executing action "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" (a44c0341)
+2018-08-01T08:41:45.3237166+07:00 0HLFN9VKG2I3C:00000003 [INF] Executing action method "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" - Validation state: Valid (dad538d7)
+2018-08-01T08:41:45.3782806+07:00 0HLFN9VKG2I3C:00000003 [INF] Executed action method "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.0273ms. (50a9e262)
+2018-08-01T08:41:45.5243636+07:00 0HLFN9VKG2I3C:00000003 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-08-01T08:41:45.8638382+07:00 0HLFN9VKG2I3C:00000003 [INF] Executed ViewResult - view "Index" executed in 149.7144ms. (f66409e9)
+2018-08-01T08:41:46.2700807+07:00 0HLFN9VKG2I3C:00000003 [INF] Executed action "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" in 681.5894ms (afa2e885)
+2018-08-01T08:41:46.6909109+07:00 0HLFN9VKG2I3C:00000003 [INF] Request finished in 1868.1921ms 200 text/html; charset=utf-8 (791a596a)
+2018-08-01T08:41:53.7103017+07:00 0HLFN9VKG2I3B:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/font-awesome/css/font-awesome.css   (ca22a1cb)
+2018-08-01T08:41:53.7393084+07:00 0HLFN9VKG2I3B:00000004 [INF] Sending file. Request path: '"/font-awesome/css/font-awesome.css"'. Physical path: '"D:\Githubs\NETCORE2.1\NetCore\NetCore\node_modules\font-awesome\css\font-awesome.css"' (27b0a520)
+2018-08-01T08:41:53.7719764+07:00 0HLFN9VKG2I3B:00000004 [INF] Request finished in 45.6284ms 200 text/css (791a596a)
+2018-08-01T08:41:53.9629909+07:00 0HLFN9VKG2I3C:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/nprogress/nprogress.css   (ca22a1cb)
+2018-08-01T08:41:54.3976337+07:00 0HLFN9VKG2I3C:00000004 [INF] Sending file. Request path: '"/nprogress/nprogress.css"'. Physical path: '"D:\Githubs\NETCORE2.1\NetCore\NetCore\node_modules\nprogress\nprogress.css"' (27b0a520)
+2018-08-01T08:41:54.4576089+07:00 0HLFN9VKG2I3C:00000004 [INF] Request finished in 524.9079ms 200 text/css (791a596a)
+2018-08-01T08:41:54.6569032+07:00 0HLFN9VKG2I3B:00000005 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/animate.css/animate.css   (ca22a1cb)
+2018-08-01T08:41:54.6706956+07:00 0HLFN9VKG2I3B:00000005 [INF] The file "/animate.css/animate.css" was not modified (f1f8d725)
+2018-08-01T08:41:54.6947877+07:00 0HLFN9VKG2I3B:00000005 [INF] Request finished in 25.1149ms 304 text/css (791a596a)
+2018-08-01T08:41:54.8140825+07:00 0HLFN9VKG2I3C:00000005 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/css/custom.css   (ca22a1cb)
+2018-08-01T08:41:54.9950517+07:00 0HLFN9VKG2I3C:00000005 [INF] Sending file. Request path: '"/admin-side/css/custom.css"'. Physical path: '"D:\Githubs\NETCORE2.1\NetCore\NetCore\wwwroot\admin-side\css\custom.css"' (27b0a520)
+2018-08-01T08:41:55.0096571+07:00 0HLFN9VKG2I3C:00000005 [INF] Request finished in 247.4475ms 200 text/css (791a596a)
+2018-08-01T08:41:55.6325026+07:00 0HLFN9VKG2I3B:00000006 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/notifyjs/dist/notify.js   (ca22a1cb)
+2018-08-01T08:41:55.6437539+07:00 0HLFN9VKG2I3B:00000006 [INF] The file "/notifyjs/dist/notify.js" was not modified (f1f8d725)
+2018-08-01T08:41:55.6636906+07:00 0HLFN9VKG2I3B:00000006 [INF] Request finished in 19.3452ms 304 application/javascript (791a596a)
+2018-08-01T08:41:55.6994023+07:00 0HLFN9VKG2I3C:00000006 [INF] Request starting HTTP/1.1 GET http://localhost:44357/app/controllers/login/index.js   (ca22a1cb)
+2018-08-01T08:41:55.7276185+07:00 0HLFN9VKG2I3C:00000006 [INF] The file "/app/controllers/login/index.js" was not modified (f1f8d725)
+2018-08-01T08:41:55.7738347+07:00 0HLFN9VKG2I3C:00000006 [INF] Request finished in 34.5386ms 304 application/javascript (791a596a)
+2018-08-01T08:41:55.8085416+07:00 0HLFN9VKG2I3B:00000007 [INF] Request starting HTTP/1.1 GET http://localhost:44357/app/shared/netcore.js   (ca22a1cb)
+2018-08-01T08:41:55.8710689+07:00 0HLFN9VKG2I3B:00000007 [INF] The file "/app/shared/netcore.js" was not modified (f1f8d725)
+2018-08-01T08:41:55.9323770+07:00 0HLFN9VKG2I3B:00000007 [INF] Request finished in 73.8196ms 304 application/javascript (791a596a)
+2018-08-01T08:41:56.6272150+07:00 0HLFN9VKG2I3C:00000007 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/jquery-validation/dist/jquery.validate.js   (ca22a1cb)
+2018-08-01T08:41:56.6481038+07:00 0HLFN9VKG2I3C:00000007 [INF] The file "/jquery-validation/dist/jquery.validate.js" was not modified (f1f8d725)
+2018-08-01T08:41:56.8438528+07:00 0HLFN9VKG2I3C:00000007 [INF] Request finished in 32.3351ms 304 application/javascript (791a596a)
+2018-08-01T08:41:56.9062758+07:00 0HLFN9VKG2I3B:00000008 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/jquery-validation/dist/additional-methods.js   (ca22a1cb)
+2018-08-01T08:41:56.9211832+07:00 0HLFN9VKG2I3B:00000008 [INF] The file "/jquery-validation/dist/additional-methods.js" was not modified (f1f8d725)
+2018-08-01T08:41:56.9410495+07:00 0HLFN9VKG2I3B:00000008 [INF] Request finished in 27.2565ms 304 application/javascript (791a596a)
+2018-08-01T08:41:57.0389515+07:00 0HLFN9VKG2I3C:00000008 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js   (ca22a1cb)
+2018-08-01T08:41:57.0551189+07:00 0HLFN9VKG2I3C:00000008 [INF] The file "/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js" was not modified (f1f8d725)
+2018-08-01T08:41:57.0880729+07:00 0HLFN9VKG2I3C:00000008 [INF] Request finished in 27.0536ms 304 application/javascript (791a596a)
+2018-08-01T08:41:57.1250685+07:00 0HLFN9VKG2I3B:00000009 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/jquery-validation/dist/localization/messages_vi.js   (ca22a1cb)
+2018-08-01T08:41:57.1364857+07:00 0HLFN9VKG2I3B:00000009 [INF] The file "/jquery-validation/dist/localization/messages_vi.js" was not modified (f1f8d725)
+2018-08-01T08:41:57.1594536+07:00 0HLFN9VKG2I3B:00000009 [INF] Request finished in 30.6502ms 304 application/javascript (791a596a)
+2018-08-01T08:42:01.4319846+07:00 0HLFN9VKG2I3C:00000009 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0   (ca22a1cb)
+2018-08-01T08:42:01.4799917+07:00 0HLFN9VKG2I3C:00000009 [INF] Sending file. Request path: '"/font-awesome/fonts/fontawesome-webfont.woff2"'. Physical path: '"D:\Githubs\NETCORE2.1\NetCore\NetCore\node_modules\font-awesome\fonts\fontawesome-webfont.woff2"' (27b0a520)
+2018-08-01T08:42:01.5238125+07:00 0HLFN9VKG2I3C:00000009 [INF] Request finished in 57.137ms 200 font/woff2 (791a596a)
+2018-08-01T08:42:48.5159211+07:00 0HLFN9VKG2I3B:0000000A [INF] Request starting HTTP/1.1 POST http://localhost:44357/admin/login/authen application/x-www-form-urlencoded; charset=UTF-8 33 (ca22a1cb)
+2018-08-01T08:42:48.5737365+07:00 0HLFN9VKG2I3B:0000000A [INF] Route matched with "{area = \"Admin\", action = \"Authen\", controller = \"Login\"}". Executing action "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)" (a44c0341)
+2018-08-01T08:42:48.6932034+07:00 0HLFN9VKG2I3B:0000000A [INF] Executing action method "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)" with arguments (["NetCore.Application.ViewModels.Login.LoginViewModel"]) - Validation state: Valid (4e3479ed)
+2018-08-01T08:42:48.7123303+07:00 0HLFN9VKG2I3B:0000000A [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=NetCore.Data.EF " (9958f5bb)
+2018-08-01T08:42:48.7899425+07:00 0HLFN9VKG2I3B:0000000A [INF] Executed DbCommand ("54"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[Balance], [u].[BirthDay], [u].[ConcurrencyStamp], [u].[DateCreated], [u].[DateModified], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2018-08-01T08:42:48.9482881+07:00 0HLFN9VKG2I3B:0000000A [INF] Executed DbCommand ("38"ms) [Parameters=["@__user_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2018-08-01T08:42:49.1966590+07:00 0HLFN9VKG2I3B:0000000A [INF] Executed DbCommand ("9"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-08-01T08:42:49.3221894+07:00 0HLFN9VKG2I3B:0000000A [INF] Executed DbCommand ("107"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-08-01T08:42:49.3636794+07:00 0HLFN9VKG2I3B:0000000A [INF] Executed DbCommand ("31"ms) [Parameters=["@__role_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0" (0723d8ff)
+2018-08-01T08:42:49.4753623+07:00 0HLFN9VKG2I3B:0000000A [INF] Executed DbCommand ("101"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-08-01T08:42:49.4962956+07:00 0HLFN9VKG2I3B:0000000A [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2018-08-01T08:42:49.5158934+07:00 0HLFN9VKG2I3B:0000000A [INF] User logged in. (fdce0db4)
+2018-08-01T08:42:49.5330507+07:00 0HLFN9VKG2I3B:0000000A [INF] Executed action method "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 830.2081ms. (50a9e262)
+2018-08-01T08:42:49.5602782+07:00 0HLFN9VKG2I3B:0000000A [INF] Executing ObjectResult, writing value of type '"NetCore.Utilities.Dtos.GenericResult"'. (8a1b66c8)
+2018-08-01T08:42:49.7295487+07:00 0HLFN9VKG2I3B:0000000A [INF] Executed action "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)" in 1151.5509ms (afa2e885)
+2018-08-01T08:42:49.7572584+07:00 0HLFN9VKG2I3B:0000000A [INF] Request finished in 1222.9949ms 200 application/json; charset=utf-8 (791a596a)
+2018-08-01T08:42:49.7767488+07:00 0HLFN9VKG2I3C:0000000A [INF] Request starting HTTP/1.1 GET http://localhost:44357/Admin/Home/Index   (ca22a1cb)
+2018-08-01T08:42:49.7912364+07:00 0HLFN9VKG2I3C:0000000A [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Home\"}". Executing action "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)" (a44c0341)
+2018-08-01T08:42:49.8298000+07:00 0HLFN9VKG2I3C:0000000A [INF] Authorization was successful. (0d575a54)
+2018-08-01T08:42:49.9386454+07:00 0HLFN9VKG2I3C:0000000A [INF] Executing action method "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)" - Validation state: Valid (dad538d7)
+2018-08-01T08:42:50.0206045+07:00 0HLFN9VKG2I3C:0000000A [INF] Executed action method "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 4.6376ms. (50a9e262)
+2018-08-01T08:42:50.0476540+07:00 0HLFN9VKG2I3C:0000000A [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-08-01T08:42:50.2270259+07:00 0HLFN9VKG2I3C:0000000A [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=NetCore.Data.EF " (9958f5bb)
+2018-08-01T08:42:50.3153952+07:00 0HLFN9VKG2I3C:0000000A [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [dtoFunction].[IconCss], [dtoFunction].[Id], [dtoFunction].[Name], [dtoFunction].[ParentId], [dtoFunction].[SortOrder], [dtoFunction].[Status], [dtoFunction].[URL]
+FROM [Functions] AS [dtoFunction]" (0723d8ff)
+2018-08-01T08:42:50.4775049+07:00 0HLFN9VKG2I3C:0000000A [INF] Executed ViewResult - view "Index" executed in 451.0647ms. (f66409e9)
+2018-08-01T08:42:50.4952334+07:00 0HLFN9VKG2I3C:0000000A [INF] Executed action "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)" in 698.7431ms (afa2e885)
+2018-08-01T08:42:50.5478268+07:00 0HLFN9VKG2I3C:0000000A [INF] Request finished in 724.6435ms 200 text/html; charset=utf-8 (791a596a)
+2018-08-01T08:42:50.9111587+07:00 0HLFN9VKG2I3D:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/ckeditor/skins/moono/editor.css   (ca22a1cb)
+2018-08-01T08:42:50.9488855+07:00 0HLFN9VKG2I3B:0000000B [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/images/img.jpg   (ca22a1cb)
+2018-08-01T08:42:51.0118941+07:00 0HLFN9VKG2I3E:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/jquery-easyui/js/jquery.min.js   (ca22a1cb)
+2018-08-01T08:42:51.0476541+07:00 0HLFN9VKG2I3C:0000000B [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/daterangepicker/daterangepicker.css   (ca22a1cb)
+2018-08-01T08:42:51.0657708+07:00 0HLFN9VKG2I3E:00000001 [INF] The file "/jquery-easyui/js/jquery.min.js" was not modified (f1f8d725)
+2018-08-01T08:42:51.1603729+07:00 0HLFN9VKG2I3F:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/lib/ckfinder/ckfinder.js   (ca22a1cb)
+2018-08-01T08:42:51.1940206+07:00 0HLFN9VKG2I3E:00000001 [INF] Request finished in 289.4841ms 304 application/javascript (791a596a)
+2018-08-01T08:42:51.2763756+07:00 0HLFN9VKG2I3H:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/mustache/mustache.js   (ca22a1cb)
+2018-08-01T08:42:51.2984805+07:00 0HLFN9VKG2I3I:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/ckeditor/ckeditor.js   (ca22a1cb)
+2018-08-01T08:42:51.3388878+07:00 0HLFN9VKG2I3F:00000001 [INF] Sending file. Request path: '"/lib/ckfinder/ckfinder.js"'. Physical path: '"D:\Githubs\NETCORE2.1\NetCore\NetCore\wwwroot\lib\ckfinder\ckfinder.js"' (27b0a520)
+2018-08-01T08:42:51.3489331+07:00 0HLFN9VKG2I3I:00000001 [INF] The file "/ckeditor/ckeditor.js" was not modified (f1f8d725)
+2018-08-01T08:42:51.3953631+07:00 0HLFN9VKG2I3F:00000001 [INF] Request finished in 547.3793ms 200 application/javascript (791a596a)
+2018-08-01T08:42:51.5885138+07:00 0HLFN9VKG2I3I:00000001 [INF] Request finished in 156.5833ms 304 application/javascript (791a596a)
+2018-08-01T08:42:51.6097975+07:00 0HLFN9VKG2I3H:00000001 [INF] The file "/mustache/mustache.js" was not modified (f1f8d725)
+2018-08-01T08:42:51.7148715+07:00 0HLFN9VKG2I3G:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/twbs-pagination/jquery.twbsPagination.js   (ca22a1cb)
+2018-08-01T08:42:51.7784720+07:00 0HLFN9VKG2I3H:00000001 [INF] Request finished in 470.9556ms 304 application/javascript (791a596a)
+2018-08-01T08:42:51.8367910+07:00 0HLFN9VKG2I3G:00000001 [INF] The file "/twbs-pagination/jquery.twbsPagination.js" was not modified (f1f8d725)
+2018-08-01T08:42:51.9642273+07:00 0HLFN9VKG2I3C:0000000B [INF] Sending file. Request path: '"/daterangepicker/daterangepicker.css"'. Physical path: '"D:\Githubs\NETCORE2.1\NetCore\NetCore\node_modules\daterangepicker\daterangepicker.css"' (27b0a520)
+2018-08-01T08:42:52.2989911+07:00 0HLFN9VKG2I3G:00000001 [INF] Request finished in 706.939ms 304 application/javascript (791a596a)
+2018-08-01T08:42:52.5071381+07:00 0HLFN9VKG2I3C:0000000B [INF] Request finished in 1173.1523ms 200 text/css (791a596a)
+2018-08-01T08:42:52.5135902+07:00 0HLFN9VKG2I3D:00000001 [INF] Sending file. Request path: '"/ckeditor/skins/moono/editor.css"'. Physical path: '"D:\Githubs\NETCORE2.1\NetCore\NetCore\node_modules\ckeditor\skins\moono\editor.css"' (27b0a520)
+2018-08-01T08:42:52.5245473+07:00 0HLFN9VKG2I3B:0000000B [INF] Sending file. Request path: '"/admin-side/images/img.jpg"'. Physical path: '"D:\Githubs\NETCORE2.1\NetCore\NetCore\wwwroot\admin-side\images\img.jpg"' (27b0a520)
+2018-08-01T08:42:52.5312003+07:00 0HLFN9VKG2I3D:00000001 [INF] Request finished in 1810.6597ms 200 text/css (791a596a)
+2018-08-01T08:42:52.5437728+07:00 0HLFN9VKG2I3B:0000000B [INF] Request finished in 1749.8542ms 200 image/jpeg (791a596a)
+2018-08-01T08:42:55.9314830+07:00 0HLFN9VKG2I3B:0000000C [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin/product/index   (ca22a1cb)
+2018-08-01T08:42:55.9493138+07:00 0HLFN9VKG2I3B:0000000C [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Product\"}". Executing action "NetCore.Areas.Admin.Controllers.ProductController.Index (NetCore)" (a44c0341)
+2018-08-01T08:42:55.9778066+07:00 0HLFN9VKG2I3B:0000000C [INF] Authorization was successful. (0d575a54)
+2018-08-01T08:42:55.9957708+07:00 0HLFN9VKG2I3B:0000000C [INF] Executing action method "NetCore.Areas.Admin.Controllers.ProductController.Index (NetCore)" - Validation state: Valid (dad538d7)
+2018-08-01T08:42:56.0097955+07:00 0HLFN9VKG2I3B:0000000C [INF] Executed action method "NetCore.Areas.Admin.Controllers.ProductController.Index (NetCore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.5159ms. (50a9e262)
+2018-08-01T08:42:56.0292913+07:00 0HLFN9VKG2I3B:0000000C [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-08-01T08:42:56.2270017+07:00 0HLFN9VKG2I3B:0000000C [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=NetCore.Data.EF " (9958f5bb)
+2018-08-01T08:42:56.3448063+07:00 0HLFN9VKG2I3B:0000000C [INF] Executed DbCommand ("19"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [dtoFunction].[IconCss], [dtoFunction].[Id], [dtoFunction].[Name], [dtoFunction].[ParentId], [dtoFunction].[SortOrder], [dtoFunction].[Status], [dtoFunction].[URL]
+FROM [Functions] AS [dtoFunction]" (0723d8ff)
+2018-08-01T08:42:56.3965779+07:00 0HLFN9VKG2I3B:0000000C [INF] Executed ViewResult - view "Index" executed in 350.2485ms. (f66409e9)
+2018-08-01T08:42:56.4076699+07:00 0HLFN9VKG2I3B:0000000C [INF] Executed action "NetCore.Areas.Admin.Controllers.ProductController.Index (NetCore)" in 447.3685ms (afa2e885)
+2018-08-01T08:42:56.4813704+07:00 0HLFN9VKG2I3B:0000000C [INF] Request finished in 481.0214ms 200 text/html; charset=utf-8 (791a596a)
+2018-08-01T08:42:56.5788253+07:00 0HLFN9VKG2I3E:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/jquery-easyui/css/easyui.css   (ca22a1cb)
+2018-08-01T08:42:56.6091318+07:00 0HLFN9VKG2I3D:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/app/controllers/product/index.js   (ca22a1cb)
+2018-08-01T08:42:56.6149164+07:00 0HLFN9VKG2I3C:0000000C [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/jquery-easyui/js/jquery.easyui.min.js   (ca22a1cb)
+2018-08-01T08:42:56.6270275+07:00 0HLFN9VKG2I3D:00000002 [INF] Sending file. Request path: '"/app/controllers/product/index.js"'. Physical path: '"D:\Githubs\NETCORE2.1\NetCore\NetCore\wwwroot\app\controllers\product\index.js"' (27b0a520)
+2018-08-01T08:42:56.6875962+07:00 0HLFN9VKG2I3D:00000002 [INF] Request finished in 52.2729ms 200 application/javascript (791a596a)
+2018-08-01T08:42:56.7581763+07:00 0HLFN9VKG2I3E:00000002 [INF] Sending file. Request path: '"/jquery-easyui/css/easyui.css"'. Physical path: '"D:\Githubs\NETCORE2.1\NetCore\NetCore\node_modules\jquery-easyui\css\easyui.css"' (27b0a520)
+2018-08-01T08:42:56.7959028+07:00 0HLFN9VKG2I3C:0000000C [INF] Sending file. Request path: '"/jquery-easyui/js/jquery.easyui.min.js"'. Physical path: '"D:\Githubs\NETCORE2.1\NetCore\NetCore\node_modules\jquery-easyui\js\jquery.easyui.min.js"' (27b0a520)
+2018-08-01T08:42:56.8797698+07:00 0HLFN9VKG2I3E:00000002 [INF] Request finished in 204.8542ms 200 text/css (791a596a)
+2018-08-01T08:42:56.8974011+07:00 0HLFN9VKG2I3C:0000000C [INF] Request finished in 220.9138ms 200 application/javascript (791a596a)
+2018-08-01T08:42:57.2281286+07:00 0HLFN9VKG2I3I:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin/product/getAllpaging?categoryId=&keyword=&page=1&pageSize=10   (ca22a1cb)
+2018-08-01T08:42:57.2435084+07:00 0HLFN9VKG2I3H:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin/product/GetAllCategories?categoryId=1&keyword=&page=1&pageSize=10   (ca22a1cb)
+2018-08-01T08:42:57.4446901+07:00 0HLFN9VKG2I3I:00000002 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Product\"}". Executing action "NetCore.Areas.Admin.Controllers.ProductController.GetAllPaging (NetCore)" (a44c0341)
+2018-08-01T08:42:57.4970879+07:00 0HLFN9VKG2I3H:00000002 [INF] Route matched with "{area = \"Admin\", action = \"GetAllCategories\", controller = \"Product\"}". Executing action "NetCore.Areas.Admin.Controllers.ProductController.GetAllCategories (NetCore)" (a44c0341)
+2018-08-01T08:42:57.5096070+07:00 0HLFN9VKG2I3I:00000002 [INF] Authorization was successful. (0d575a54)
+2018-08-01T08:42:57.6405757+07:00 0HLFN9VKG2I3H:00000002 [INF] Authorization was successful. (0d575a54)
+2018-08-01T08:42:57.6624792+07:00 0HLFN9VKG2I3I:00000002 [INF] Executing action method "NetCore.Areas.Admin.Controllers.ProductController.GetAllPaging (NetCore)" with arguments (["", "", "1", "10"]) - Validation state: Valid (4e3479ed)
+2018-08-01T08:42:57.6916782+07:00 0HLFN9VKG2I3H:00000002 [INF] Executing action method "NetCore.Areas.Admin.Controllers.ProductController.GetAllCategories (NetCore)" - Validation state: Valid (dad538d7)
+2018-08-01T08:42:57.6961109+07:00 0HLFN9VKG2I3I:00000002 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=NetCore.Data.EF " (9958f5bb)
+2018-08-01T08:42:57.7087947+07:00 0HLFN9VKG2I3F:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/ckeditor/config.js?t=I639   (ca22a1cb)
+2018-08-01T08:42:57.7163604+07:00 0HLFN9VKG2I3H:00000002 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=NetCore.Data.EF " (9958f5bb)
+2018-08-01T08:42:57.7933312+07:00 0HLFN9VKG2I3F:00000002 [INF] Sending file. Request path: '"/ckeditor/config.js"'. Physical path: '"D:\Githubs\NETCORE2.1\NetCore\NetCore\node_modules\ckeditor\config.js"' (27b0a520)
+2018-08-01T08:42:57.9260910+07:00 0HLFN9VKG2I3F:00000002 [INF] Request finished in 314.9045ms 200 application/javascript (791a596a)
+2018-08-01T08:42:58.0494758+07:00 0HLFN9VKG2I3I:00000002 [INF] Executed DbCommand ("74"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [p]
+WHERE [p].[Status] = 1" (0723d8ff)
+2018-08-01T08:42:58.2377158+07:00 0HLFN9VKG2I3G:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/ckeditor/lang/vi.js?t=I639   (ca22a1cb)
+2018-08-01T08:42:58.3880917+07:00 0HLFN9VKG2I3B:0000000D [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/ckeditor/skins/moono-lisa/editor.css?t=I639   (ca22a1cb)
+2018-08-01T08:42:58.4124771+07:00 0HLFN9VKG2I3H:00000002 [INF] Executed DbCommand ("9"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[Icon], [x].[Id], [x].[Image], [x].[LanguageId], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeyWords], [x].[SeoTitle], [x].[SortOrder], [x].[Status]
+FROM [ProductCategories] AS [x]
+ORDER BY [x].[ParentId], [x].[Id]" (0723d8ff)
+2018-08-01T08:42:58.4328945+07:00 0HLFN9VKG2I3I:00000002 [INF] Executed DbCommand ("36"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Active], COALESCE([p].[Age], 0) AS [Age], [p].[CategoryId], [p].[Code], [p].[Content], [p].[DateCreated], [p].[DateModified], [p].[Description], CAST(COALESCE([p].[HomeFlag], 0) AS bit) AS [HomeFlag0], [p].[Id], [p].[ImageDetail], [p].[ImageThumbs], [p].[Info], COALESCE([p].[LanguageId], 0) AS [LanguageId0], [p].[Name], CAST(COALESCE([p].[New], 0) AS bit) AS [New], [p].[NotePrice], [p].[Parameter], COALESCE([p].[Price], 0.0) AS [Price], COALESCE([p].[PriceSale], 0.0) AS [PriceSale], CASE
+    WHEN [p].[CategoryId] IS NULL
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END, [p.ProductCategory].[Content] AS [Content0], [p.ProductCategory].[DateCreated] AS [DateCreated0], [p.ProductCategory].[DateModified] AS [DateModified0], [p.ProductCategory].[Description] AS [Description0], [p.ProductCategory].[HomeFlag], [p.ProductCategory].[Icon], [p.ProductCategory].[Image], [p.ProductCategory].[LanguageId], [p.ProductCategory].[Name] AS [Name0], [p.ProductCategory].[ParentId], [p.ProductCategory].[SeoAlias], [p.ProductCategory].[SeoDescription], [p.ProductCategory].[SeoKeyWords], [p.ProductCategory].[SeoTitle], [p.ProductCategory].[SortOrder], [p.ProductCategory].[Status], CAST(COALESCE([p].[ProductSale], 0) AS bit) AS [ProductSale], [p].[Sale], [p].[SeoAlias] AS [SeoAlias0], [p].[SeoDescription] AS [SeoDescription0], [p].[SeoKeyWords] AS [SeoKeyWords0], [p].[SeoTitle] AS [SeoTitle0], [p].[Size], [p].[SortOrder] AS [SortOrder0], [p].[Status] AS [Status0], [p].[Tag], CAST(COALESCE([p].[Vat], 0) AS bit) AS [Vat], COALESCE([p].[ViewCount], 0) AS [ViewCount], [p].[Warranty], [p.ProductCategory].[Id]
+FROM [Products] AS [p]
+INNER JOIN [ProductCategories] AS [p.ProductCategory] ON [p].[CategoryId] = [p.ProductCategory].[Id]
+WHERE [p].[Status] = 1
+ORDER BY [p].[DateCreated] DESC, [p].[Id], [p.ProductCategory].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2018-08-01T08:42:58.4712776+07:00 0HLFN9VKG2I3B:0000000D [INF] Sending file. Request path: '"/ckeditor/skins/moono-lisa/editor.css"'. Physical path: '"D:\Githubs\NETCORE2.1\NetCore\NetCore\node_modules\ckeditor\skins\moono-lisa\editor.css"' (27b0a520)
+2018-08-01T08:42:58.4787844+07:00 0HLFN9VKG2I3H:00000002 [INF] Executed DbCommand ("13"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[ParentId], [t].[Id], [x.Products].[Active], COALESCE([x.Products].[Age], 0) AS [Age], [x.Products].[CategoryId], [x.Products].[Code], [x.Products].[Content], [x.Products].[DateCreated], [x.Products].[DateModified], [x.Products].[Description], CAST(COALESCE([x.Products].[HomeFlag], 0) AS bit) AS [HomeFlag], [x.Products].[Id] AS [Id0], [x.Products].[ImageDetail], [x.Products].[ImageThumbs], [x.Products].[Info], COALESCE([x.Products].[LanguageId], 0) AS [LanguageId], [x.Products].[Name], CAST(COALESCE([x.Products].[New], 0) AS bit) AS [New], [x.Products].[NotePrice], [x.Products].[Parameter], COALESCE([x.Products].[Price], 0.0) AS [Price], COALESCE([x.Products].[PriceSale], 0.0) AS [PriceSale], CAST(COALESCE([x.Products].[ProductSale], 0) AS bit) AS [ProductSale], [x.Products].[Sale], [x.Products].[SeoAlias], [x.Products].[SeoDescription], [x.Products].[SeoKeyWords], [x.Products].[SeoTitle], [x.Products].[Size], [x.Products].[SortOrder], [x.Products].[Status], [x.Products].[Tag], CAST(COALESCE([x.Products].[Vat], 0) AS bit) AS [Vat], COALESCE([x.Products].[ViewCount], 0) AS [ViewCount], [x.Products].[Warranty]
+FROM [Products] AS [x.Products]
+INNER JOIN (
+    SELECT [x0].[ParentId], [x0].[Id]
+    FROM [ProductCategories] AS [x0]
+) AS [t] ON [x.Products].[CategoryId] = [t].[Id]
+ORDER BY [t].[ParentId], [t].[Id], [x.Products].[Id]" (0723d8ff)
+2018-08-01T08:42:58.5250181+07:00 0HLFN9VKG2I3B:0000000D [INF] Request finished in 613.51ms 200 text/css (791a596a)
+2018-08-01T08:42:58.5305790+07:00 0HLFN9VKG2I3H:00000002 [INF] Executed DbCommand ("13"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [t1].[ParentId], [t1].[Id], [t1].[Id0], [x.Products.ProductTags].[Id] AS [Id1], [x.Products.ProductTags].[ProductId], CASE
+    WHEN [x.Products.ProductTags].[TagId] IS NULL
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END, [x.Products.ProductTags].[TagId]
+FROM [ProductTags] AS [x.Products.ProductTags]
+INNER JOIN (
+    SELECT [t0].[ParentId], [t0].[Id], [x.Products0].[Id] AS [Id0]
+    FROM [Products] AS [x.Products0]
+    INNER JOIN (
+        SELECT [x1].[ParentId], [x1].[Id]
+        FROM [ProductCategories] AS [x1]
+    ) AS [t0] ON [x.Products0].[CategoryId] = [t0].[Id]
+) AS [t1] ON [x.Products.ProductTags].[ProductId] = [t1].[Id0]
+ORDER BY [t1].[ParentId], [t1].[Id], [t1].[Id0]" (0723d8ff)
+2018-08-01T08:42:58.5485740+07:00 0HLFN9VKG2I3I:00000002 [INF] Executed DbCommand ("14"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[DateCreated], [t].[Id], [t].[Id0], [p.ProductCategory.Products].[Active], COALESCE([p.ProductCategory.Products].[Age], 0) AS [Age], [p.ProductCategory.Products].[CategoryId], [p.ProductCategory.Products].[Code], [p.ProductCategory.Products].[Content], [p.ProductCategory.Products].[DateCreated] AS [DateCreated0], [p.ProductCategory.Products].[DateModified], [p.ProductCategory.Products].[Description], CAST(COALESCE([p.ProductCategory.Products].[HomeFlag], 0) AS bit) AS [HomeFlag], [p.ProductCategory.Products].[Id] AS [Id1], [p.ProductCategory.Products].[ImageDetail], [p.ProductCategory.Products].[ImageThumbs], [p.ProductCategory.Products].[Info], COALESCE([p.ProductCategory.Products].[LanguageId], 0) AS [LanguageId], [p.ProductCategory.Products].[Name], CAST(COALESCE([p.ProductCategory.Products].[New], 0) AS bit) AS [New], [p.ProductCategory.Products].[NotePrice], [p.ProductCategory.Products].[Parameter], COALESCE([p.ProductCategory.Products].[Price], 0.0) AS [Price], COALESCE([p.ProductCategory.Products].[PriceSale], 0.0) AS [PriceSale], CAST(COALESCE([p.ProductCategory.Products].[ProductSale], 0) AS bit) AS [ProductSale], [p.ProductCategory.Products].[Sale], [p.ProductCategory.Products].[SeoAlias], [p.ProductCategory.Products].[SeoDescription], [p.ProductCategory.Products].[SeoKeyWords], [p.ProductCategory.Products].[SeoTitle], [p.ProductCategory.Products].[Size], [p.ProductCategory.Products].[SortOrder], [p.ProductCategory.Products].[Status], [p.ProductCategory.Products].[Tag], CAST(COALESCE([p.ProductCategory.Products].[Vat], 0) AS bit) AS [Vat], COALESCE([p.ProductCategory.Products].[ViewCount], 0) AS [ViewCount], [p.ProductCategory.Products].[Warranty]
+FROM [Products] AS [p.ProductCategory.Products]
+INNER JOIN (
+    SELECT [p0].[DateCreated], [p0].[Id], [p.ProductCategory0].[Id] AS [Id0]
+    FROM [Products] AS [p0]
+    INNER JOIN [ProductCategories] AS [p.ProductCategory0] ON [p0].[CategoryId] = [p.ProductCategory0].[Id]
+    WHERE [p0].[Status] = 1
+    ORDER BY [p0].[DateCreated] DESC, [p0].[Id], [p.ProductCategory0].[Id]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t] ON [p.ProductCategory.Products].[CategoryId] = [t].[Id0]
+ORDER BY [t].[DateCreated] DESC, [t].[Id], [t].[Id0], [p.ProductCategory.Products].[Id]" (0723d8ff)
+2018-08-01T08:42:58.5951990+07:00 0HLFN9VKG2I3G:00000002 [INF] Sending file. Request path: '"/ckeditor/lang/vi.js"'. Physical path: '"D:\Githubs\NETCORE2.1\NetCore\NetCore\node_modules\ckeditor\lang\vi.js"' (27b0a520)
+2018-08-01T08:42:58.6413461+07:00 0HLFN9VKG2I3H:00000002 [INF] Executed action method "NetCore.Areas.Admin.Controllers.ProductController.GetAllCategories (NetCore)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 872.993ms. (50a9e262)
+2018-08-01T08:42:58.6633499+07:00 0HLFN9VKG2I3G:00000002 [INF] Request finished in 741.1202ms 200 application/javascript (791a596a)
+2018-08-01T08:42:58.6786165+07:00 0HLFN9VKG2I3H:00000002 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NetCore.Application.ViewModels.Product.ProductCategoryViewModel, NetCore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2018-08-01T08:42:58.7946585+07:00 0HLFN9VKG2I3I:00000002 [INF] Executed DbCommand ("46"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t1].[DateCreated], [t1].[Id], [t1].[Id0], [t1].[Id1], [p.ProductCategory.Products.ProductTags].[Id] AS [Id2], [p.ProductCategory.Products.ProductTags].[ProductId], CASE
+    WHEN [p.ProductCategory.Products.ProductTags].[TagId] IS NULL
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END, [p.ProductCategory.Products.ProductTags].[TagId]
+FROM [ProductTags] AS [p.ProductCategory.Products.ProductTags]
+INNER JOIN (
+    SELECT [t0].[DateCreated], [t0].[Id], [t0].[Id0], [p.ProductCategory.Products0].[Id] AS [Id1]
+    FROM [Products] AS [p.ProductCategory.Products0]
+    INNER JOIN (
+        SELECT [p1].[DateCreated], [p1].[Id], [p.ProductCategory1].[Id] AS [Id0]
+        FROM [Products] AS [p1]
+        INNER JOIN [ProductCategories] AS [p.ProductCategory1] ON [p1].[CategoryId] = [p.ProductCategory1].[Id]
+        WHERE [p1].[Status] = 1
+        ORDER BY [p1].[DateCreated] DESC, [p1].[Id], [p.ProductCategory1].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t0] ON [p.ProductCategory.Products0].[CategoryId] = [t0].[Id0]
+) AS [t1] ON [p.ProductCategory.Products.ProductTags].[ProductId] = [t1].[Id1]
+ORDER BY [t1].[DateCreated] DESC, [t1].[Id], [t1].[Id0], [t1].[Id1]" (0723d8ff)
+2018-08-01T08:42:58.9256747+07:00 0HLFN9VKG2I3H:00000002 [INF] Executed action "NetCore.Areas.Admin.Controllers.ProductController.GetAllCategories (NetCore)" in 1297.7088ms (afa2e885)
+2018-08-01T08:42:58.9491930+07:00 0HLFN9VKG2I3D:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/ckeditor/styles.js?t=I639   (ca22a1cb)
+2018-08-01T08:42:58.9551940+07:00 0HLFN9VKG2I3H:00000002 [INF] Request finished in 1711.2711ms 200 application/json; charset=utf-8 (791a596a)
+2018-08-01T08:42:58.9824340+07:00 0HLFN9VKG2I3I:00000002 [INF] Executed DbCommand ("53"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t2].[DateCreated], [t2].[Id], [p.ProductTags].[Id] AS [Id0], [p.ProductTags].[ProductId], CASE
+    WHEN [p.ProductTags].[TagId] IS NULL
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END, [p.ProductTags].[TagId]
+FROM [ProductTags] AS [p.ProductTags]
+INNER JOIN (
+    SELECT [p2].[DateCreated], [p2].[Id]
+    FROM [Products] AS [p2]
+    INNER JOIN [ProductCategories] AS [p.ProductCategory2] ON [p2].[CategoryId] = [p.ProductCategory2].[Id]
+    WHERE [p2].[Status] = 1
+    ORDER BY [p2].[DateCreated] DESC, [p2].[Id]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t2] ON [p.ProductTags].[ProductId] = [t2].[Id]
+ORDER BY [t2].[DateCreated] DESC, [t2].[Id]" (0723d8ff)
+2018-08-01T08:42:59.0299270+07:00 0HLFN9VKG2I3D:00000003 [INF] Sending file. Request path: '"/ckeditor/styles.js"'. Physical path: '"D:\Githubs\NETCORE2.1\NetCore\NetCore\node_modules\ckeditor\styles.js"' (27b0a520)
+2018-08-01T08:42:59.0770122+07:00 0HLFN9VKG2I3I:00000002 [INF] Executed action method "NetCore.Areas.Admin.Controllers.ProductController.GetAllPaging (NetCore)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1364.3889ms. (50a9e262)
+2018-08-01T08:42:59.0824787+07:00 0HLFN9VKG2I3D:00000003 [INF] Request finished in 118.4672ms 200 application/javascript (791a596a)
+2018-08-01T08:42:59.0922932+07:00 0HLFN9VKG2I3E:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/ckeditor/plugins/autolink/plugin.js?t=I639   (ca22a1cb)
+2018-08-01T08:42:59.0983006+07:00 0HLFN9VKG2I3I:00000002 [INF] Executing ObjectResult, writing value of type '"NetCore.Utilities.Dtos.PagedResult`1[[NetCore.Application.ViewModels.Product.ProductViewModel, NetCore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2018-08-01T08:42:59.1175643+07:00 0HLFN9VKG2I3C:0000000D [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/ckeditor/plugins/font/plugin.js?t=I639   (ca22a1cb)
+2018-08-01T08:42:59.1455619+07:00 0HLFN9VKG2I3I:00000002 [INF] Executed action "NetCore.Areas.Admin.Controllers.ProductController.GetAllPaging (NetCore)" in 1667.8445ms (afa2e885)
+2018-08-01T08:42:59.1488951+07:00 0HLFN9VKG2I3C:0000000D [INF] Sending file. Request path: '"/ckeditor/plugins/font/plugin.js"'. Physical path: '"D:\Githubs\NETCORE2.1\NetCore\NetCore\node_modules\ckeditor\plugins\font\plugin.js"' (27b0a520)
+2018-08-01T08:42:59.1963128+07:00 0HLFN9VKG2I3E:00000003 [INF] Sending file. Request path: '"/ckeditor/plugins/autolink/plugin.js"'. Physical path: '"D:\Githubs\NETCORE2.1\NetCore\NetCore\node_modules\ckeditor\plugins\autolink\plugin.js"' (27b0a520)
+2018-08-01T08:42:59.2116472+07:00 0HLFN9VKG2I3C:0000000D [INF] Request finished in 70.9181ms 200 application/javascript (791a596a)
+2018-08-01T08:42:59.2272888+07:00 0HLFN9VKG2I3E:00000003 [INF] Request finished in 153.6949ms 200 application/javascript (791a596a)
+2018-08-01T08:42:59.2366584+07:00 0HLFN9VKG2I3I:00000002 [INF] Request finished in 1935.6455ms 200 application/json; charset=utf-8 (791a596a)
+2018-08-01T08:42:59.2804853+07:00 0HLFN9VKG2I3F:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/ckeditor/plugins/colorbutton/plugin.js?t=I639   (ca22a1cb)
+2018-08-01T08:42:59.5266647+07:00 0HLFN9VKG2I3B:0000000E [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/ckeditor/plugins/liststyle/plugin.js?t=I639   (ca22a1cb)
+2018-08-01T08:42:59.5571893+07:00 0HLFN9VKG2I3F:00000003 [INF] Sending file. Request path: '"/ckeditor/plugins/colorbutton/plugin.js"'. Physical path: '"D:\Githubs\NETCORE2.1\NetCore\NetCore\node_modules\ckeditor\plugins\colorbutton\plugin.js"' (27b0a520)
+2018-08-01T08:42:59.5616727+07:00 0HLFN9VKG2I3B:0000000E [INF] Sending file. Request path: '"/ckeditor/plugins/liststyle/plugin.js"'. Physical path: '"D:\Githubs\NETCORE2.1\NetCore\NetCore\node_modules\ckeditor\plugins\liststyle\plugin.js"' (27b0a520)
+2018-08-01T08:42:59.5697171+07:00 0HLFN9VKG2I3F:00000003 [INF] Request finished in 331.71ms 200 application/javascript (791a596a)
+2018-08-01T08:42:59.5777754+07:00 0HLFN9VKG2I3B:0000000E [INF] Request finished in 328.2704ms 200 application/javascript (791a596a)
+2018-08-01T08:42:59.5821591+07:00 0HLFN9VKG2I3H:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-site/images/user.png   (ca22a1cb)
+2018-08-01T08:42:59.6410970+07:00 0HLFN9VKG2I3G:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin/product/getAllpaging?categoryId=&keyword=&page=1&pageSize=10   (ca22a1cb)
+2018-08-01T08:42:59.6597424+07:00 0HLFN9VKG2I3H:00000003 [INF] Request finished in 57.6949ms 404  (791a596a)
+2018-08-01T08:42:59.6651432+07:00 0HLFN9VKG2I3G:00000003 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Product\"}". Executing action "NetCore.Areas.Admin.Controllers.ProductController.GetAllPaging (NetCore)" (a44c0341)
+2018-08-01T08:42:59.6726563+07:00 0HLFN9VKG2I3D:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/ckeditor/plugins/panelbutton/plugin.js?t=I639   (ca22a1cb)
+2018-08-01T08:42:59.6752843+07:00 0HLFN9VKG2I3G:00000003 [INF] Authorization was successful. (0d575a54)
+2018-08-01T08:42:59.6805172+07:00 0HLFN9VKG2I3D:00000004 [INF] The file "/ckeditor/plugins/panelbutton/plugin.js" was not modified (f1f8d725)
+2018-08-01T08:42:59.7388157+07:00 0HLFN9VKG2I3D:00000004 [INF] Request finished in 39.5289ms 304 application/javascript (791a596a)
+2018-08-01T08:42:59.7746366+07:00 0HLFN9VKG2I3G:00000003 [INF] Executing action method "NetCore.Areas.Admin.Controllers.ProductController.GetAllPaging (NetCore)" with arguments (["", "", "1", "10"]) - Validation state: Valid (4e3479ed)
+2018-08-01T08:42:59.7782763+07:00 0HLFN9VKG2I3C:0000000E [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/ckeditor/plugins/scayt/dialogs/dialog.css   (ca22a1cb)
+2018-08-01T08:42:59.7822975+07:00 0HLFN9VKG2I3G:00000003 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=NetCore.Data.EF " (9958f5bb)
+2018-08-01T08:42:59.7904616+07:00 0HLFN9VKG2I3I:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/ckeditor/plugins/font/lang/vi.js?t=I639   (ca22a1cb)
+2018-08-01T08:42:59.7943102+07:00 0HLFN9VKG2I3C:0000000E [INF] The file "/ckeditor/plugins/scayt/dialogs/dialog.css" was not modified (f1f8d725)
+2018-08-01T08:42:59.8127165+07:00 0HLFN9VKG2I3I:00000003 [INF] The file "/ckeditor/plugins/font/lang/vi.js" was not modified (f1f8d725)
+2018-08-01T08:42:59.8128013+07:00 0HLFN9VKG2I3G:00000003 [INF] Executed DbCommand ("8"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [p]
+WHERE [p].[Status] = 1" (0723d8ff)
+2018-08-01T08:42:59.8207618+07:00 0HLFN9VKG2I3C:0000000E [INF] Request finished in 47.3024ms 304 text/css (791a596a)
+2018-08-01T08:42:59.8320312+07:00 0HLFN9VKG2I3I:00000003 [INF] Request finished in 43.4314ms 304 application/javascript (791a596a)
+2018-08-01T08:42:59.8813839+07:00 0HLFN9VKG2I3G:00000003 [INF] Executed DbCommand ("6"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Active], COALESCE([p].[Age], 0) AS [Age], [p].[CategoryId], [p].[Code], [p].[Content], [p].[DateCreated], [p].[DateModified], [p].[Description], CAST(COALESCE([p].[HomeFlag], 0) AS bit) AS [HomeFlag0], [p].[Id], [p].[ImageDetail], [p].[ImageThumbs], [p].[Info], COALESCE([p].[LanguageId], 0) AS [LanguageId0], [p].[Name], CAST(COALESCE([p].[New], 0) AS bit) AS [New], [p].[NotePrice], [p].[Parameter], COALESCE([p].[Price], 0.0) AS [Price], COALESCE([p].[PriceSale], 0.0) AS [PriceSale], CASE
+    WHEN [p].[CategoryId] IS NULL
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END, [p.ProductCategory].[Content] AS [Content0], [p.ProductCategory].[DateCreated] AS [DateCreated0], [p.ProductCategory].[DateModified] AS [DateModified0], [p.ProductCategory].[Description] AS [Description0], [p.ProductCategory].[HomeFlag], [p.ProductCategory].[Icon], [p.ProductCategory].[Image], [p.ProductCategory].[LanguageId], [p.ProductCategory].[Name] AS [Name0], [p.ProductCategory].[ParentId], [p.ProductCategory].[SeoAlias], [p.ProductCategory].[SeoDescription], [p.ProductCategory].[SeoKeyWords], [p.ProductCategory].[SeoTitle], [p.ProductCategory].[SortOrder], [p.ProductCategory].[Status], CAST(COALESCE([p].[ProductSale], 0) AS bit) AS [ProductSale], [p].[Sale], [p].[SeoAlias] AS [SeoAlias0], [p].[SeoDescription] AS [SeoDescription0], [p].[SeoKeyWords] AS [SeoKeyWords0], [p].[SeoTitle] AS [SeoTitle0], [p].[Size], [p].[SortOrder] AS [SortOrder0], [p].[Status] AS [Status0], [p].[Tag], CAST(COALESCE([p].[Vat], 0) AS bit) AS [Vat], COALESCE([p].[ViewCount], 0) AS [ViewCount], [p].[Warranty], [p.ProductCategory].[Id]
+FROM [Products] AS [p]
+INNER JOIN [ProductCategories] AS [p.ProductCategory] ON [p].[CategoryId] = [p.ProductCategory].[Id]
+WHERE [p].[Status] = 1
+ORDER BY [p].[DateCreated] DESC, [p].[Id], [p.ProductCategory].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2018-08-01T08:42:59.9304050+07:00 0HLFN9VKG2I3D:00000005 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/ckeditor/plugins/colorbutton/lang/vi.js?t=I639   (ca22a1cb)
+2018-08-01T08:42:59.9522546+07:00 0HLFN9VKG2I3H:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/ckeditor/plugins/tableselection/styles/tableselection.css   (ca22a1cb)
+2018-08-01T08:42:59.9908455+07:00 0HLFN9VKG2I3G:00000003 [INF] Executed DbCommand ("50"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[DateCreated], [t].[Id], [t].[Id0], [p.ProductCategory.Products].[Active], COALESCE([p.ProductCategory.Products].[Age], 0) AS [Age], [p.ProductCategory.Products].[CategoryId], [p.ProductCategory.Products].[Code], [p.ProductCategory.Products].[Content], [p.ProductCategory.Products].[DateCreated] AS [DateCreated0], [p.ProductCategory.Products].[DateModified], [p.ProductCategory.Products].[Description], CAST(COALESCE([p.ProductCategory.Products].[HomeFlag], 0) AS bit) AS [HomeFlag], [p.ProductCategory.Products].[Id] AS [Id1], [p.ProductCategory.Products].[ImageDetail], [p.ProductCategory.Products].[ImageThumbs], [p.ProductCategory.Products].[Info], COALESCE([p.ProductCategory.Products].[LanguageId], 0) AS [LanguageId], [p.ProductCategory.Products].[Name], CAST(COALESCE([p.ProductCategory.Products].[New], 0) AS bit) AS [New], [p.ProductCategory.Products].[NotePrice], [p.ProductCategory.Products].[Parameter], COALESCE([p.ProductCategory.Products].[Price], 0.0) AS [Price], COALESCE([p.ProductCategory.Products].[PriceSale], 0.0) AS [PriceSale], CAST(COALESCE([p.ProductCategory.Products].[ProductSale], 0) AS bit) AS [ProductSale], [p.ProductCategory.Products].[Sale], [p.ProductCategory.Products].[SeoAlias], [p.ProductCategory.Products].[SeoDescription], [p.ProductCategory.Products].[SeoKeyWords], [p.ProductCategory.Products].[SeoTitle], [p.ProductCategory.Products].[Size], [p.ProductCategory.Products].[SortOrder], [p.ProductCategory.Products].[Status], [p.ProductCategory.Products].[Tag], CAST(COALESCE([p.ProductCategory.Products].[Vat], 0) AS bit) AS [Vat], COALESCE([p.ProductCategory.Products].[ViewCount], 0) AS [ViewCount], [p.ProductCategory.Products].[Warranty]
+FROM [Products] AS [p.ProductCategory.Products]
+INNER JOIN (
+    SELECT [p0].[DateCreated], [p0].[Id], [p.ProductCategory0].[Id] AS [Id0]
+    FROM [Products] AS [p0]
+    INNER JOIN [ProductCategories] AS [p.ProductCategory0] ON [p0].[CategoryId] = [p.ProductCategory0].[Id]
+    WHERE [p0].[Status] = 1
+    ORDER BY [p0].[DateCreated] DESC, [p0].[Id], [p.ProductCategory0].[Id]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t] ON [p.ProductCategory.Products].[CategoryId] = [t].[Id0]
+ORDER BY [t].[DateCreated] DESC, [t].[Id], [t].[Id0], [p.ProductCategory.Products].[Id]" (0723d8ff)
+2018-08-01T08:43:00.0205019+07:00 0HLFN9VKG2I3D:00000005 [INF] The file "/ckeditor/plugins/colorbutton/lang/vi.js" was not modified (f1f8d725)
+2018-08-01T08:43:00.1442808+07:00 0HLFN9VKG2I3H:00000004 [INF] The file "/ckeditor/plugins/tableselection/styles/tableselection.css" was not modified (f1f8d725)
+2018-08-01T08:43:00.2122988+07:00 0HLFN9VKG2I3G:00000003 [INF] Executed DbCommand ("30"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t1].[DateCreated], [t1].[Id], [t1].[Id0], [t1].[Id1], [p.ProductCategory.Products.ProductTags].[Id] AS [Id2], [p.ProductCategory.Products.ProductTags].[ProductId], CASE
+    WHEN [p.ProductCategory.Products.ProductTags].[TagId] IS NULL
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END, [p.ProductCategory.Products.ProductTags].[TagId]
+FROM [ProductTags] AS [p.ProductCategory.Products.ProductTags]
+INNER JOIN (
+    SELECT [t0].[DateCreated], [t0].[Id], [t0].[Id0], [p.ProductCategory.Products0].[Id] AS [Id1]
+    FROM [Products] AS [p.ProductCategory.Products0]
+    INNER JOIN (
+        SELECT [p1].[DateCreated], [p1].[Id], [p.ProductCategory1].[Id] AS [Id0]
+        FROM [Products] AS [p1]
+        INNER JOIN [ProductCategories] AS [p.ProductCategory1] ON [p1].[CategoryId] = [p.ProductCategory1].[Id]
+        WHERE [p1].[Status] = 1
+        ORDER BY [p1].[DateCreated] DESC, [p1].[Id], [p.ProductCategory1].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t0] ON [p.ProductCategory.Products0].[CategoryId] = [t0].[Id0]
+) AS [t1] ON [p.ProductCategory.Products.ProductTags].[ProductId] = [t1].[Id1]
+ORDER BY [t1].[DateCreated] DESC, [t1].[Id], [t1].[Id0], [t1].[Id1]" (0723d8ff)
+2018-08-01T08:43:00.2236956+07:00 0HLFN9VKG2I3D:00000005 [INF] Request finished in 251.017ms 304 application/javascript (791a596a)
+2018-08-01T08:43:00.2262864+07:00 0HLFN9VKG2I3H:00000004 [INF] Request finished in 387.8501ms 304 text/css (791a596a)
+2018-08-01T08:43:00.2322776+07:00 0HLFN9VKG2I3G:00000003 [INF] Executed DbCommand ("11"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t2].[DateCreated], [t2].[Id], [p.ProductTags].[Id] AS [Id0], [p.ProductTags].[ProductId], CASE
+    WHEN [p.ProductTags].[TagId] IS NULL
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END, [p.ProductTags].[TagId]
+FROM [ProductTags] AS [p.ProductTags]
+INNER JOIN (
+    SELECT [p2].[DateCreated], [p2].[Id]
+    FROM [Products] AS [p2]
+    INNER JOIN [ProductCategories] AS [p.ProductCategory2] ON [p2].[CategoryId] = [p.ProductCategory2].[Id]
+    WHERE [p2].[Status] = 1
+    ORDER BY [p2].[DateCreated] DESC, [p2].[Id]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t2] ON [p.ProductTags].[ProductId] = [t2].[Id]
+ORDER BY [t2].[DateCreated] DESC, [t2].[Id]" (0723d8ff)
+2018-08-01T08:43:00.2392167+07:00 0HLFN9VKG2I3B:0000000F [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/ckeditor/plugins/liststyle/lang/vi.js?t=I639   (ca22a1cb)
+2018-08-01T08:43:00.2454937+07:00 0HLFN9VKG2I3E:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/ckeditor/plugins/scayt/skins/moono-lisa/scayt.css   (ca22a1cb)
+2018-08-01T08:43:00.2582756+07:00 0HLFN9VKG2I3G:00000003 [INF] Executed action method "NetCore.Areas.Admin.Controllers.ProductController.GetAllPaging (NetCore)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 465.3077ms. (50a9e262)
+2018-08-01T08:43:00.2708673+07:00 0HLFN9VKG2I3B:0000000F [INF] Sending file. Request path: '"/ckeditor/plugins/liststyle/lang/vi.js"'. Physical path: '"D:\Githubs\NETCORE2.1\NetCore\NetCore\node_modules\ckeditor\plugins\liststyle\lang\vi.js"' (27b0a520)
+2018-08-01T08:43:00.2759862+07:00 0HLFN9VKG2I3G:00000003 [INF] Executing ObjectResult, writing value of type '"NetCore.Utilities.Dtos.PagedResult`1[[NetCore.Application.ViewModels.Product.ProductViewModel, NetCore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2018-08-01T08:43:00.2959497+07:00 0HLFN9VKG2I3B:0000000F [INF] Request finished in 501.471ms 200 application/javascript (791a596a)
+2018-08-01T08:43:00.3086946+07:00 0HLFN9VKG2I3G:00000003 [INF] Executed action "NetCore.Areas.Admin.Controllers.ProductController.GetAllPaging (NetCore)" in 611.6048ms (afa2e885)
+2018-08-01T08:43:00.4379109+07:00 0HLFN9VKG2I3E:00000004 [INF] The file "/ckeditor/plugins/scayt/skins/moono-lisa/scayt.css" was not modified (f1f8d725)
+2018-08-01T08:43:00.5975441+07:00 0HLFN9VKG2I3G:00000003 [INF] Request finished in 732.8333ms 200 application/json; charset=utf-8 (791a596a)
+2018-08-01T08:43:00.6084452+07:00 0HLFN9VKG2I3E:00000004 [INF] Request finished in 690.9324ms 304 text/css (791a596a)
+2018-08-01T08:43:00.6148843+07:00 0HLFN9VKG2I3I:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-site/images/user.png   (ca22a1cb)
+2018-08-01T08:43:00.6990398+07:00 0HLFN9VKG2I3D:00000006 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/ckeditor/contents.css?t=I639   (ca22a1cb)
+2018-08-01T08:43:00.7491865+07:00 0HLFN9VKG2I3D:00000006 [INF] The file "/ckeditor/contents.css" was not modified (f1f8d725)
+2018-08-01T08:43:00.7782890+07:00 0HLFN9VKG2I3I:00000004 [INF] Request finished in 17.9638ms 404  (791a596a)
+2018-08-01T08:43:00.7914718+07:00 0HLFN9VKG2I3D:00000006 [INF] Request finished in 151.6785ms 304 text/css (791a596a)
+2018-08-01T08:43:00.8110278+07:00 0HLFN9VKG2I3F:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/ckeditor/plugins/wsc/skins/moono-lisa/wsc.css   (ca22a1cb)
+2018-08-01T08:43:00.8271948+07:00 0HLFN9VKG2I3C:0000000F [INF] Request starting HTTP/1.1 GET http://localhost:44357/vendor/ckeditor/skins/moono-lisa/icons.png?t=I639   (ca22a1cb)
+2018-08-01T08:43:00.8588704+07:00 0HLFN9VKG2I3F:00000004 [INF] The file "/ckeditor/plugins/wsc/skins/moono-lisa/wsc.css" was not modified (f1f8d725)
+2018-08-01T08:43:00.8775201+07:00 0HLFN9VKG2I3C:0000000F [INF] The file "/ckeditor/skins/moono-lisa/icons.png" was not modified (f1f8d725)
+2018-08-01T08:43:00.8925264+07:00 0HLFN9VKG2I3F:00000004 [INF] Request finished in 1089.5949ms 304 text/css (791a596a)
+2018-08-01T08:43:00.8943553+07:00 0HLFN9VKG2I3C:0000000F [INF] Request finished in 480.1347ms 304 image/png (791a596a)
