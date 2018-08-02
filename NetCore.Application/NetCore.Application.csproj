@@ -6,12 +6,17 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="7.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="2.1.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\NetCore.Data.EF\NetCore.Data.EF.csproj" />
     <ProjectReference Include="..\NetCore.Data\NetCore.Data.csproj" />
     <ProjectReference Include="..\NetCore.Utilities\NetCore.Utilities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ViewModels\NewFolder\" />
   </ItemGroup>
 
 </Project>

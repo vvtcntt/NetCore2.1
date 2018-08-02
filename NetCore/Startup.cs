@@ -79,15 +79,17 @@ namespace NetCore
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<IProductTagRepository, ProductTagRepository>();
             services.AddTransient<ITagRepository, TagRepository>();
+            services.AddTransient<IPermissionRepository, PermissionRepository>();
 
 
             //Service
             services.AddTransient<IProductCategoryService, ProductCategoryService>();
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<IFunctionService, FunctionService>();
- 
- 
 
+            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IRoleService, RoleService>();
+ 
             //fdfdf
             services.AddMvc().AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
             //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

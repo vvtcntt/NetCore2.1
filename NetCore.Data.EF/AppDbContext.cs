@@ -65,7 +65,6 @@ namespace NETCORE.Data.EF
             builder.AddConfiguration(new SystemConfigConfiguration());
             builder.AddConfiguration(new AnnouncementConfiguration());
             builder.AddConfiguration(new FunctionConfiguration());
-
             base.OnModelCreating(builder);
         }
 

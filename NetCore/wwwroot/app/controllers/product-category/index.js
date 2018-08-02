@@ -1,22 +1,64 @@
 ﻿var productCategoryController = function () {
     this.initialize = function () {
         loadData();
-        registerEvents();
+        registerEvents(); registerControls();
     }
-    function registerEvents() {     
+    function registerControls() {
+        CKEDITOR.replace('txtContM', {});
 
+        //Fix: cannot click on element ck in modal
+        $.fn.modal.Constructor.prototype.enforceFocus = function () {
+            $(document)
+                .off('focusin.bs.modal') // guard against infinite focus loop
+                .on('focusin.bs.modal', $.proxy(function (e) {
+                    if (
+                        this.$element[0] !== e.target && !this.$element.has(e.target).length
+                        // CKEditor compatibility fix start.
+                        && !$(e.target).closest('.cke_dialog, .cke').length
+                        // CKEditor compatibility fix end.
+                    ) {
+                        this.$element.trigger('focus');
+                    }
+                }, this));
+        };
+    }
+    function registerEvents() {
+        $('#btnSelectImg').on('click', function () {
+            $('#fileInputImage').click();
+        });
+
+        $("#fileInputImage").on('change', function () {
+            var fileUpload = $(this).get(0);
+            var files = fileUpload.files;
+            var data = new FormData();
+            for (var i = 0; i < files.length; i++) {
+                data.append(files[i].name, files[i]);
+            }
+            $.ajax({
+                type: "POST",
+                url: "/Admin/Upload/UploadImage",
+                contentType: false,
+                processData: false,
+                data: data,
+                success: function (path) {
+                    $('#txtImageM').val(path);
+                    netcore.notify('Upload image succesful!', 'success');
+                },
+                error: function () {
+                    netcore.notify('There was error uploading files!', 'error');
+                }
+            });
+        });
         $('#btnCreate').off('click').on('click', function () {
             initTreeDropDownCategory();
-             $('#modal-add-edit').modal('show');
-
+            $('#modal-add-edit').modal('show');
         });
+
         $('body').on('click', '#btnCreateM', function (e) {
             e.preventDefault();
             var that = $('#hidIdM').val();
             initTreeDropDownCategory();
             $('#modal-add-edit').modal('show');
-
-
         });
         $('body').on('click', '#btnEdit', function (e) {
             e.preventDefault();
@@ -47,7 +89,6 @@
                     $('#txtOrderM').val(data.SortOrder);
                     $('#modal-add-edit').modal('show');
                     netcore.stopLoading();
-
                 },
                 error: function (status) {
                     netcore.notify('Có lỗi xảy ra', 'error');
@@ -83,70 +124,68 @@
 
         $('#btnSave').on('click', function (e) {
             //if ($('#frmMaintainance').valid()) {
-                e.preventDefault();
-                var id = parseInt($('#hidIdM').val());
-                var name = $('#txtNameM').val();
-                var parentId = $('#ddlCategoryIdM').combotree('getValue');
-                var description = $('#txtDescM').val();
-                var content = $('#txtContM').val();
-                var icon = $('#txtIconM').val();
-                var image = $('#txtImageM').val();
-                var order = parseInt($('#txtOrderM').val());
+            e.preventDefault();
+            var id = parseInt($('#hidIdM').val());
+            var name = $('#txtNameM').val();
+            var parentId = $('#ddlCategoryIdM').combotree('getValue');
+            var description = $('#txtDescM').val();
+            var content = $('#txtContM').val();
+            var icon = $('#txtIconM').val();
+            var image = $('#txtImageM').val();
+            var order = parseInt($('#txtOrderM').val());
 
-                var seoKeyword = $('#txtSeoKeywordM').val();
-                var seoMetaDescription = $('#txtSeoDescriptionM').val();
-                var seoPageTitle = $('#txtSeoPageTitleM').val();
-                var seoAlias = $('#txtSeoAliasM').val();
-                var status = $('#ckStatusM').prop('checked') == true ? 1 : 0;
-                var homeflag = $('#chkHomeglag').prop('checked');
+            var seoKeyword = $('#txtSeoKeywordM').val();
+            var seoMetaDescription = $('#txtSeoDescriptionM').val();
+            var seoPageTitle = $('#txtSeoPageTitleM').val();
+            var seoAlias = $('#txtSeoAliasM').val();
+            var status = $('#ckStatusM').prop('checked') == true ? 1 : 0;
+            var homeflag = $('#chkHomeglag').prop('checked');
 
-                $.ajax({
-                    type: "POST",
-                    url: "/Admin/ProductCategory/SaveEntity",
-                    data: {
-                        Id: id,
-                        Name: name,
-                        Description: description,
-                        Content: content,
-                        ParentId: parentId,
-                        Ord: order,
-                        HomeFlag: homeflag,
-                        Image: image,
-                        Icon: icon,
-                        Status: status,
-                        SeoMeta: seoPageTitle,
-                        Alias: seoAlias,
-                        KeywordMeta: seoKeyword,
-                        DescriptionMeta: seoMetaDescription
-                    },
-                    dataType: "json",
-                    beforeSend: function () {
-                        netcore.startLoading();
-                    },
-                    success: function (response) {
-                        netcore.notify('Update success', 'success');
-                        $('#modal-add-edit').modal('hide');
+            $.ajax({
+                type: "POST",
+                url: "/Admin/ProductCategory/SaveEntity",
+                data: {
+                    Id: id,
+                    Name: name,
+                    Description: description,
+                    Content: content,
+                    ParentId: parentId,
+                    Ord: order,
+                    HomeFlag: homeflag,
+                    Image: image,
+                    Icon: icon,
+                    Status: status,
+                    SeoMeta: seoPageTitle,
+                    Alias: seoAlias,
+                    KeywordMeta: seoKeyword,
+                    DescriptionMeta: seoMetaDescription
+                },
+                dataType: "json",
+                beforeSend: function () {
+                    netcore.startLoading();
+                },
+                success: function (response) {
+                    netcore.notify('Update success', 'success');
+                    $('#modal-add-edit').modal('hide');
 
-                        resetFormMaintainance();
+                    resetFormMaintainance();
 
-                        netcore.stopLoading();
-                        loadData(true);
-                    },
-                    error: function () {
-                        netcore.notify('Has an error in update progress', 'error');
-                        netcore.stopLoading();
-                    }
-                });
+                    netcore.stopLoading();
+                    loadData(true);
+                },
+                error: function () {
+                    netcore.notify('Has an error in update progress', 'error');
+                    netcore.stopLoading();
+                }
+            });
             //}
             return false;
-
         });
     }
     function resetFormMaintainance() {
         $('#hidIdM').val(0);
         $('#txtNameM').val('');
         initTreeDropDownCategory('');
-
         $('#txtDescM').val('');
         $('#txtOrderM').val('');
         $('#txtImageM').val('');
@@ -159,7 +198,7 @@
         $('#txtIconM').val('');
         $('#ckStatusM').prop('checked', true);
     }
-   
+
     function initTreeDropDownCategory(selectedId) {
         $.ajax({
             url: "/Admin/ProductCategory/GetAll",
@@ -168,7 +207,7 @@
             async: false,
             success: function (response) {
                 var data = [];
-               
+
                 $.each(response, function (i, item) {
                     data.push({
                         id: item.Id,
@@ -183,10 +222,10 @@
                     id: '',
                     text: 'Menu Parent',
                     parentId: '',
-                    SortOrder:'0'
+                    SortOrder: '0'
                 });
                 $('#ddlCategoryIdM').combotree({
-                     data: arr
+                    data: arr
                 });
                 if (selectedId != undefined) {
                     $('#ddlCategoryIdM').combotree('setValue', selectedId);
@@ -241,7 +280,6 @@
                                     value: i
                                 });
                             });
-
                             //Update to database
                             $.ajax({
                                 url: '/Admin/ProductCategory/UpdateParentId',

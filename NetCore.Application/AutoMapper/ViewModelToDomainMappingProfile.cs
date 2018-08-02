@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using NetCore.Application.ViewModels.Product;
+using NetCore.Application.ViewModels.System;
 using NetCore.Data.Entites;
+using System;
 
 namespace NetCore.Application.AutoMapper
 {
@@ -20,6 +22,9 @@ namespace NetCore.Application.AutoMapper
                     x.SortOrder, x.DateCreated, x.DateModified, x.SeoAlias,
                     x.SeoKeyWords, x.SeoDescription, x.SeoAlias, x.Status,
                     x.LanguageId, x.ViewCount, x.Active, x.Tag));
+            CreateMap<AppUserViewModel, AppUser>()
+           .ConstructUsing(c => new AppUser(c.Id.GetValueOrDefault(Guid.Empty), c.FullName, c.UserName,
+           c.Email, c.PhoneNumber, c.Avatar, c.Status));
         }
     }
 }
