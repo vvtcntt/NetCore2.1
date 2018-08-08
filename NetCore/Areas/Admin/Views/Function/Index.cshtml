@@ -2,36 +2,36 @@
     ViewData["Title"] = "Index";
 }
 @section Scripts{
-    <script src="~/app/controllers/product-category/index.js" asp-append-version="true"></script>
+    <script src="~/app/controllers/function/index.js"  asp-append-version="true"></script>
 
     <script src="~/vendor/jquery-easyui/js/jquery.easyui.min.js"></script>
     <script>
-        var productCategory = new productCategoryController();
-        productCategory.initialize();
+        var functions = new functionController();
+        functions.initialize();
     </script>
 
 }
 @section Styles{
     <link href="~/vendor/jquery-easyui/css/easyui.css" rel="stylesheet" />
 }
-    <div class="page-title">
-        <div class="title_left">
-            <h3>Product <small>List Product Category</small></h3>
-        </div>
-        <div class="title_right">
-            <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                <button class="btn btn-success" id="btnCreate" type="button">Add</button>
-
-            </div>
-
-        </div>
+<div class="page-title">
+    <div class="title_left">
+        <h3>Function <small>List Function</small></h3>
     </div>
+    <div class="title_right">
+        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+            <button class="btn btn-success" id="btnCreate" type="button">Add</button>
+
+        </div>
+
+    </div>
+</div>
 <div class="clearfix"></div>
 <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
             <div class="x_title">
-               
+
                 <ul class="nav navbar-right panel_toolbox">
                     <li>
                         <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>

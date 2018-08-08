@@ -16,8 +16,9 @@ namespace NetCore.Data.Entites
         {
 
         }
-        public Function(string name, string url, string parentId, string iconCss, int sorOrder)
+        public Function(string id,string name, string url, string parentId, string iconCss, int sorOrder)
         {
+            this.Id = id;
             this.Name = name;
             this.URL = url;
             this.ParentId = parentId;

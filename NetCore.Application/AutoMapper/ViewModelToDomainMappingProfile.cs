@@ -25,6 +25,8 @@ namespace NetCore.Application.AutoMapper
             CreateMap<AppUserViewModel, AppUser>()
            .ConstructUsing(c => new AppUser(c.Id.GetValueOrDefault(Guid.Empty), c.FullName, c.UserName,
            c.Email, c.PhoneNumber, c.Avatar, c.Status));
+            CreateMap<FunctionViewModel, Function>()
+           .ConstructUsing(c => new Function(c.Id,c.Name,c.URL,c.ParentId,c.IconCss,c.SortOrder));
         }
     }
 }

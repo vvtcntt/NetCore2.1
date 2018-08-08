@@ -24,7 +24,7 @@ namespace NetCore.Areas.Admin.Components
             List<FunctionViewModel> function;
             if (role.Split(";").Contains(CommonConstants.AdminRole))
             {
-                function = await _functionService.GetAll();
+                function = await _functionService.GetAll(string.Empty);
             }
             else
             {
