@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -12,6 +13,7 @@ using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Logging;
 using NetCore.Application.Implementation;
 using NetCore.Application.Interfaces;
+using NetCore.Authorization;
 using NetCore.Data.EF;
 using NetCore.Data.EF.Repositories;
 using NetCore.Data.Entites;
@@ -89,7 +91,8 @@ namespace NetCore
 
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IRoleService, RoleService>();
- 
+            services.AddTransient<IAuthorizationHandler, BaseResourceAuthorizationHandler>();
+
             //fdfdf
             services.AddMvc().AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
             //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

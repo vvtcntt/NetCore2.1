@@ -10,7 +10,7 @@ using NETCORE.Data.EF;
 namespace NetCore.Data.EF.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20180730085132_initial")]
+    [Migration("20180809040334_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

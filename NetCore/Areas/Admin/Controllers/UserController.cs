@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using NetCore.Application.Interfaces;
 using NetCore.Application.ViewModels.System;
+using NetCore.Authorization;
 
 namespace NetCore.Areas.Admin.Controllers
 {
@@ -20,13 +21,18 @@ namespace NetCore.Areas.Admin.Controllers
             _userService = userService;
             _authorizationService = authorizationService;
         }
-        public async Task<IActionResult> Index()
+        //public async Task<IActionResult> Index()
+        //{
+        //    var result = await _authorizationService.AuthorizeAsync(User, "USER", Operations.Read);
+        //    if (result.Succeeded == false)
+        //    {
+        //        return new RedirectResult("/admin/login/index");
+        //    }
+        //    return View();
+        //}
+        public IActionResult Index()
         {
-            //var result = await _authorizationService.AuthorizeAsync(User, "USER", Operation.Read);
-            //if (result.Succeeded == false)
-            //{
-            //    return new RedirectResult("/admin/login/index");
-            //}
+           
             return View();
         }
         public IActionResult GetAll()

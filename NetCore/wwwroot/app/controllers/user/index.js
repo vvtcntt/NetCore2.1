@@ -68,9 +68,7 @@
                     $('#txtEmail').val(data.Email);
                     $('#txtPhoneNumber').val(data.PhoneNumber);
                     $('#ckStatus').prop('checked', data.Status === 1);
-
                     initRoleList(data.Roles);
-
                     disableFieldEdit(true);
                     $('#modal-add-edit').modal('show');
                     netcore.stopLoading();
@@ -86,7 +84,6 @@
         $('#btnSave').on('click', function (e) {
            // if ($('#frmMaintainance').valid()) {
                 e.preventDefault();
-
                 var id = $('#hidId').val();
                 var fullName = $('#txtFullName').val();
                 var userName = $('#txtUserName').val();
@@ -98,9 +95,8 @@
                     if ($(item).prop('checked') === true)
                         roles.push($(item).prop('value'));
                 });
-            var status1 = $('#ckStatus').prop('checked');
+                var status1 = $('#ckStatus').prop('checked');
                 var status = $('#ckStatus').prop('checked') === true ? 1 : 0;
-
                 $.ajax({
                     type: "POST",
                     url: "/Admin/User/SaveEntity",
@@ -240,19 +236,15 @@
                     $("#lbl-total-records").text(response.RowCount);
                     if (render !== undefined) {
                         $('#tbl-content').html(render);
-
                     }
                     wrapPaging(response.RowCount, function () {
                         loadData();
                     }, isPageChanged);
-
-
                 }
                 else {
                     $('#tbl-content').html('');
                 }
-                netcore.stopLoading();
-            },
+                netcore.stopLoading();            },
             error: function (status) {
                 console.log(status);
             }

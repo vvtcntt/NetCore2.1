@@ -14,24 +14,26 @@ namespace NetCore.Areas.Admin.Components
     public class SideBarViewComponent:ViewComponent
     {
         private IFunctionService _functionService;
+
         public SideBarViewComponent(IFunctionService functionService)
         {
             _functionService = functionService;
         }
+
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var role = ((ClaimsPrincipal)User).getSpecificClaim("Role");
-            List<FunctionViewModel> function;
-            if (role.Split(";").Contains(CommonConstants.AdminRole))
+            var roles = ((ClaimsPrincipal)User).getSpecificClaim("Roles");
+            List<FunctionViewModel> functions;
+            if (roles.Split(";").Contains(CommonConstants.AdminRole))
             {
-                function = await _functionService.GetAll(string.Empty);
+                functions = await _functionService.GetAll(string.Empty);
             }
             else
             {
-                // Get by permistion
-                function = new List<FunctionViewModel>();
+                //TODO: Get by permission
+                functions = new List<FunctionViewModel>();
             }
-            return View(function);
+            return View(functions);
         }
     }
 }
