@@ -20,14 +20,18 @@ namespace NetCore.Application.Implementation
         private IFunctionRepository _functionRepository;
         private IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
+        private IPermissionRepository _permissionRepository;
+        private IRoleService _roleService;
 
         public FunctionService(IMapper mapper,
             IFunctionRepository functionRepository,
-            IUnitOfWork unitOfWork)
+            IUnitOfWork unitOfWork, IPermissionRepository permissionRepository, IRoleService roleService)
         {
             _functionRepository = functionRepository;
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _permissionRepository = permissionRepository;
+            _roleService = roleService;
         }
 
 
@@ -115,6 +119,14 @@ namespace NetCore.Application.Implementation
         public List<FunctionViewModel> GetAllFunc()
         {
              return _functionRepository.FindAll().OrderBy(x => x.ParentId).ProjectTo<FunctionViewModel>().ToList();
+        }
+
+        public Task<List<FunctionViewModel>> GetAllByRole(string roleId)
+        {
+             var permison = _permissionRepository.FindAll(x => x.RoleId.ToString() == roleId && x.CanRead==true).Select(x=>x.FunctionId).ToList();
+            var query = _functionRepository.FindAll(x => permison.Contains(x.Id));
+           
+            return query.OrderBy(x => x.ParentId).ProjectTo<FunctionViewModel>().ToListAsync();
         }
     }
 }

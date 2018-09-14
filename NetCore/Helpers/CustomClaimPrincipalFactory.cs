@@ -20,12 +20,15 @@ namespace NetCore.Helpers
         public async override Task<ClaimsPrincipal> CreateAsync(AppUser user)
         {
             var principal = await base.CreateAsync(user);
-            var role = await _userManager.GetRolesAsync(user);
-            ((ClaimsIdentity)principal.Identity).AddClaims(new[] {
+            var roles = await _userManager.GetRolesAsync(user);
+            ((ClaimsIdentity)principal.Identity).AddClaims(new[]
+            {
+                new Claim(ClaimTypes.NameIdentifier,user.UserName),
                 new Claim("Email",user.Email),
                 new Claim("FullName",user.FullName),
                 new Claim("Avatar",user.Avatar??string.Empty),
-                new Claim("Role",string.Join(";",role))
+                new Claim("Roles",string.Join(";",roles)),
+                new Claim("UserId",user.Id.ToString())
             });
             return principal;
         }

@@ -9,8 +9,10 @@ using NetCore.Infrastructure.Interfaces;
 using NetCore.Utilities.Constants;
 using NetCore.Utilities.Dtos;
 using NetCore.Utilities.Helpers;
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace NetCore.Application.Implementation
@@ -155,7 +157,35 @@ namespace NetCore.Application.Implementation
             _unitOfWork.Commit();
         }
 
-       
+        public void ImportExcel(string filePath, int categoryId)
+        {
+            using (var package = new ExcelPackage(new FileInfo(filePath)))
+            {
+                ExcelWorksheet workSheet = package.Workbook.Worksheets[1];
+                Product product;
+                for (int i = workSheet.Dimension.Start.Row + 1; i <= workSheet.Dimension.End.Row; i++)
+                {
+                    product = new Product();
+                    product.CategoryId = categoryId;
 
+                    product.Name = workSheet.Cells[i, 1].Value.ToString();
+                    product.Code = workSheet.Cells[i, 2].Value.ToString();
+                    product.Description = workSheet.Cells[i, 3].Value.ToString();
+                    decimal.TryParse(workSheet.Cells[i, 4].Value.ToString(), out var price);
+                    product.Price = price;
+                    decimal.TryParse(workSheet.Cells[i, 5].Value.ToString(), out var priceSale);
+                    product.PriceSale = priceSale;
+                    product.Content = workSheet.Cells[i, 6].Value.ToString();
+                    product.SeoTitle = workSheet.Cells[i, 7].Value.ToString();
+                    product.SeoKeyWords = workSheet.Cells[i, 8].Value.ToString();
+                    product.SeoDescription = workSheet.Cells[i, 9].Value.ToString();  
+                    product.SeoAlias=  TextHelper.ToUnsignString(workSheet.Cells[i, 1].Value.ToString());
+                    bool.TryParse(workSheet.Cells[i, 10].Value.ToString(), out var homeFlag);
+                    product.HomeFlag = homeFlag;
+                    product.Status = Status.Active;
+                    _productRepository.Add(product);
+                }
+            }
+        }
     }
 }

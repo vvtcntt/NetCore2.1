@@ -11,7 +11,7 @@ namespace NetCore.Application.Interfaces
         void Add(FunctionViewModel function);
         List<FunctionViewModel> GetAllFunc();
         Task<List<FunctionViewModel>> GetAll(string filter);
-
+        Task<List<FunctionViewModel>> GetAllByRole(string roles);
         IEnumerable<FunctionViewModel> GetAllWithParentId(string parentId);
 
         FunctionViewModel GetById(string id);

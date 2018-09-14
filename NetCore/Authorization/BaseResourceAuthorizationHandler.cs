@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authorization.Infrastructure;
-using NetCore.Application.Interfaces;
-using NetCore.Utilities.Constants;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using NetCore.Application.Interfaces;
+using NetCore.Utilities.Constants;
 
 namespace NetCore.Authorization
 {
@@ -20,7 +20,6 @@ namespace NetCore.Authorization
         }
         protected override async Task HandleRequirementAsync(AuthorizationHandlerContext context, OperationAuthorizationRequirement requirement, string resource)
         {
-            //var roles = ((ClaimsIdentity)context.User.Identity).Claims.FirstOrDefault();
             var roles = ((ClaimsIdentity)context.User.Identity).Claims.FirstOrDefault(x => x.Type == CommonConstants.UserClaims.Roles);
             if (roles != null)
             {

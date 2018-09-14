@@ -14,11 +14,10 @@ namespace NetCore.Application.Interfaces
         Task DeleteAsync(Guid id);
 
         Task<List<AppRoleViewModel>> GetAllAsync();
-
         PagedResult<AppRoleViewModel> GetAllPagingAsync(string keyword, int page, int pageSize);
 
         Task<AppRoleViewModel> GetById(Guid id);
-
+ 
 
         Task UpdateAsync(AppRoleViewModel userVm);
 

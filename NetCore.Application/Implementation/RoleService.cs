@@ -22,14 +22,14 @@ namespace NetCore.Application.Implementation
         private IFunctionRepository _functionRepository;
         private IPermissionRepository _permissionRepository;
         private IUnitOfWork _unitOfWork;
-        public RoleService(RoleManager<AppRole> roleManager, IUnitOfWork unitOfWork,
+         public RoleService(RoleManager<AppRole> roleManager, IUnitOfWork unitOfWork,
          IFunctionRepository functionRepository, IPermissionRepository permissionRepository)
         {
             _unitOfWork = unitOfWork;
             _roleManager = roleManager;
             _functionRepository = functionRepository;
             _permissionRepository = permissionRepository;
-        }
+         }
         public async Task<bool> AddAsync(AppRoleViewModel roleVm)
         {
             var role = new AppRole()
@@ -117,8 +117,8 @@ namespace NetCore.Application.Implementation
                         };
             return query.ToList();
         }
-
-        public void SavePermission(List<PermissionViewModel> permissionVms, Guid roleId)
+ 
+            public void SavePermission(List<PermissionViewModel> permissionVms, Guid roleId)
         {
             var permissions = Mapper.Map<List<PermissionViewModel>, List<Permission>>(permissionVms);
             var oldPermission = _permissionRepository.FindAll().Where(x => x.RoleId == roleId).ToList();

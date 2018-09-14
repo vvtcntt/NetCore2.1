@@ -14,7 +14,7 @@ namespace NetCore.Application.Interfaces
         ProductViewModel Add(ProductViewModel productVm);
         void delete(int id);
         void Save();
-        //void ImportExcel(string filePath, int categoryId);
+        void ImportExcel(string filePath, int categoryId);
         void Update(ProductViewModel productVm);
     }
 }
