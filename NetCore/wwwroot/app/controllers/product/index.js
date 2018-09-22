@@ -1,6 +1,9 @@
 ﻿var productController = function () {
+    var quantityManagenment = new QuantityManagement();
     this.initialize = function () {
         loadCategories(); loadData(); registerEvents(); registerControls();
+
+        quantityManagenment.initialize();
     }
     function registerControls() {
         CKEDITOR.replace('txtContM', {});

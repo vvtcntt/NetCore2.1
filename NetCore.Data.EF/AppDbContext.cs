@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using NetCore.Data.EF.Configruations;
 using NetCore.Data.EF.Extensions;
 using NetCore.Data.Entites;
+using NetCore.Data.Entities;
 using NetCore.Data.Interfaces;
 using System;
 using System.IO;
@@ -41,7 +42,7 @@ namespace NETCORE.Data.EF
         public DbSet<Function> Functions { set; get; }
         public DbSet<Tag> Tags { set; get; }
         public DbSet<Permission> Permissions { set; get; }
-
+        public DbSet<ProductQuantity> ProductQuantitys { set; get; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             #region Identity Config

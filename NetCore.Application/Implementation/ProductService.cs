@@ -3,6 +3,7 @@ using AutoMapper.QueryableExtensions;
 using NetCore.Application.Interfaces;
 using NetCore.Application.ViewModels.Product;
 using NetCore.Data.Entites;
+using NetCore.Data.Entities;
 using NetCore.Data.Enums;
 using NetCore.Data.IRepositories;
 using NetCore.Infrastructure.Interfaces;
@@ -28,19 +29,16 @@ namespace NetCore.Application.Implementation
         private IProductRepository _productRepository;
         private ITagRepository _tagRepository;
         private IUnitOfWork _unitOfWork;
+        private IProductQuantityRepository _productQuantityRepository;
 
-        public ProductService(IProductRepository productRepository, IProductTagRepository productTagRepository, ITagRepository tagRepository, IUnitOfWork unitOfWork)
+        public ProductService(IProductRepository productRepository, IProductTagRepository productTagRepository, ITagRepository tagRepository, IUnitOfWork unitOfWork, IProductQuantityRepository productQuantityRepository)
         {
             _productRepository = productRepository;
             _productTagRepository = productTagRepository;
             _tagRepository = tagRepository;
             _unitOfWork = unitOfWork;
+            _productQuantityRepository = productQuantityRepository;
         }
-
-
-
-       
-
         public List<ProductViewModel> GetAll()
         {
             return _productRepository.FindAll(x => x.ProductCategory).ProjectTo<ProductViewModel>().ToList();
@@ -186,6 +184,31 @@ namespace NetCore.Application.Implementation
                     _productRepository.Add(product);
                 }
             }
+        }
+
+       
+
+        
+
+        public void AddQuantity(int productId, List<ProductQuantityViewModel> quantities)
+        {
+            _productQuantityRepository.RemoveMultiple(_productQuantityRepository.FindAll(x => x.ProductId == productId).ToList());
+            foreach (var quantity in quantities)
+            {
+                _productQuantityRepository.Add(new ProductQuantity()
+                {
+                    ProductId = productId,
+                    ColorId = quantity.ColorId,
+                    SizeId = quantity.SizeId,
+                    Quantity = quantity.Quantity
+                });
+            }
+        }
+
+        List<ProductQuantityViewModel> IProductService.GetQuantities(int productId)
+        {
+
+            return _productQuantityRepository.FindAll(x => x.ProductId == productId).ProjectTo<ProductQuantityViewModel>().ToList();
         }
     }
 }

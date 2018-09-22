@@ -2,6 +2,7 @@
     ViewData["Title"] = "Index";
 }
 @section Scripts{
+    <script src="~/app/controllers/product/quantitty-management.js"></script>
     <script src="~/app/controllers/product/index.js"></script>
     <script src="~/vendor/jquery-easyui/js/jquery.easyui.min.js"></script>
 
@@ -115,7 +116,10 @@
     <tr>
         <th>
             <button class="btn btn-default btn-sm btnEdit" data-id="{{Id}}"><i class="fa fa-pencil"></i></button>
-            <button class="btn btn-danger btn-sm btnDelele"  data-id="{{Id}}"><i class="fa fa-trash"></i></button>
+            <button class="btn btn-danger btn-sm btnDelele" data-id="{{Id}}"><i class="fa fa-trash"></i></button>
+            <a href="#" data-id="{{Id}}" class="btn btn-xs btn-images"><i class="fa fa-image"></i></a>
+            <a href="#" data-id="{{Id}}" class="btn btn-xs btn-quantity"><i class="fa fa-hourglass-start"></i></a>
+            <a href="#" data-id="{{Id}}" class="btn btn-xs btn-whole-price"><i class="fa fa-money"></i></a>
         </th>
         <td>{{{ImageThumbs}}}</td>
         <td>{{Name}}</td>
@@ -128,3 +132,4 @@
 
 <partial name="_AddEditModal.cshtml" />
 <partial name="_ImportExcelModal.cshtml" />
+<partial name="_QuantityManagement.cshtml" />
