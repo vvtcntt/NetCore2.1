@@ -91,17 +91,17 @@ namespace NetCore.Data.EF
             }
 
 
-            //if (_context.Colors.Count() == 0)
-            //{
-            //    List<Color> listColor = new List<Color>()
-            //    {
-            //        new Color() {Name="Black", Code="#000000" },
-            //        new Color() {Name="White", Code="#FFFFFF"},
-            //        new Color() {Name="Red", Code="#ff0000" },
-            //        new Color() {Name="Blue", Code="#1000ff" },
-            //    };
-            //    _context.Colors.AddRange(listColor);
-            //}
+            if (_context.Colors.Count() == 0)
+            {
+                List<Color> listColor = new List<Color>()
+                {
+                    new Color() {Name="Black", Code="#000000" },
+                    new Color() {Name="White", Code="#FFFFFF"},
+                    new Color() {Name="Red", Code="#ff0000" },
+                    new Color() {Name="Blue", Code="#1000ff" },
+                };
+                _context.Colors.AddRange(listColor);
+            }
 
 
 

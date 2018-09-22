@@ -82,12 +82,16 @@ namespace NetCore
             services.AddTransient<IProductTagRepository, ProductTagRepository>();
             services.AddTransient<ITagRepository, TagRepository>();
             services.AddTransient<IPermissionRepository, PermissionRepository>();
-
+            services.AddTransient<IBillRepository, BillRepository>();
+            services.AddTransient<IBillDetailRepository, BillDetailRepository>();
+            services.AddTransient<IColorRepository, ColorRepository>();
+            services.AddTransient<ISizeRepository, SizeRepository>();
 
             //Service
             services.AddTransient<IProductCategoryService, ProductCategoryService>();
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<IFunctionService, FunctionService>();
+            services.AddTransient<IBillService, BillService>();
 
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IRoleService, RoleService>();

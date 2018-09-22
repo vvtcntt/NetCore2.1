@@ -16,7 +16,7 @@ namespace NetCore.Data.Entites
         public Bill() { }
 
         public Bill(string customerName, string customerAddress, string customerMobile, string customerMessage,
-            BillStatus billStatus, PaymentMethod paymentMethod, Status status, Guid customerId)
+            BillStatus billStatus, PaymentMethod paymentMethod, Status status, Guid? customerId)
         {
             CustomerName = customerName;
             CustomerAddress = customerAddress;
@@ -29,7 +29,7 @@ namespace NetCore.Data.Entites
         }
 
         public Bill(int id, string customerName, string customerAddress, string customerMobile, string customerMessage,
-           BillStatus billStatus, PaymentMethod paymentMethod, Status status, Guid customerId)
+           BillStatus billStatus, PaymentMethod paymentMethod, Status status, Guid? customerId)
         {
             Id = id;
             CustomerName = customerName;
@@ -52,27 +52,19 @@ namespace NetCore.Data.Entites
         [Required]
         [MaxLength(50)]
         public string CustomerMobile { set; get; }
-
         [Required]
         [MaxLength(256)]
         public string CustomerMessage { set; get; }
-
         public PaymentMethod PaymentMethod { set; get; }
-
         public BillStatus BillStatus { set; get; }
-
         public DateTime DateCreated { set; get; }
         public DateTime DateModified { set; get; }
-
         [DefaultValue(Status.Active)]
         public Status Status { set; get; } = Status.Active;
-
         [StringLength(450)]
-        public Guid CustomerId { set; get; }
-
+        public Guid? CustomerId { set; get; }
         [ForeignKey("CustomerId")]
         public virtual AppUser User { set; get; }
-
         public virtual ICollection<BillDetail> BillDetails { set; get; }
     }
 }

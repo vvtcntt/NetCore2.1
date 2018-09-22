@@ -125,11 +125,11 @@ namespace NetCore.Data.Entites
 
         [Required]
         [DefaultValue(0)]
-        public decimal? Price { get; set; }
+        public decimal Price { get; set; }
 
         [Required]
         [DefaultValue(0)]
-        public decimal? PriceSale { get; set; }
+        public decimal PriceSale { get; set; }
 
         [StringLength(250)]
         public string NotePrice { get; set; }

@@ -27,6 +27,8 @@ namespace NetCore.Application.AutoMapper
            c.Email, c.PhoneNumber, c.Avatar, c.Status));
             CreateMap<FunctionViewModel, Function>()
            .ConstructUsing(c => new Function(c.Id,c.Name,c.URL,c.ParentId,c.IconCss,c.SortOrder));
+            CreateMap<BillViewModel, Bill>().ConstructUsing(c => new Bill(c.Id,c.CustomerName, c.CustomerAddress, c.CustomerMobile, c.CustomerMessage, c.BillStatus, c.PaymentMethod, c.Status,c.CustomerId));
+            CreateMap<BillDetailViewModel, BillDetail>().ConstructUsing(c => new BillDetail(c.Id,c.ProductId,c.Quantity,c.Price,c.ColorId,c.SizeId));
         }
     }
 }

@@ -17,6 +17,11 @@ namespace NetCore.Application.AutoMapper
             CreateMap<Function, FunctionViewModel>();
             CreateMap<AppUser, AppUserViewModel>();
             CreateMap<AppRole, AppRoleViewModel>();
+            CreateMap<Bill, BillViewModel>().MaxDepth(2);
+            CreateMap<BillDetail, BillDetailViewModel>().MaxDepth(2);
+            CreateMap<Color, ColorViewModel>().MaxDepth(2);
+            CreateMap<Size, SizeViewModel>().MaxDepth(2);
+
         }
     }
 }

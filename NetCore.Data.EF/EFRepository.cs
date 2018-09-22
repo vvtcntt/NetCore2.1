@@ -7,6 +7,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using NETCORE.Data.EF;
+using NetCore.Data.Interfaces;
 
 namespace NetCore.Data.EF
 {
@@ -85,5 +86,32 @@ namespace NetCore.Data.EF
         {
             _context.Set<T>().Update(entity);
         }
+        //public TEntity Update(TEntity entity)
+        //{
+        //    var dbEntity = DbContext.Set<TEntity>().AsNoTracking().Single(p => p.Id.Equals(entity.Id));
+        //    var databaseEntry = DbContext.Entry(dbEntity);
+        //    var inputEntry = DbContext.Entry(entity);
+
+        //    //no items mentioned, so find out the updated entries
+        //    IEnumerable<string> dateProperties = typeof(IDateTracking).GetPublicProperties().Select(x => x.Name);
+
+        //    var allProperties = databaseEntry.Metadata.GetProperties()
+        //    .Where(x => !dateProperties.Contains(x.Name));
+
+        //    foreach (var property in allProperties)
+        //    {
+        //        var proposedValue = inputEntry.Property(property.Name).CurrentValue;
+        //        var originalValue = databaseEntry.Property(property.Name).OriginalValue;
+
+        //        if (proposedValue != null && !proposedValue.Equals(originalValue))
+        //        {
+        //            databaseEntry.Property(property.Name).IsModified = true;
+        //            databaseEntry.Property(property.Name).CurrentValue = proposedValue;
+        //        }
+        //    }
+
+        //    var result = DbContext.Set<TEntity>().Update(dbEntity);
+        //    return result.Entity;
+        //}
     }
 }
