@@ -892,6 +892,27 @@ namespace NetCore.Data.EF.Migrations
                     b.ToTable("ProductQuantities");
                 });
 
+            modelBuilder.Entity("NetCore.Data.Entities.WholePrice", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("FromQuantity");
+
+                    b.Property<decimal>("Price");
+
+                    b.Property<int>("ProductId");
+
+                    b.Property<int>("ToQuantity");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("WholePrices");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
                     b.HasOne("NetCore.Data.Entites.AppRole")
@@ -1052,6 +1073,14 @@ namespace NetCore.Data.EF.Migrations
                     b.HasOne("NetCore.Data.Entites.Size", "Size")
                         .WithMany()
                         .HasForeignKey("SizeId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("NetCore.Data.Entities.WholePrice", b =>
+                {
+                    b.HasOne("NetCore.Data.Entites.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

@@ -20,5 +20,7 @@ namespace NetCore.Application.Interfaces
         void Update(ProductViewModel productVm);
         void AddImages(int productId, string[] Images);
         List<ProductImageViewModel> GetImages(int productId);
+        void AddWholePrice(int productId, List<WholePriceViewModel> wholePrice);
+        List<WholePriceViewModel> GetWholePrices (int productId);
     }
 }

@@ -2,6 +2,8 @@
     ViewData["Title"] = "Index";
 }
 @section Scripts{
+    <script src="~/app/controllers/product/whole-price-management.js"></script>
+
     <script src="~/app/controllers/product/quantitty-management.js"></script>
     <script src="~/app/controllers/product/image-management.js"></script>
     <script src="~/app/controllers/product/index.js"></script>
@@ -20,7 +22,13 @@
     <div class="title_left">
         <h3>Product <small>List Products</small></h3>
     </div>
-    <div class="title_right">
+    <div class="title_right"><div class="col-md-6 col-sm-2 col-xs-12 form-group pull-right top_search ">
+    <button class="btn btn-success" id="btnCreate" type="button">Create</button>
+    <a class="btn btn-danger" href="~/template/productImporttemplate.xlsx">Download Template</a>
+    <button class="btn btn-primary" id="btnExport" type="button"><i class="fa fa-forward"></i></button>
+    <button class="btn btn-primary" id="btnInport" type="button"><i class="fa fa-file-excel-o"></i></button>
+
+</div>
         <div class="col-md-3 col-sm-5 col-xs-12 form-group pull-right top_search">
             <div class="input-group">
                 <input type="text" id="txtKeyword" class="form-control" placeholder="Search for...">
@@ -34,13 +42,7 @@
                 <option value="1">Chọn danh mục</option>
             </select>
         </div>
-        <div class="col-md-6 col-sm-2 col-xs-12 form-group pull-right top_search ">
-            <button class="btn btn-success" id="btnCreate" type="button">Create</button>
-            <a class="btn btn-danger" href="~/template/productImporttemplate.xlsx">Download Template</a>
-            <button class="btn btn-primary" id="btnExport" type="button"><i class="fa fa-forward"></i></button>
-            <button class="btn btn-primary" id="btnInport" type="button"><i class="fa fa-file-excel-o"></i></button>
-
-        </div>
+        
 
     </div>
 </div>
@@ -75,13 +77,14 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th width="10%">#</th>
+
                             <th>Image</th>
                             <th>Name</th>
                             <th>Category</th>
                             <th>Price</th>
                             <th>Date Created</th>
                             <th>Status</th>
+                            <th width="20%">#</th>
                         </tr>
                     </thead>
                     <tbody id="tbl-content"></tbody>
@@ -115,19 +118,20 @@
 <script id="table-template" type="x-tmpl-mastache">
 
     <tr>
-        <th>
-            <button class="btn btn-default btn-sm btnEdit" data-id="{{Id}}"><i class="fa fa-pencil"></i></button>
-            <button class="btn btn-danger btn-sm btnDelele" data-id="{{Id}}"><i class="fa fa-trash"></i></button>
-            <a href="#" data-id="{{Id}}" class="btn btn-xs btn-images"><i class="fa fa-image"></i></a>
-            <a href="#" data-id="{{Id}}" class="btn btn-xs btn-quantity"><i class="fa fa-hourglass-start"></i></a>
-            <a href="#" data-id="{{Id}}" class="btn btn-xs btn-whole-price"><i class="fa fa-money"></i></a>
-        </th>
+
         <td>{{{ImageThumbs}}}</td>
         <td>{{Name}}</td>
         <td>{{CategoryName}}</td>
         <td>{{Price}}</td>
         <td>{{{DateCreated}}}</td>
         <td>{{{Status}}}</td>
+        <th>
+            <a href="#" class=" btn-sm btnEdit" data-id="{{Id}}"><i class="fa fa-pencil"></i></a>
+            <a href="#"  class=" btn-sm btnDelele" data-id="{{Id}}"><i class="fa fa-trash"></i></a>
+            <a href="#" data-id="{{Id}}" class="btn btn-xs btn-images"><i class="fa fa-image"></i></a>
+            <a href="#" data-id="{{Id}}" class="btn btn-xs btn-quantity"><i class="fa fa-hourglass-start"></i></a>
+            <a href="#" data-id="{{Id}}" class="btn btn-xs btn-whole-price"><i class="fa fa-money"></i></a>
+        </th>
     </tr>
 </script>
 
@@ -135,3 +139,4 @@
 <partial name="_ImportExcelModal.cshtml" />
 <partial name="_QuantityManagement.cshtml" />
 <partial name="_ImageManagement.cshtml" />
+<partial name="_WholePriceManagement.cshtml" />

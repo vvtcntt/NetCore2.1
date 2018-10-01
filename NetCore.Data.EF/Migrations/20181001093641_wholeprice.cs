@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace NetCore.Data.EF.Migrations
 {
-    public partial class intia : Migration
+    public partial class wholeprice : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -458,7 +458,7 @@ namespace NetCore.Data.EF.Migrations
                     DateCreated = table.Column<DateTime>(nullable: false),
                     DateModified = table.Column<DateTime>(nullable: false),
                     Status = table.Column<int>(nullable: false),
-                    CustomerId = table.Column<Guid>(maxLength: 450, nullable: false)
+                    CustomerId = table.Column<Guid>(maxLength: 450, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -468,7 +468,7 @@ namespace NetCore.Data.EF.Migrations
                         column: x => x.CustomerId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -662,6 +662,40 @@ namespace NetCore.Data.EF.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ProductQuantities",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ProductId = table.Column<int>(nullable: false),
+                    SizeId = table.Column<int>(nullable: false),
+                    ColorId = table.Column<int>(nullable: false),
+                    Quantity = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProductQuantities", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ProductQuantities_Colors_ColorId",
+                        column: x => x.ColorId,
+                        principalTable: "Colors",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ProductQuantities_Products_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Products",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ProductQuantities_Sizes_SizeId",
+                        column: x => x.SizeId,
+                        principalTable: "Sizes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ProductTags",
                 columns: table => new
                 {
@@ -685,6 +719,28 @@ namespace NetCore.Data.EF.Migrations
                         principalTable: "Tags",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "WholePrices",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ProductId = table.Column<int>(nullable: false),
+                    FromQuantity = table.Column<int>(nullable: false),
+                    ToQuantity = table.Column<int>(nullable: false),
+                    Price = table.Column<decimal>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_WholePrices", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_WholePrices_Products_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Products",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -787,6 +843,21 @@ namespace NetCore.Data.EF.Migrations
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_ProductQuantities_ColorId",
+                table: "ProductQuantities",
+                column: "ColorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProductQuantities_ProductId",
+                table: "ProductQuantities",
+                column: "ProductId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProductQuantities_SizeId",
+                table: "ProductQuantities",
+                column: "SizeId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Products_CategoryId",
                 table: "Products",
                 column: "CategoryId");
@@ -800,6 +871,11 @@ namespace NetCore.Data.EF.Migrations
                 name: "IX_ProductTags_TagId",
                 table: "ProductTags",
                 column: "TagId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_WholePrices_ProductId",
+                table: "WholePrices",
+                column: "ProductId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -862,19 +938,22 @@ namespace NetCore.Data.EF.Migrations
                 name: "ProductImages");
 
             migrationBuilder.DropTable(
+                name: "ProductQuantities");
+
+            migrationBuilder.DropTable(
                 name: "ProductSizes");
 
             migrationBuilder.DropTable(
                 name: "ProductTags");
 
             migrationBuilder.DropTable(
+                name: "WholePrices");
+
+            migrationBuilder.DropTable(
                 name: "Announcements");
 
             migrationBuilder.DropTable(
                 name: "Bills");
-
-            migrationBuilder.DropTable(
-                name: "Sizes");
 
             migrationBuilder.DropTable(
                 name: "Functions");
@@ -886,10 +965,13 @@ namespace NetCore.Data.EF.Migrations
                 name: "Colors");
 
             migrationBuilder.DropTable(
-                name: "Products");
+                name: "Sizes");
 
             migrationBuilder.DropTable(
                 name: "Tags");
+
+            migrationBuilder.DropTable(
+                name: "Products");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

@@ -43,6 +43,7 @@ namespace NETCORE.Data.EF
         public DbSet<Tag> Tags { set; get; }
         public DbSet<Permission> Permissions { set; get; }
         public DbSet<ProductQuantity> ProductQuantitys { set; get; }
+        public DbSet<WholePrice> WholePrices { set; get; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             #region Identity Config

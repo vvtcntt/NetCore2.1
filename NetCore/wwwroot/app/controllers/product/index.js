@@ -1,11 +1,14 @@
 ﻿var productController = function () {
     var quantityManagenment = new QuantityManagement();
     var imageManagement = new ImageManagement();
+    var wholePriceManagement = new WholePriceManagement();
+
     this.initialize = function () {
         loadCategories(); loadData(); registerEvents(); registerControls();
 
         quantityManagenment.initialize();
         imageManagement.initialize();
+        wholePriceManagement.initialize();
     }
     function registerControls() {
         CKEDITOR.replace('txtContM', {});

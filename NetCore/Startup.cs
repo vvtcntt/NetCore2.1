@@ -88,6 +88,7 @@ namespace NetCore
             services.AddTransient<ISizeRepository, SizeRepository>();
             services.AddTransient<IProductQuantityRepository, ProductQuantityRepository>();
             services.AddTransient<IProductImageRepository, ProductImageRepository>();
+            services.AddTransient<IWholePriceRepository, WholePriceRepository>();
 
             //Service
             services.AddTransient<IProductCategoryService, ProductCategoryService>();

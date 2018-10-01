@@ -10,8 +10,8 @@ using NETCORE.Data.EF;
 namespace NetCore.Data.EF.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20180919021845_initalCustomId")]
-    partial class initalCustomId
+    [Migration("20181001093641_wholeprice")]
+    partial class wholeprice
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -869,6 +869,52 @@ namespace NetCore.Data.EF.Migrations
                     b.ToTable("Tags");
                 });
 
+            modelBuilder.Entity("NetCore.Data.Entities.ProductQuantity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ColorId");
+
+                    b.Property<int>("ProductId");
+
+                    b.Property<int>("Quantity");
+
+                    b.Property<int>("SizeId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ColorId");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("SizeId");
+
+                    b.ToTable("ProductQuantities");
+                });
+
+            modelBuilder.Entity("NetCore.Data.Entities.WholePrice", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("FromQuantity");
+
+                    b.Property<decimal>("Price");
+
+                    b.Property<int>("ProductId");
+
+                    b.Property<int>("ToQuantity");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("WholePrices");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
                     b.HasOne("NetCore.Data.Entites.AppRole")
@@ -1012,6 +1058,32 @@ namespace NetCore.Data.EF.Migrations
                     b.HasOne("NetCore.Data.Entites.Tag", "Tag")
                         .WithMany("ProductTags")
                         .HasForeignKey("TagId");
+                });
+
+            modelBuilder.Entity("NetCore.Data.Entities.ProductQuantity", b =>
+                {
+                    b.HasOne("NetCore.Data.Entites.Color", "Color")
+                        .WithMany()
+                        .HasForeignKey("ColorId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("NetCore.Data.Entites.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("NetCore.Data.Entites.Size", "Size")
+                        .WithMany()
+                        .HasForeignKey("SizeId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("NetCore.Data.Entities.WholePrice", b =>
+                {
+                    b.HasOne("NetCore.Data.Entites.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }
