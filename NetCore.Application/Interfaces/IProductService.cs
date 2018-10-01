@@ -18,5 +18,7 @@ namespace NetCore.Application.Interfaces
         void Save();
         void ImportExcel(string filePath, int categoryId);
         void Update(ProductViewModel productVm);
+        void AddImages(int productId, string[] Images);
+        List<ProductImageViewModel> GetImages(int productId);
     }
 }
