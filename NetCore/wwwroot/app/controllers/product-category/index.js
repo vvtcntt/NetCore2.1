@@ -291,7 +291,7 @@
                                     items: children
                                 },
                                 success: function (res) {
-                                    netcore.notify('Deleted success', 'success');
+                                    netcore.notify('update success', 'success');
                                     loadData();
                                 }
                             });
@@ -306,7 +306,7 @@
                                     targetId: targetNode.id
                                 },
                                 success: function (res) {
-                                    netcore.notify('Deleted success', 'success');
+                                    netcore.notify('update success', 'success');
                                     loadData();
                                 }
                             });

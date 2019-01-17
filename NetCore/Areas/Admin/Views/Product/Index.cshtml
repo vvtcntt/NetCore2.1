@@ -2,6 +2,7 @@
     ViewData["Title"] = "Index";
 }
 @section Scripts{
+
     <script src="~/app/controllers/product/whole-price-management.js"></script>
 
     <script src="~/app/controllers/product/quantitty-management.js"></script>
@@ -20,15 +21,15 @@
 
 <div class="page-title">
     <div class="title_left">
-        <h3>Product <small>List Products</small></h3>
     </div>
-    <div class="title_right"><div class="col-md-6 col-sm-2 col-xs-12 form-group pull-right top_search ">
-    <button class="btn btn-success" id="btnCreate" type="button">Create</button>
-    <a class="btn btn-danger" href="~/template/productImporttemplate.xlsx">Download Template</a>
-    <button class="btn btn-primary" id="btnExport" type="button"><i class="fa fa-forward"></i></button>
-    <button class="btn btn-primary" id="btnInport" type="button"><i class="fa fa-file-excel-o"></i></button>
+    <div class="title_right">
+        <div class="col-md-6 col-sm-2 col-xs-12 form-group pull-right top_search ">
+            <button class="btn btn-success" id="btnCreate" type="button">Create</button>
+            <a class="btn btn-danger" href="~/template/productImporttemplate.xlsx">Download Template</a>
+            <button class="btn btn-primary" id="btnExport" type="button"><i class="fa fa-forward"></i></button>
+            <button class="btn btn-primary" id="btnInport" type="button"><i class="fa fa-file-excel-o"></i></button>
 
-</div>
+        </div>
         <div class="col-md-3 col-sm-5 col-xs-12 form-group pull-right top_search">
             <div class="input-group">
                 <input type="text" id="txtKeyword" class="form-control" placeholder="Search for...">
@@ -37,12 +38,11 @@
                 </span>
             </div>
         </div>
-        <div class="col-md-3 col-sm-5 col-xs-12 form-group pull-right top_search ">
-            <select class="form-control" id="ddlCategory">
-                <option value="1">Chọn danh mục</option>
-            </select>
+        <div class="col-md-3 col-sm-5 col-xs-12 form-group  top_search ">
+            
+            <input id="ddlCategoryIdM" class="form-control" name="ddlCategoryIdM" value="" style=" float:left; margin:5px !important">
         </div>
-        
+
 
     </div>
 </div>
@@ -51,7 +51,7 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
             <div class="x_title">
-                <h2>Product <small>ListProduct</small></h2>
+                <h2> <small>Product List</small></h2>
                 <ul class="nav navbar-right panel_toolbox">
                     <li>
                         <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -74,6 +74,7 @@
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
+               
                 <table class="table">
                     <thead>
                         <tr>
@@ -82,9 +83,12 @@
                             <th>Name</th>
                             <th>Category</th>
                             <th>Price</th>
-                            <th>Date Created</th>
-                            <th>Status</th>
-                            <th width="20%">#</th>
+                            <th>PriceSale</th>
+                            <th class="col-lg-1">SortOrd</th>
+                            <th>Active</th>
+                            <th>Product Sale</th>
+                            <th>Home Flag</th>
+                            <th width="20%">Action</th>
                         </tr>
                     </thead>
                     <tbody id="tbl-content"></tbody>
@@ -119,18 +123,23 @@
 
     <tr>
 
-        <td>{{{ImageThumbs}}}</td>
-        <td>{{Name}}</td>
+        <td> <a href="#" class=" btn-sm btnEdit" data-id="{{Id}}">{{{ImageThumbs}}}</a></td>
+        <td> <a href="#" class=" btn-sm btnEdit" data-id="{{Id}}">{{Name}}</a></td>
         <td>{{CategoryName}}</td>
-        <td>{{Price}}</td>
-        <td>{{{DateCreated}}}</td>
-        <td>{{{Status}}}</td>
+        <td><input class="form-control btnEditPrice" type="text" value="{{Price}}" data-id="{{Id}}" /></td>
+        <td><input class="form-control btnEditPriceSale" type="text" value="{{PriceSale}}" data-id="{{Id}}" /></td>
+        <td class="col-sm-2"><input class="form-control btnEditSortOrd " type="text" value="{{SortOrder}}" data-id="{{Id}}" /></td>
+        <td align="center"><a href="#" data-id="{{Id}}" class="btnActive" title="{{Actives}}">{{{Active}}}</a></td>
+        <td align="center"><a href="#" data-id="{{Id}}" class="btnProductSale" title="{{ProductSales}}">{{{ProductSale}}}</a></td>
+        <td align="center"><a href="#" data-id="{{Id}}" class="btnHomeFlag" title="{{HomeFlags}}">{{{HomeFlag}}}</a></td>
         <th>
             <a href="#" class=" btn-sm btnEdit" data-id="{{Id}}"><i class="fa fa-pencil"></i></a>
-            <a href="#"  class=" btn-sm btnDelele" data-id="{{Id}}"><i class="fa fa-trash"></i></a>
+            <a href="#" class=" btn-sm btnDelele" data-id="{{Id}}"><i class="fa fa-trash"></i></a>
             <a href="#" data-id="{{Id}}" class="btn btn-xs btn-images"><i class="fa fa-image"></i></a>
             <a href="#" data-id="{{Id}}" class="btn btn-xs btn-quantity"><i class="fa fa-hourglass-start"></i></a>
             <a href="#" data-id="{{Id}}" class="btn btn-xs btn-whole-price"><i class="fa fa-money"></i></a>
+
+
         </th>
     </tr>
 </script>

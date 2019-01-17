@@ -15,7 +15,6 @@ namespace NetCore.Data.Entites
        
         public DateTime DateCreated { set; get; }
         public DateTime DateModified { set; get; }
-        public Status Status { set; get; }
         public string Name { set; get; }
         public int? CategoryId { set; get; }
         [StringLength(200)]
@@ -34,5 +33,6 @@ namespace NetCore.Data.Entites
         public string SeoKeyWords  { set; get; }
         public string SeoDescription  { set; get; }
         public int SortOrder  { set; get; }
+        public Active Active { set; get; }
     }
 }

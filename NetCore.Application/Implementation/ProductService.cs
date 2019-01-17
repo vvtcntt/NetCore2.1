@@ -50,7 +50,7 @@ namespace NetCore.Application.Implementation
         }
         public PagedResult<ProductViewModel> GetAllPaging(int? categogyId, string keyword, int page, int pageSize)
         {
-            var query = _productRepository.FindAll(p => p.Status == Data.Enums.Status.Active);
+            var query = _productRepository.FindAll();
             if (!string.IsNullOrEmpty(keyword))
             {
                 query = query.Where(p => p.Name.Contains(keyword));
@@ -119,34 +119,43 @@ namespace NetCore.Application.Implementation
 
             if (!string.IsNullOrEmpty(productVm.Tag))
             {
-                string[] tags = productVm.Tag.Split(',');
-                foreach (var item in tags)
-                {
-                    var tagId = TextHelper.ToUnsignString(item);
-                    if (!_tagRepository.FindAll(x => x.Id == tagId).Any())
-                    {
-                        Tag tag = new Tag
-                        {
-                            Id = tagId,
-                            Name = item,
-                            Type = CommonConstants.ProductTag
-                        };
-                        _tagRepository.Add(tag);
-                        _productTagRepository.RemoveMultiple(_productTagRepository.FindAll(x => x.Id == productVm.Id).ToList());
-                        ProductTag productTag = new ProductTag
-                        {
-                            TagId = tagId
-                        };
+              
 
-                        _productTagRepository.Add(productTag);
-                    }
-                }
+                //_productTagRepository.RemoveMultiple(_productTagRepository.FindAll(x => x.ProductId == productVm.Id).ToList());
+                //_tagRepository.RemoveMultiple(_tagRepository.FindAll(x => x.Id == "1").ToList());
+                //_unitOfWork.Commit();
+
+                //string[] tags = productVm.Tag.Split(',');
+                //foreach (var item in tags)
+                //{
+                //    var tagId = TextHelper.ToUnsignString(item);
+                //    if (!_tagRepository.FindAll(x => x.Id == tagId).Any())
+                //    {
+                //        Tag tag = new Tag
+                //        {
+                //            Id = tagId,
+                //            Name = item,
+                //            Type = CommonConstants.ProductTag
+                //        };
+                //        _tagRepository.Add(tag);
+               
+                //        ProductTag productTag = new ProductTag
+                //        {
+                //            TagId = tagId,
+                //            ProductId=productVm.Id
+                //        };
+
+                //        _productTagRepository.Add(productTag);
+                //    }
+                //}
+                 
             }
             var product = Mapper.Map<ProductViewModel, Product>(productVm);
-            foreach (var productTag in productTags)
-            {
-                product.ProductTags.Add(productTag);
-            }
+            product.Tag = productVm.Tag;
+            //foreach (var productTag in productTags)
+            //{
+            //    product.ProductTags.Add(productTag);
+            //}
             _productRepository.Update(product);
         }
 
@@ -185,16 +194,11 @@ namespace NetCore.Application.Implementation
                     product.SeoAlias=  TextHelper.ToUnsignString(workSheet.Cells[i, 1].Value.ToString());
                     bool.TryParse(workSheet.Cells[i, 10].Value.ToString(), out var homeFlag);
                     product.HomeFlag = homeFlag;
-                    product.Status = Status.Active;
+                    product.Status = Status.Ready;
                     _productRepository.Add(product);
                 }
             }
         }
-
-       
-
-        
-
         public void AddQuantity(int productId, List<ProductQuantityViewModel> quantities)
         {
             _productQuantityRepository.RemoveMultiple(_productQuantityRepository.FindAll(x => x.ProductId == productId).ToList());
@@ -258,5 +262,61 @@ namespace NetCore.Application.Implementation
             return _wholePriceRepository.FindAll(x => x.ProductId == productId).ProjectTo<WholePriceViewModel>().ToList();
         }
 
+        public void UpdateFast(int id,decimal? price, decimal? priceSale,int?sortOrd, int? active, bool? productSale, bool? homeFlag)
+        {
+            var product = _productRepository.FindById(id);
+            bool activeM = true;
+            if(price.HasValue)
+            {
+                product.Price = price.Value;
+                _productRepository.Update(product);
+            }
+            if (priceSale.HasValue)
+            {
+                product.PriceSale = priceSale.Value;
+                _productRepository.Update(product);
+            }
+            if (sortOrd.HasValue)
+            {
+                product.SortOrder = sortOrd.Value;
+                _productRepository.Update(product);
+            }
+            if (active.HasValue)
+            {
+              if(product.Active==Active.Active)
+                {
+                    product.Active = Active.IsActive;
+                }
+              else
+                {
+                    product.Active = Active.Active;
+                }
+                _productRepository.Update(product);
+            }
+            if (productSale.HasValue)
+            {
+                if (product.ProductSale ==true)
+                {
+                    product.ProductSale = false;
+                }
+                else
+                {
+                    product.ProductSale = true;
+                }
+                _productRepository.Update(product);
+            }
+            if (homeFlag.HasValue)
+            {
+                if (product.HomeFlag == true)
+                {
+                    product.HomeFlag = false;
+                }
+                else
+                {
+                    product.HomeFlag = true;
+                }
+                _productRepository.Update(product);
+            }
+        }
     }
 }

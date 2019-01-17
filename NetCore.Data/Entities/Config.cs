@@ -11,9 +11,46 @@ namespace NetCore.Data.Entites
     [Table("Configs")]
     public class Config:DomainEntity<string>,INameable
     {
+        public Config() { }
+        public Config(string name, string address, string mobile, string hotline, string fax, string email,string emailReceive, string slogan, string imageLogo, string imageFavicon,
+            string content, string userEmail, string passEmail, string analytics, string webMasterTool, string appFacebook, string codeChat, string fanpageFacebook, string fanpageGoogle,
+            string fanpageYoutube, string geoMeta, string color, string host, int port, string timeOut, bool coppy, bool status,  string titleMeta, string keywordMeta, string descriptionMeta)
+        {
+            Name = name;
+            Address = Address;
+            Mobile = mobile;
+            Hotline = hotline;
+            Fax = fax;
+            Email = email;
+            Slogan = slogan;
+            ImageLogo = imageLogo;
+            ImageFavicon = imageFavicon;
+            Content = content;
+            UserMail = userEmail;
+            PassMail = passEmail;
+            Analytics = analytics;
+            WebMasterTool = webMasterTool;
+            AppFacebook = appFacebook;
+            CodeChat = codeChat;
+            FanpageFacebook = fanpageFacebook;
+            FanpageGoogle = fanpageGoogle;
+            FanpageYoutube = fanpageYoutube;
+            GeoMeta = geoMeta;
+            Color = color;
+            Host = host;
+            Port = port;
+            TimeOut = timeOut;
+            EmailReceive = emailReceive;
+            Status = status;
+            Coppy = coppy;
+             TitleMeta = titleMeta;
+            KeywordMeta = keywordMeta;
+            DescriptionMeta = descriptionMeta;
+        }
+     
+        
         public string Name { get; set; }
-
-        [StringLength(250)]
+                [StringLength(250)]
          public string Address { get; set; }
         [StringLength(100)]
          public string Mobile { get; set; }
@@ -24,6 +61,8 @@ namespace NetCore.Data.Entites
         [StringLength(100)]
          public string Email { get; set; }
         [StringLength(100)]
+        public string EmailReceive { get; set; }
+        [StringLength(100)]
          public string Slogan { get; set; }
         [StringLength(250)]
         [Required]
@@ -33,8 +72,8 @@ namespace NetCore.Data.Entites
         public string Content { get; set; }
         [StringLength(100)]
          public string UserMail { get; set; }
-        [StringLength(250)]
-         public string PassMail { get; set; }
+        [StringLength(100)]
+        public string PassMail { get; set; }
         [StringLength(200)]
          public string Analytics { get; set; }
         [StringLength(200)]
@@ -44,7 +83,7 @@ namespace NetCore.Data.Entites
         [StringLength(500)]
          public string CodeChat { get; set; }
         [StringLength(250)]
-         public string FanpgeFacebook { get; set; }
+         public string FanpageFacebook { get; set; }
         [StringLength(250)]
          public string FanpageGoogle { get; set; }
         [StringLength(250)]
@@ -62,17 +101,18 @@ namespace NetCore.Data.Entites
         [Column(TypeName = "varchar(50)")]
         public string TimeOut { get; set; }
         public bool? Coppy { get; set; }
-        public bool? Social { get; set; }
-        public bool? Popup { get; set; }
+        public bool? Status { get; set; }
         [StringLength(250)]
         [Column(TypeName = "varchar(255)")]
-        string TitleMeta { set; get; }
+        public string TitleMeta { set; get; }
         [StringLength(500)]
         [Column(TypeName = "varchar(500)")]
-        string KeywordMeta { set; get; }
+        public string KeywordMeta { set; get; }
         [StringLength(250)]
         [Column(TypeName = "varchar(500)")]
-        string DescriptionMeta { set; get; }
+        public string DescriptionMeta {
+            set; get;
+        }
     }
 
 }

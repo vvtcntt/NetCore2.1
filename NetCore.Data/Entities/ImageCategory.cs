@@ -11,7 +11,7 @@ namespace NetCore.Data.Entites
     public class ImageCategory : DomainEntity<int>, INameable, ISortable, ISwitchable
     {
         public int Ord { set; get; }
-        public Status Status { set; get; }
+        public Active Active { set; get; }
         string INameable.Name { set; get; }
 
         public virtual ICollection<Image> Images { set; get; }

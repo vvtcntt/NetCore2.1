@@ -10,7 +10,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace NetCore.Data.Entites
 {
     [Table("Products")]
-    public class Product : DomainEntity<int>, INameable, ISwitchable, IHasSeoMetaData, IDateTracking, ISortable, IMultiLanguage<int>
+    public class Product : DomainEntity<int>, INameable, ISwitchable, ISwitchStatus, IHasSeoMetaData, IDateTracking, ISortable, IMultiLanguage<int>
     {
         public Product()
         {
@@ -23,8 +23,8 @@ namespace NetCore.Data.Entites
             int warranty, int age, string sale, string size, 
             bool vat, bool news, bool productSale, bool homeFlag,
             int sortOrder, DateTime dateCreate, DateTime dateModifire, string seoTitle,
-            string seoKeywords, string seoDescription, string seoAlias, Status status, 
-            int languageId, int viewCount, Status Active, string tag)
+            string seoKeywords, string seoDescription, string seoAlias, Active active,Status status, 
+            int languageId, int viewCount,  string tag)
         {
 
             Name = name;
@@ -54,15 +54,16 @@ namespace NetCore.Data.Entites
             SeoKeyWords = seoKeywords;
             SeoDescription = seoDescription;
             SeoAlias = seoAlias;
-            Status = status;
+            Active = active;
             LanguageId = languageId;
             ViewCount = viewCount;
+            Status = status;
             Tag = tag; ProductTags = new List<ProductTag>();
 
 
         }
         public Product(int id, string name, int catelogyId, string code, string description, string info, string content, string parameter, string imageDetail, string imageThumb, decimal price, decimal priceSale,
-          string notePrice, int warranty, int age, string sale, string size, bool vat, bool news, bool productSale, bool homeFlag, int sortOrder, DateTime dateCreate, DateTime dateModifire, string seoTitle, string seoKeywords, string seoDescription, string seoAlias, Status status, int languageId, int viewCount, Status Active, string tag)
+          string notePrice, int warranty, int age, string sale, string size, bool vat, bool news, bool productSale, bool homeFlag, int sortOrder, DateTime dateCreate, DateTime dateModifire, string seoTitle, string seoKeywords, string seoDescription, string seoAlias, Active active, Status status, int languageId, int viewCount, string tag)
         {
             Id = id;
             Name = name;
@@ -92,7 +93,7 @@ namespace NetCore.Data.Entites
             SeoKeyWords = seoKeywords;
             SeoDescription = seoDescription;
             SeoAlias = seoAlias;
-            Status = status;
+            Active = active;
             LanguageId = languageId;
             ViewCount = viewCount;
             Tag = tag; ProductTags = new List<ProductTag>();
@@ -159,8 +160,7 @@ namespace NetCore.Data.Entites
         [DefaultValue(0)]
         public int? ViewCount { set; get; }
 
-        public Status Active { set; get; }
-
+ 
         [StringLength(255)]
         public string Tag { set; get; }
 
@@ -170,6 +170,7 @@ namespace NetCore.Data.Entites
         public string SeoKeyWords  { set; get; }
         public string SeoDescription  { set; get; }
         public int SortOrder  { set; get; }
+        public Active Active { set; get; }
         int IMultiLanguage<int>.LanguageId  { set; get; }
     }
 }

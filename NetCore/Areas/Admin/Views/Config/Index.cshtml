@@ -1,0 +1,479 @@
+﻿
+@{
+    ViewData["Title"] = "User List";
+}
+@section Scripts{
+
+    <script src="~/app/controllers/System/index.js"></script>
+    <script>
+        var config = new configController();
+        config.initialize();
+    </script>
+}
+@section Styles{
+}
+<div class="row">
+    <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2><small>Company Infomation</small></h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li>
+                        <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="#">Settings 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Settings 2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <br />
+                <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                    <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-3 col-xs-12" for="company-name">
+                            Company Name <span class="required">*</span>
+                        </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input type="text" id="txtName" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-3 col-xs-12" for="company-address">
+                            Address <span class="required">*</span>
+                        </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input type="text" id="txtAddress" name="txtAddress" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-3 col-xs-12" for="company-Slogan">
+                            Slogan <span class="required">*</span>
+                        </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input type="text" id="txtSlogan" name="txtSlogan" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-3 col-xs-12" for="phone">
+                            Phone <span class="required">*</span>
+                        </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input type="text" id="txtPhone" name="txtPhone" class="form-control col-md-7 col-xs-12">
+                            <span class="fa fa-phone form-control-feedback right" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-3 col-xs-12" for="hotline">
+                            Hotline <span class="required">*</span>
+                        </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input type="text" id="txtHotline" name="txtHotline" class="form-control col-md-7 col-xs-12">
+                            <span class="fa fa-phone form-control-feedback right" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-3 col-xs-12" for="phone">
+                            Fax <span class="required">*</span>
+                        </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input type="text" id="txtFax" name="txtFax" class="form-control col-md-7 col-xs-12">
+                            <span class="fa fa-phone form-control-feedback right" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-3 col-xs-12" for="email">
+                            Email <span class="required">*</span>
+                        </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input type="text" id="txtEmail" name="txtEmail" required="required" class="form-control col-md-7 col-xs-12">
+                            <span class="fa fa-envelope form-control-feedback right" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-3 col-xs-12" for="Logo">
+                            Logo <span class="required">*</span>
+                        </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <div class="input-group">
+                                <input type="text" name="txtLogo" class="form-control" id="txtLogo" />
+                                <input type="file" id="fileLogo" style="display:none" />
+                                <span class="input-group-btn">
+                                    <input type="button"  id="btnSelectLogo" class="btn btn-default" value="Browser" />
+                                </span>
+                            </div><!-- /input-group -->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-3 col-xs-12" for="Favicon">
+                            Favicon <span class="required">*</span>
+                        </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <div class="input-group">
+                                <input type="text" name="txtFavicon" id="txtFavicon" class="form-control" />
+                                <input type="file" id="fileFavicon" style="display:none" />
+                                <span class="input-group-btn">
+                                    <input type="button"  id="btnSelectFavicon" class="btn btn-default" value="Browser" />
+                                </span>
+                            </div><!-- /input-group -->
+                        </div>
+                    </div>
+
+                    <div class="ln_solid"></div>
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                            <a href="#" class="btn btn-success btnSubmit" ><i class="fa fa-save"></i> Save</a>
+                            <button class="btn btn-primary" type="reset"> <i class="fa fa-refresh"></i> Reset</button>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2><small>Config Email</small></h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li>
+                        <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="#">Settings 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Settings 2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <form class="form-horizontal form-label-left input_mask">
+                    <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input type="email" class="form-control has-feedback-left" id="txtUserMail" placeholder="Send Emai">
+                        <span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input type="password" class="form-control" id="txtPassMail" placeholder="PassEmail">
+                        <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input type="email" class="form-control has-feedback-left" id="txtEmailReceive" placeholder="Email Reveive">
+                        <span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control" id="txtNameSend" placeholder="Name Send">
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control" id="txtHost" placeholder="Host">
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control" id="txtPort" placeholder="Port">
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control" id="txtTimeOut" placeholder="Time Out">
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+                            <a  class="btn btn-success btnSubmit"><i class="fa fa-save"></i> Save</a>
+                            <button class="btn btn-primary" type="reset"> <i class="fa fa-refresh"></i> Reset</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="x_panel">
+            <div class="x_title">
+                <h2><small>Config Seo</small></h2>
+
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <br />
+                <form class="form-horizontal form-label-left">
+                    <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-3 col-xs-12">Title</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input type="text" class="form-control" id="txtTitle" placeholder="Title">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-3 col-xs-12">Description </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <textarea class="form-control" rows="3" id="txtDescription" placeholder="Description"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-3 col-xs-12">Keyword</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <textarea class="form-control" id="txtKeyword" rows="2" placeholder="Keyword"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+                            <a  class="btn btn-success btnSubmit"><i class="fa fa-save"></i> Save</a>
+                            <button class="btn btn-primary" type="reset" > <i class="fa fa-refresh"></i> Reset</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div class="col-md-6 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2><small>Config Website</small></h2>
+            <ul class="nav navbar-right panel_toolbox">
+                <li>
+                    <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>
+                            <a href="#">Settings 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Settings 2</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="close-link"><i class="fa fa-close"></i></a>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <br />
+            <form data-parsley-validate class="form-horizontal form-label-left">
+                <div class="form-group">
+                    <label class="control-label col-md-2 col-sm-3 col-xs-12" for="company-name">
+                        Google Analytics <span class="required">*</span>
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <textarea class="form-control" rows="2" id="txtAnalytics" placeholder="Google Analytics"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2 col-sm-3 col-xs-12" for="company-address">
+                        Google Master Tool <span class="required">*</span>
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <textarea class="form-control" rows="2" id="txtWebMasterTool" placeholder="Google Master Tool"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2 col-sm-3 col-xs-12" for="company-Slogan">
+                        Code Subiz <span class="required">*</span>
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <textarea class="form-control" rows="3" id="txtCodeChat" placeholder="Code Subiz"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2 col-sm-3 col-xs-12" for="company-Slogan">
+                        Geo Meta <span class="required">*</span>
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <textarea class="form-control" rows="3" id="txtGeoMeta" placeholder="Code Geo Meta"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2 col-sm-3 col-xs-12" for="company-Slogan">
+                        AppFacebook <span class="required">*</span>
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" id="txtAppFacebook" name="txtAppFacebook" class="form-control col-md-7 col-xs-12">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2 col-sm-3 col-xs-12" for="company-Slogan">
+                        Fanpage Facebook <span class="required">*</span>
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" id="txtFanpageFacebook" name="txtFanpageFacebook" class="form-control col-md-7 col-xs-12">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2 col-sm-3 col-xs-12" for="company-Slogan">
+                        Fanpage Google <span class="required">*</span>
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" id="txtFanpageGoogle" name="txtFanpageGoogle" class="form-control col-md-7 col-xs-12">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2 col-sm-3 col-xs-12" for="company-Slogan">
+                        Fanpage Youtube <span class="required">*</span>
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" id="txtFanpageYoutube" name="txtFanpageYoutube" class="form-control col-md-7 col-xs-12">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2 col-sm-3 col-xs-12" for="company-Slogan">
+                        Color Website <span class="required">*</span>
+                    </label>
+                    <div class="col-md-3 col-sm-9 col-xs-12">
+                        <input type="text" class="form-control" id="txtColor" placeholder="Color Website">
+                    </div>
+
+                    <div class="col-md-2 col-sm-9 col-xs-12">
+                        <label>
+                            <input id="chkCoppy" type="checkbox" data-size="mini" name="my-checkbox">
+                            <span class="text">Coppy</span>
+                        </label>
+                    </div>
+                    <div class="col-md-2 col-sm-9 col-xs-12">
+                        <label>
+                            <input id="chkStatus" type="checkbox" data-size="mini" name="my-checkbox">
+                            <span class="text">Status</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                        <a href="#" class="btn btn-success btnSubmit"><i class="fa fa-save"></i> Save</a>
+                        <button class="btn btn-primary" type="reset"> <i class="fa fa-refresh"></i> Reset</button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="col-md-6 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2><small>Footer</small></h2>
+            <ul class="nav navbar-right panel_toolbox">
+                <li>
+                    <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>
+                            <a href="#">Settings 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Settings 2</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="close-link"><i class="fa fa-close"></i></a>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <div id="alerts"></div>
+            <div class="btn-toolbar editor" data-role="editor-toolbar" data-target="#editor-one">
+                <div class="btn-group">
+                    <a class="btn dropdown-toggle" data-toggle="dropdown" title="Font"><i class="fa fa-font"></i><b class="caret"></b></a>
+                    <ul class="dropdown-menu"></ul>
+                </div>
+                <div class="btn-group">
+                    <a class="btn dropdown-toggle" data-toggle="dropdown" title="Font Size"><i class="fa fa-text-height"></i>&nbsp;<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a data-edit="fontSize 5">
+                                <p style="font-size:17px">Huge</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a data-edit="fontSize 3">
+                                <p style="font-size:14px">Normal</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a data-edit="fontSize 1">
+                                <p style="font-size:11px">Small</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="btn-group">
+                    <a class="btn" data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i class="fa fa-bold"></i></a>
+                    <a class="btn" data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i class="fa fa-italic"></i></a>
+                    <a class="btn" data-edit="strikethrough" title="Strikethrough"><i class="fa fa-strikethrough"></i></a>
+                    <a class="btn" data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i class="fa fa-underline"></i></a>
+                </div>
+                <div class="btn-group">
+                    <a class="btn" data-edit="insertunorderedlist" title="Bullet list"><i class="fa fa-list-ul"></i></a>
+                    <a class="btn" data-edit="insertorderedlist" title="Number list"><i class="fa fa-list-ol"></i></a>
+                    <a class="btn" data-edit="outdent" title="Reduce indent (Shift+Tab)"><i class="fa fa-dedent"></i></a>
+                    <a class="btn" data-edit="indent" title="Indent (Tab)"><i class="fa fa-indent"></i></a>
+                </div>
+                <div class="btn-group">
+                    <a class="btn" data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
+                    <a class="btn" data-edit="justifycenter" title="Center (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i></a>
+                    <a class="btn" data-edit="justifyright" title="Align Right (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
+                    <a class="btn" data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i class="fa fa-align-justify"></i></a>
+                </div>
+                <div class="btn-group">
+                    <a class="btn dropdown-toggle" data-toggle="dropdown" title="Hyperlink"><i class="fa fa-link"></i></a>
+                    <div class="dropdown-menu input-append">
+                        <input class="span2" placeholder="URL" type="text" data-edit="createLink" />
+                        <button class="btn" type="button">Add</button>
+                    </div>
+                    <a class="btn" data-edit="unlink" title="Remove Hyperlink"><i class="fa fa-cut"></i></a>
+                </div>
+                <div class="btn-group">
+                    <a class="btn" title="Insert picture (or just drag & drop)" id="pictureBtn"><i class="fa fa-picture-o"></i></a>
+                    <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" />
+                </div>
+                <div class="btn-group">
+                    <a class="btn" data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="fa fa-undo"></i></a>
+                    <a class="btn" data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="fa fa-repeat"></i></a>
+                </div>
+            </div>
+            <div id="editor-one" class="editor-wrapper"></div>
+            <textarea name="descr" id="descr" style="display:none;"></textarea>
+            <div class="ln_solid"></div>
+
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                    <a   class="btn btn-success btnSubmit"><i class="fa fa-save"></i> Save</a>
+                    <button class="btn btn-primary" type="reset"> <i class="fa fa-refresh"></i> Reset</button>
+
+                </div>
+            </div>
+            <br />
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

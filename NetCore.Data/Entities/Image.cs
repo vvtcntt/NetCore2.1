@@ -18,7 +18,7 @@ namespace NetCore.Data.Entites
         public bool? TypeLink { set; get; }
         [StringLength(200)]
         public string Url { set; get; }
-        public Status Status { set; get; }
+        public Active Active { set; get; }
         [ForeignKey("CategoryId")]
         public virtual ImageCategory ImageCategories { set; get; }
         public int SortOrder { set; get; }

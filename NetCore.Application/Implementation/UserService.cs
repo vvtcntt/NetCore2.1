@@ -76,7 +76,7 @@ namespace NetCore.Application.Implementation
                 FullName = x.FullName,
                 Id = x.Id,
                 PhoneNumber = x.PhoneNumber,
-                Status = x.Status,
+                Active = x.Active,
                 DateCreated = x.DateCreated
 
             }).ToList();
@@ -116,7 +116,7 @@ namespace NetCore.Application.Implementation
 
                 //Update user detail
                 user.FullName = userVm.FullName;
-                user.Status = userVm.Status;
+                user.Active = userVm.Active;
                 user.Email = userVm.Email;
                 user.PhoneNumber = userVm.PhoneNumber;
                 await _userManager.UpdateAsync(user);

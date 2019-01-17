@@ -47,10 +47,10 @@ namespace NetCore.Application.ViewModels.Product
         public DateTime DateCreated { set; get; }
         public DateTime DateModified { set; get; }
         public Status Status { set; get; }
-        public int LanguageId { set; get; }
+         public int LanguageId { set; get; }
      
         public int ViewCount { set; get; }
-        public Status Active { set; get; }      
+        public Active Active { set; get; }      
         public string Tag { set; get; }
         public string SeoTitle { set; get; }
         public string SeoAlias { set; get; }

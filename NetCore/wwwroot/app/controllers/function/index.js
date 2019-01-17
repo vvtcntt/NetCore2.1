@@ -112,7 +112,7 @@
             var iconCss = $('#txtiConCss').val();
             var sortOrd = $('#txtOrderM').val();
 
-			var status = $('#ckStatusM').prop('checked') == true ? 1 : 0;
+            var status = $('#chkStatusM').prop('checked') == true ? 1 : 0;
 			$.ajax({
 				type: "POST",
 				url: "/Admin/function/SaveEntity",
@@ -227,9 +227,7 @@
 						});
 					},
 					onDrop: function (target, source, point) {
-						console.log(target);
-						console.log(source);
-						console.log(point);
+				
 						var targetNode = $(this).tree('getNode', target);
 						if (point === 'append') {
 							var children = [];
@@ -250,8 +248,8 @@
 									items: children
 								},
 								success: function (res) {
-									netcore.notify('Deleted success', 'success');
-									loadData();
+                                    loadData();
+                                    netcore.notify('Upload succesful!', 'success');
 								}
 							});
 						}
@@ -264,9 +262,11 @@
 									sourceId: source.id,
 									targetId: targetNode.id
 								},
-								success: function (res) {
-									netcore.notify('Deleted success', 'success');
-									loadData();
+                                success: function () {
+                                    netcore.notify('Upload succesful!', 'success');
+
+                                    loadData();
+
 								}
 							});
 						}

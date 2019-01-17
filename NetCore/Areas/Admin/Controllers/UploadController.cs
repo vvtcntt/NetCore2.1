@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Processing;
 
 namespace NetCore.Areas.Admin.Controllers
 {
@@ -68,6 +70,7 @@ namespace NetCore.Areas.Admin.Controllers
                                     .Trim('"');
 
                 var imageFolder = $@"\uploaded\images\{now.ToString("yyyyMMdd")}";
+                var imageFolderThumb = $@"\uploaded\ImageThumbs\{now.ToString("yyyyMMdd")}";
 
                 string folder = _hostingEnviroment.WebRootPath + imageFolder;
 
@@ -75,14 +78,47 @@ namespace NetCore.Areas.Admin.Controllers
                 {
                     Directory.CreateDirectory(folder);
                 }
+                string folderThumbs = _hostingEnviroment.WebRootPath + imageFolderThumb;
+
+                if (!Directory.Exists(folderThumbs))
+                {
+                    Directory.CreateDirectory(folderThumbs);
+                }
                 string filePath = Path.Combine(folder, filename);
                 using (FileStream fs = System.IO.File.Create(filePath))
                 {
                     file.CopyTo(fs);
                     fs.Flush();
                 }
+                string filePathThumb = Path.Combine(folderThumbs, filename);
+                using (FileStream fs = System.IO.File.Create(filePathThumb))
+                {
+                    file.CopyTo(fs);
+                    fs.Flush();
+                }
+                ResizeAndSaveImage(filePathThumb, filename);
                 return new OkObjectResult(Path.Combine(imageFolder, filename).Replace(@"\", @"/"));
             }
         }
+         public static void ResizeAndSaveImage(string stream, string filename)
+        {
+            using (Image<SixLabors.ImageSharp.PixelFormats.Rgba32> image = Image.Load(stream))
+            {
+                int hieght = image.Height;
+                int width = image.Width;
+                if(width>400)
+                {
+                    width = 400 * 100 / width;
+                    hieght = width * hieght / 100;
+
+                    image.Mutate(x => x
+                    .Resize(400, hieght)
+                    );
+                    image.Save(stream);
+                }
+                 // Automatic encoder selected based on extension.
+            }
+        }
+
     }
 }

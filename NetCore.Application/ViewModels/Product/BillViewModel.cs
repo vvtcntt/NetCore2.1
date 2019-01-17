@@ -24,7 +24,7 @@ namespace NetCore.Application.ViewModels.Product
         public DateTime DateModified { set; get; }
 
         public Status Status { set; get; }
-
+        public Active Active { set; get; }
         public Guid? CustomerId { set; get; }
 
         public List<BillDetailViewModel> BillDetails { set; get; }

@@ -21,7 +21,7 @@ namespace NetCore.Controllers
 
             return View();
         }
-
+        [Route("lien-he.html",Name ="Contact")]
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";

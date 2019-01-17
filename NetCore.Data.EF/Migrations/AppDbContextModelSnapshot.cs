@@ -186,14 +186,14 @@ namespace NetCore.Data.EF.Migrations
                         .HasMaxLength(128)
                         .IsUnicode(false);
 
+                    b.Property<int>("Active");
+
                     b.Property<string>("Content")
                         .HasMaxLength(250);
 
                     b.Property<DateTime>("DateCreated");
 
                     b.Property<DateTime>("DateModified");
-
-                    b.Property<int>("Status");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -263,6 +263,8 @@ namespace NetCore.Data.EF.Migrations
 
                     b.Property<int>("AccessFailedCount");
 
+                    b.Property<int>("Active");
+
                     b.Property<string>("Avatar");
 
                     b.Property<decimal>("Balance");
@@ -301,8 +303,6 @@ namespace NetCore.Data.EF.Migrations
 
                     b.Property<string>("SecurityStamp");
 
-                    b.Property<int>("Status");
-
                     b.Property<bool>("TwoFactorEnabled");
 
                     b.Property<string>("UserName")
@@ -326,6 +326,8 @@ namespace NetCore.Data.EF.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Active");
 
                     b.Property<int>("BillStatus");
 
@@ -436,16 +438,23 @@ namespace NetCore.Data.EF.Migrations
 
                     b.Property<bool?>("Coppy");
 
+                    b.Property<string>("DescriptionMeta")
+                        .HasColumnType("varchar(500)")
+                        .HasMaxLength(250);
+
                     b.Property<string>("Email")
                         .HasMaxLength(100);
+
+                    b.Property<string>("EmailReceive")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("FanpageFacebook")
+                        .HasMaxLength(250);
 
                     b.Property<string>("FanpageGoogle")
                         .HasMaxLength(250);
 
                     b.Property<string>("FanpageYoutube")
-                        .HasMaxLength(250);
-
-                    b.Property<string>("FanpgeFacebook")
                         .HasMaxLength(250);
 
                     b.Property<string>("Fax")
@@ -468,26 +477,32 @@ namespace NetCore.Data.EF.Migrations
                         .IsRequired()
                         .HasMaxLength(250);
 
+                    b.Property<string>("KeywordMeta")
+                        .HasColumnType("varchar(500)")
+                        .HasMaxLength(500);
+
                     b.Property<string>("Mobile")
                         .HasMaxLength(100);
 
                     b.Property<string>("Name");
 
                     b.Property<string>("PassMail")
-                        .HasMaxLength(250);
-
-                    b.Property<bool?>("Popup");
+                        .HasMaxLength(100);
 
                     b.Property<int?>("Port");
 
                     b.Property<string>("Slogan")
                         .HasMaxLength(100);
 
-                    b.Property<bool?>("Social");
+                    b.Property<bool?>("Status");
 
                     b.Property<string>("TimeOut")
                         .HasColumnType("varchar(50)")
                         .HasMaxLength(50);
+
+                    b.Property<string>("TitleMeta")
+                        .HasColumnType("varchar(255)")
+                        .HasMaxLength(250);
 
                     b.Property<string>("UserMail")
                         .HasMaxLength(100);
@@ -504,6 +519,8 @@ namespace NetCore.Data.EF.Migrations
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<int>("Active");
 
                     b.Property<string>("Address")
                         .HasMaxLength(250);
@@ -522,8 +539,6 @@ namespace NetCore.Data.EF.Migrations
                     b.Property<string>("Phone")
                         .HasMaxLength(50);
 
-                    b.Property<int>("Status");
-
                     b.Property<string>("Website")
                         .HasMaxLength(250);
 
@@ -538,6 +553,8 @@ namespace NetCore.Data.EF.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("Active");
+
                     b.Property<DateTime>("DateCreated");
 
                     b.Property<DateTime>("DateModified");
@@ -549,8 +566,6 @@ namespace NetCore.Data.EF.Migrations
                         .HasMaxLength(500);
 
                     b.Property<string>("Name");
-
-                    b.Property<int>("Status");
 
                     b.HasKey("Id");
 
@@ -564,6 +579,8 @@ namespace NetCore.Data.EF.Migrations
                         .HasMaxLength(128)
                         .IsUnicode(false);
 
+                    b.Property<int>("Active");
+
                     b.Property<string>("IconCss");
 
                     b.Property<string>("Name");
@@ -572,8 +589,6 @@ namespace NetCore.Data.EF.Migrations
                         .HasMaxLength(128);
 
                     b.Property<int>("SortOrder");
-
-                    b.Property<int>("Status");
 
                     b.Property<string>("URL")
                         .IsRequired()
@@ -589,13 +604,13 @@ namespace NetCore.Data.EF.Migrations
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int>("Active");
+
                     b.Property<bool>("IsDefault");
 
                     b.Property<string>("Name");
 
                     b.Property<string>("Resources");
-
-                    b.Property<int>("Status");
 
                     b.HasKey("Id");
 
@@ -721,6 +736,8 @@ namespace NetCore.Data.EF.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("Active");
+
                     b.Property<string>("Content");
 
                     b.Property<DateTime>("DateCreated");
@@ -755,8 +772,6 @@ namespace NetCore.Data.EF.Migrations
                     b.Property<string>("SeoTitle");
 
                     b.Property<int>("SortOrder");
-
-                    b.Property<int>("Status");
 
                     b.HasKey("Id");
 

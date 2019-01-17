@@ -13,7 +13,7 @@ namespace NetCore.Data.Entites
     public class NewsCategory : DomainEntity<int>, ISwitchable,INameable,ISortable,IHasSeoMetaData
     {
 
-        public Status Status { set; get; }
+        public Active Active { set; get; }
         public string Name { set; get; }
       
         public string Alias { set; get; }

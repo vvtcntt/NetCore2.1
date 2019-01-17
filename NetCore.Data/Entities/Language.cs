@@ -18,6 +18,6 @@ namespace NetCore.Data.Entites
         public bool IsDefault { get; set; }
 
         public string Resources { get; set; }
-        public Status Status { get; set; }
+        public Active Active { get; set; }
     }
 }

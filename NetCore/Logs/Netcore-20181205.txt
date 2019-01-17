@@ -1,0 +1,365 @@
+2018-12-05T10:23:12.4212575+07:00 0HLIQC3NVO3N4:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/   (ca22a1cb)
+2018-12-05T10:23:13.3103601+07:00 0HLIQC3NVO3N4:00000001 [INF] Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing action "NetCore.Controllers.HomeController.Index (NetCore)" (a44c0341)
+2018-12-05T10:23:13.3586913+07:00 0HLIQC3NVO3N4:00000001 [INF] Executing action method "NetCore.Controllers.HomeController.Index (NetCore)" - Validation state: Valid (dad538d7)
+2018-12-05T10:23:13.3789527+07:00 0HLIQC3NVO3N4:00000001 [INF] Executed action method "NetCore.Controllers.HomeController.Index (NetCore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.8852ms. (50a9e262)
+2018-12-05T10:23:13.5334627+07:00 0HLIQC3NVO3N4:00000001 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-12-05T10:23:14.7925647+07:00 0HLIQC3NVO3N4:00000001 [INF] Executed ViewResult - view "Index" executed in 1323.8072ms. (f66409e9)
+2018-12-05T10:23:15.0267315+07:00 0HLIQC3NVO3N4:00000001 [INF] Executed action "NetCore.Controllers.HomeController.Index (NetCore)" in 1482.3086ms (afa2e885)
+2018-12-05T10:23:15.0753944+07:00 0HLIQC3NVO3N4:00000001 [INF] Request finished in 2671.8218ms 200 text/html; charset=utf-8 (791a596a)
+2018-12-05T10:28:06.7950970+07:00 0HLIQC3NVO3N4:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin   (ca22a1cb)
+2018-12-05T10:28:06.8282250+07:00 0HLIQC3NVO3N4:00000002 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Login\"}". Executing action "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" (a44c0341)
+2018-12-05T10:28:06.9618575+07:00 0HLIQC3NVO3N4:00000002 [INF] Executing action method "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" - Validation state: Valid (dad538d7)
+2018-12-05T10:28:06.9877055+07:00 0HLIQC3NVO3N4:00000002 [INF] Executed action method "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.488ms. (50a9e262)
+2018-12-05T10:28:07.0381808+07:00 0HLIQC3NVO3N4:00000002 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-12-05T10:28:07.1323322+07:00 0HLIQC3NVO3N4:00000002 [INF] Executed ViewResult - view "Index" executed in 124.963ms. (f66409e9)
+2018-12-05T10:28:07.1629002+07:00 0HLIQC3NVO3N4:00000002 [INF] Executed action "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" in 303.9971ms (afa2e885)
+2018-12-05T10:28:07.1756616+07:00 0HLIQC3NVO3N4:00000002 [INF] Request finished in 380.4591ms 200 text/html; charset=utf-8 (791a596a)
+2018-12-05T10:28:07.3667846+07:00 0HLIQC3NVO3N4:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/app/shared/netcore.js   (ca22a1cb)
+2018-12-05T10:28:07.4252675+07:00 0HLIQC3NVO3N4:00000003 [INF] The file "/app/shared/netcore.js" was not modified (f1f8d725)
+2018-12-05T10:28:07.4823664+07:00 0HLIQC3NVO3N4:00000003 [INF] Request finished in 95.2173ms 304 application/javascript (791a596a)
+2018-12-05T10:28:07.4915228+07:00 0HLIQC3NVO3N5:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin   (ca22a1cb)
+2018-12-05T10:28:07.4951245+07:00 0HLIQC3NVO3N5:00000001 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Login\"}". Executing action "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" (a44c0341)
+2018-12-05T10:28:07.5312331+07:00 0HLIQC3NVO3N5:00000001 [INF] Executing action method "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" - Validation state: Valid (dad538d7)
+2018-12-05T10:28:07.5413395+07:00 0HLIQC3NVO3N5:00000001 [INF] Executed action method "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.0242ms. (50a9e262)
+2018-12-05T10:28:07.5471973+07:00 0HLIQC3NVO3N5:00000001 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-12-05T10:28:07.6084382+07:00 0HLIQC3NVO3N5:00000001 [INF] Executed ViewResult - view "Index" executed in 8.0918ms. (f66409e9)
+2018-12-05T10:28:07.8550418+07:00 0HLIQC3NVO3N5:00000001 [INF] Executed action "NetCore.Areas.Admin.Controllers.LoginController.Index (NetCore)" in 113.3671ms (afa2e885)
+2018-12-05T10:28:08.1059953+07:00 0HLIQC3NVO3N5:00000001 [INF] Request finished in 374.8345ms 200 text/html; charset=utf-8 (791a596a)
+2018-12-05T10:28:10.7728273+07:00 0HLIQC3NVO3N5:00000002 [INF] Request starting HTTP/1.1 POST https://localhost:5001/admin/login/authen application/x-www-form-urlencoded; charset=UTF-8 33 (ca22a1cb)
+2018-12-05T10:28:10.8614163+07:00 0HLIQC3NVO3N5:00000002 [INF] Route matched with "{area = \"Admin\", action = \"Authen\", controller = \"Login\"}". Executing action "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)" (a44c0341)
+2018-12-05T10:28:11.0782816+07:00 0HLIQC3NVO3N5:00000002 [INF] Executing action method "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)" with arguments (["NetCore.Application.ViewModels.Login.LoginViewModel"]) - Validation state: Valid (4e3479ed)
+2018-12-05T10:28:11.4089318+07:00 0HLIQC3NVO3N5:00000002 [WRN] No type was specified for the decimal column '"Balance"' on entity type '"AppUser"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-12-05T10:28:11.4244915+07:00 0HLIQC3NVO3N5:00000002 [WRN] No type was specified for the decimal column '"Price"' on entity type '"BillDetail"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-12-05T10:28:11.4302186+07:00 0HLIQC3NVO3N5:00000002 [WRN] No type was specified for the decimal column '"Price"' on entity type '"Product"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-12-05T10:28:11.4407300+07:00 0HLIQC3NVO3N5:00000002 [WRN] No type was specified for the decimal column '"PriceSale"' on entity type '"Product"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-12-05T10:28:11.4431448+07:00 0HLIQC3NVO3N5:00000002 [WRN] No type was specified for the decimal column '"Price"' on entity type '"WholePrice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-12-05T10:28:11.4622527+07:00 0HLIQC3NVO3N5:00000002 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=NetCore.Data.EF " (9958f5bb)
+2018-12-05T10:28:11.8796110+07:00 0HLIQC3NVO3N5:00000002 [INF] Executed DbCommand ("246"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Active], [u].[Avatar], [u].[Balance], [u].[BirthDay], [u].[ConcurrencyStamp], [u].[DateCreated], [u].[DateModified], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2018-12-05T10:28:12.4969026+07:00 0HLIQC3NVO3N5:00000002 [INF] Executed DbCommand ("5"ms) [Parameters=["@__user_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2018-12-05T10:28:12.6456422+07:00 0HLIQC3NVO3N5:00000002 [INF] Executed DbCommand ("63"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-12-05T10:28:12.7241735+07:00 0HLIQC3NVO3N5:00000002 [INF] Executed DbCommand ("11"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-05T10:28:12.8658443+07:00 0HLIQC3NVO3N5:00000002 [INF] Executed DbCommand ("20"ms) [Parameters=["@__role_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0" (0723d8ff)
+2018-12-05T10:28:12.9302218+07:00 0HLIQC3NVO3N5:00000002 [INF] Executed DbCommand ("43"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-12-05T10:28:13.0566813+07:00 0HLIQC3NVO3N5:00000002 [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2018-12-05T10:28:13.0923230+07:00 0HLIQC3NVO3N5:00000002 [INF] User logged in. (fdce0db4)
+2018-12-05T10:28:13.1819584+07:00 0HLIQC3NVO3N5:00000002 [INF] Executed action method "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 2028.8331ms. (50a9e262)
+2018-12-05T10:28:13.2491443+07:00 0HLIQC3NVO3N5:00000002 [INF] Executing ObjectResult, writing value of type '"NetCore.Utilities.Dtos.GenericResult"'. (8a1b66c8)
+2018-12-05T10:28:13.4639561+07:00 0HLIQC3NVO3N5:00000002 [INF] Executed action "NetCore.Areas.Admin.Controllers.LoginController.Authen (NetCore)" in 2600.0546ms (afa2e885)
+2018-12-05T10:28:13.7426542+07:00 0HLIQC3NVO3N5:00000002 [INF] Request finished in 2724.0372ms 200 application/json; charset=utf-8 (791a596a)
+2018-12-05T10:28:13.7619923+07:00 0HLIQC3NVO3N5:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Home/Index   (ca22a1cb)
+2018-12-05T10:28:13.8411134+07:00 0HLIQC3NVO3N5:00000003 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Home\"}". Executing action "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)" (a44c0341)
+2018-12-05T10:28:13.8787734+07:00 0HLIQC3NVO3N5:00000003 [INF] Authorization was successful. (0d575a54)
+2018-12-05T10:28:13.8993922+07:00 0HLIQC3NVO3N5:00000003 [INF] Executing action method "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)" - Validation state: Valid (dad538d7)
+2018-12-05T10:28:13.9298065+07:00 0HLIQC3NVO3N5:00000003 [INF] Executed action method "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 14.4251ms. (50a9e262)
+2018-12-05T10:28:13.9732141+07:00 0HLIQC3NVO3N5:00000003 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-12-05T10:28:14.1409668+07:00 0HLIQC3NVO3N5:00000003 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=NetCore.Data.EF " (9958f5bb)
+2018-12-05T10:28:14.4622049+07:00 0HLIQC3NVO3N5:00000003 [INF] Executed DbCommand ("92"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[IconCss], [x].[Id], [x].[Name], [x].[ParentId], [x].[SortOrder], [x].[URL]
+FROM [Functions] AS [x]
+WHERE [x].[Active] = 1
+ORDER BY [x].[ParentId]" (0723d8ff)
+2018-12-05T10:28:15.4635712+07:00 0HLIQC3NVO3N5:00000003 [INF] Executed ViewResult - view "Index" executed in 779.887ms. (f66409e9)
+2018-12-05T10:28:16.1253453+07:00 0HLIQC3NVO3N5:00000003 [INF] Executed action "NetCore.Areas.Admin.Controllers.HomeController.Index (NetCore)" in 1640.3867ms (afa2e885)
+2018-12-05T10:28:16.2972690+07:00 0HLIQC3NVO3N5:00000003 [INF] Request finished in 2384.5746ms 200 text/html; charset=utf-8 (791a596a)
+2018-12-05T10:31:01.8964686+07:00 0HLIQC3NVO3N5:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin/product/index   (ca22a1cb)
+2018-12-05T10:31:01.9223619+07:00 0HLIQC3NVO3N5:00000004 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Product\"}". Executing action "NetCore.Areas.Admin.Controllers.ProductController.Index (NetCore)" (a44c0341)
+2018-12-05T10:31:01.9272968+07:00 0HLIQC3NVO3N5:00000004 [INF] Authorization was successful. (0d575a54)
+2018-12-05T10:31:01.9380769+07:00 0HLIQC3NVO3N5:00000004 [INF] Executing action method "NetCore.Areas.Admin.Controllers.ProductController.Index (NetCore)" - Validation state: Valid (dad538d7)
+2018-12-05T10:31:01.9424165+07:00 0HLIQC3NVO3N5:00000004 [INF] Executed action method "NetCore.Areas.Admin.Controllers.ProductController.Index (NetCore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.4866ms. (50a9e262)
+2018-12-05T10:31:01.9715137+07:00 0HLIQC3NVO3N5:00000004 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-12-05T10:31:02.2126832+07:00 0HLIQC3NVO3N5:00000004 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=NetCore.Data.EF " (9958f5bb)
+2018-12-05T10:31:02.2454335+07:00 0HLIQC3NVO3N5:00000004 [INF] Executed DbCommand ("13"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[IconCss], [x].[Id], [x].[Name], [x].[ParentId], [x].[SortOrder], [x].[URL]
+FROM [Functions] AS [x]
+WHERE [x].[Active] = 1
+ORDER BY [x].[ParentId]" (0723d8ff)
+2018-12-05T10:31:02.6216017+07:00 0HLIQC3NVO3N5:00000004 [INF] Executed ViewResult - view "Index" executed in 322.1854ms. (f66409e9)
+2018-12-05T10:31:02.7970877+07:00 0HLIQC3NVO3N5:00000004 [INF] Executed action "NetCore.Areas.Admin.Controllers.ProductController.Index (NetCore)" in 699.3739ms (afa2e885)
+2018-12-05T10:31:02.8115318+07:00 0HLIQC3NVO3N5:00000004 [INF] Request finished in 916.0357ms 200 text/html; charset=utf-8 (791a596a)
+2018-12-05T10:31:04.1283748+07:00 0HLIQC3NVO3N5:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin/product/GetAllCategories?categoryId=1&keyword=&page=1&pageSize=10   (ca22a1cb)
+2018-12-05T10:31:04.2147291+07:00 0HLIQC3NVO3N6:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Bill/GetSizes   (ca22a1cb)
+2018-12-05T10:31:04.2299670+07:00 0HLIQC3NVO3N4:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Bill/GetColors   (ca22a1cb)
+2018-12-05T10:31:04.2403152+07:00 0HLIQC3NVO3N6:00000001 [INF] Route matched with "{area = \"Admin\", action = \"GetSizes\", controller = \"Bill\"}". Executing action "NetCore.Areas.Admin.Controllers.BillController.GetSizes (NetCore)" (a44c0341)
+2018-12-05T10:31:04.2427070+07:00 0HLIQC3NVO3N4:00000004 [INF] Route matched with "{area = \"Admin\", action = \"GetColors\", controller = \"Bill\"}". Executing action "NetCore.Areas.Admin.Controllers.BillController.GetColors (NetCore)" (a44c0341)
+2018-12-05T10:31:04.2466669+07:00 0HLIQC3NVO3N6:00000001 [INF] Authorization was successful. (0d575a54)
+2018-12-05T10:31:04.2573550+07:00 0HLIQC3NVO3N7:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin/product/getAllpaging?categoryId=&keyword=&page=1&pageSize=10   (ca22a1cb)
+2018-12-05T10:31:04.2648094+07:00 0HLIQC3NVO3N6:00000001 [INF] Executing action method "NetCore.Areas.Admin.Controllers.BillController.GetSizes (NetCore)" - Validation state: Valid (dad538d7)
+2018-12-05T10:31:04.2757341+07:00 0HLIQC3NVO3N7:00000001 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Product\"}". Executing action "NetCore.Areas.Admin.Controllers.ProductController.GetAllPaging (NetCore)" (a44c0341)
+2018-12-05T10:31:04.2914868+07:00 0HLIQC3NVO3N6:00000001 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=NetCore.Data.EF " (9958f5bb)
+2018-12-05T10:31:04.3272293+07:00 0HLIQC3NVO3N7:00000001 [INF] Authorization was successful. (0d575a54)
+2018-12-05T10:31:04.3744836+07:00 0HLIQC3NVO3N4:00000004 [INF] Authorization was successful. (0d575a54)
+2018-12-05T10:31:04.3977836+07:00 0HLIQC3NVO3N6:00000001 [INF] Executed DbCommand ("25"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [dtoSize].[Id], [dtoSize].[Name]
+FROM [Sizes] AS [dtoSize]" (0723d8ff)
+2018-12-05T10:31:04.4085230+07:00 0HLIQC3NVO3N7:00000001 [INF] Executing action method "NetCore.Areas.Admin.Controllers.ProductController.GetAllPaging (NetCore)" with arguments (["", "", "1", "10"]) - Validation state: Valid (4e3479ed)
+2018-12-05T10:31:04.4153692+07:00 0HLIQC3NVO3N4:00000004 [INF] Executing action method "NetCore.Areas.Admin.Controllers.BillController.GetColors (NetCore)" - Validation state: Valid (dad538d7)
+2018-12-05T10:31:04.4244244+07:00 0HLIQC3NVO3N6:00000001 [INF] Executed action method "NetCore.Areas.Admin.Controllers.BillController.GetSizes (NetCore)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 141.7695ms. (50a9e262)
+2018-12-05T10:31:04.4276582+07:00 0HLIQC3NVO3N7:00000001 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=NetCore.Data.EF " (9958f5bb)
+2018-12-05T10:31:04.4311903+07:00 0HLIQC3NVO3N6:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NetCore.Application.ViewModels.Product.SizeViewModel, NetCore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2018-12-05T10:31:04.4577202+07:00 0HLIQC3NVO3N4:00000004 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=NetCore.Data.EF " (9958f5bb)
+2018-12-05T10:31:04.4937967+07:00 0HLIQC3NVO3N5:00000005 [INF] Route matched with "{area = \"Admin\", action = \"GetAllCategories\", controller = \"Product\"}". Executing action "NetCore.Areas.Admin.Controllers.ProductController.GetAllCategories (NetCore)" (a44c0341)
+2018-12-05T10:31:04.4990011+07:00 0HLIQC3NVO3N6:00000001 [INF] Executed action "NetCore.Areas.Admin.Controllers.BillController.GetSizes (NetCore)" in 222.8706ms (afa2e885)
+2018-12-05T10:31:04.5095423+07:00 0HLIQC3NVO3N7:00000001 [INF] Executed DbCommand ("32"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [p]" (0723d8ff)
+2018-12-05T10:31:04.5333003+07:00 0HLIQC3NVO3N6:00000001 [INF] Request finished in 388.8144ms 200 application/json; charset=utf-8 (791a596a)
+2018-12-05T10:31:04.5701893+07:00 0HLIQC3NVO3N4:00000004 [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [dtoColor].[Code], [dtoColor].[Id], [dtoColor].[Name]
+FROM [Colors] AS [dtoColor]" (0723d8ff)
+2018-12-05T10:31:04.7701885+07:00 0HLIQC3NVO3N5:00000005 [INF] Authorization was successful. (0d575a54)
+2018-12-05T10:31:04.8495378+07:00 0HLIQC3NVO3N4:00000004 [INF] Executed action method "NetCore.Areas.Admin.Controllers.BillController.GetColors (NetCore)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 157.6854ms. (50a9e262)
+2018-12-05T10:31:04.9000693+07:00 0HLIQC3NVO3N5:00000005 [INF] Executing action method "NetCore.Areas.Admin.Controllers.ProductController.GetAllCategories (NetCore)" - Validation state: Valid (dad538d7)
+2018-12-05T10:31:04.9118683+07:00 0HLIQC3NVO3N4:00000004 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NetCore.Application.ViewModels.Product.ColorViewModel, NetCore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2018-12-05T10:31:04.9279508+07:00 0HLIQC3NVO3N5:00000005 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=NetCore.Data.EF " (9958f5bb)
+2018-12-05T10:31:04.9718352+07:00 0HLIQC3NVO3N4:00000004 [INF] Executed action "NetCore.Areas.Admin.Controllers.BillController.GetColors (NetCore)" in 672.6379ms (afa2e885)
+2018-12-05T10:31:04.9899541+07:00 0HLIQC3NVO3N4:00000004 [INF] Request finished in 1065.7496ms 200 application/json; charset=utf-8 (791a596a)
+2018-12-05T10:31:05.0045722+07:00 0HLIQC3NVO3N7:00000001 [INF] Executed DbCommand ("230"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Active], COALESCE([p].[Age], 0) AS [Age], [p].[CategoryId], [p].[Code], [p].[Content], [p].[DateCreated], [p].[DateModified], [p].[Description], CAST(COALESCE([p].[HomeFlag], 0) AS bit) AS [HomeFlag0], [p].[Id], [p].[ImageDetail], [p].[ImageThumbs], [p].[Info], COALESCE([p].[LanguageId], 0) AS [LanguageId0], [p].[Name], CAST(COALESCE([p].[New], 0) AS bit) AS [New], [p].[NotePrice], [p].[Parameter], [p].[Price], [p].[PriceSale], CASE
+    WHEN [p].[CategoryId] IS NULL
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END, [p.ProductCategory].[Active] AS [Active0], [p.ProductCategory].[Content] AS [Content0], [p.ProductCategory].[DateCreated] AS [DateCreated0], [p.ProductCategory].[DateModified] AS [DateModified0], [p.ProductCategory].[Description] AS [Description0], [p.ProductCategory].[HomeFlag], [p.ProductCategory].[Icon], [p.ProductCategory].[Image], [p.ProductCategory].[LanguageId], [p.ProductCategory].[Name] AS [Name0], [p.ProductCategory].[ParentId], [p.ProductCategory].[SeoAlias], [p.ProductCategory].[SeoDescription], [p.ProductCategory].[SeoKeyWords], [p.ProductCategory].[SeoTitle], [p.ProductCategory].[SortOrder], CAST(COALESCE([p].[ProductSale], 0) AS bit) AS [ProductSale], [p].[Sale], [p].[SeoAlias] AS [SeoAlias0], [p].[SeoDescription] AS [SeoDescription0], [p].[SeoKeyWords] AS [SeoKeyWords0], [p].[SeoTitle] AS [SeoTitle0], [p].[Size], [p].[SortOrder] AS [SortOrder0], [p].[Status], [p].[Tag], CAST(COALESCE([p].[Vat], 0) AS bit) AS [Vat], COALESCE([p].[ViewCount], 0) AS [ViewCount], [p].[Warranty], [p.ProductCategory].[Id]
+FROM [Products] AS [p]
+INNER JOIN [ProductCategories] AS [p.ProductCategory] ON [p].[CategoryId] = [p.ProductCategory].[Id]
+ORDER BY [p].[DateCreated] DESC, [p].[Id], [p.ProductCategory].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2018-12-05T10:31:05.0113998+07:00 0HLIQC3NVO3N5:00000005 [INF] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Active], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[Icon], [x].[Id], [x].[Image], [x].[LanguageId], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeyWords], [x].[SeoTitle], [x].[SortOrder]
+FROM [ProductCategories] AS [x]
+ORDER BY [x].[ParentId], [x].[Id]" (0723d8ff)
+2018-12-05T10:31:05.0583925+07:00 0HLIQC3NVO3N5:00000005 [INF] Executed DbCommand ("14"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[ParentId], [t].[Id], [x.Products].[Active], COALESCE([x.Products].[Age], 0) AS [Age], [x.Products].[CategoryId], [x.Products].[Code], [x.Products].[Content], [x.Products].[DateCreated], [x.Products].[DateModified], [x.Products].[Description], CAST(COALESCE([x.Products].[HomeFlag], 0) AS bit) AS [HomeFlag], [x.Products].[Id] AS [Id0], [x.Products].[ImageDetail], [x.Products].[ImageThumbs], [x.Products].[Info], COALESCE([x.Products].[LanguageId], 0) AS [LanguageId], [x.Products].[Name], CAST(COALESCE([x.Products].[New], 0) AS bit) AS [New], [x.Products].[NotePrice], [x.Products].[Parameter], [x.Products].[Price], [x.Products].[PriceSale], CAST(COALESCE([x.Products].[ProductSale], 0) AS bit) AS [ProductSale], [x.Products].[Sale], [x.Products].[SeoAlias], [x.Products].[SeoDescription], [x.Products].[SeoKeyWords], [x.Products].[SeoTitle], [x.Products].[Size], [x.Products].[SortOrder], [x.Products].[Status], [x.Products].[Tag], CAST(COALESCE([x.Products].[Vat], 0) AS bit) AS [Vat], COALESCE([x.Products].[ViewCount], 0) AS [ViewCount], [x.Products].[Warranty]
+FROM [Products] AS [x.Products]
+INNER JOIN (
+    SELECT [x0].[ParentId], [x0].[Id]
+    FROM [ProductCategories] AS [x0]
+) AS [t] ON [x.Products].[CategoryId] = [t].[Id]
+ORDER BY [t].[ParentId], [t].[Id], [x.Products].[Id]" (0723d8ff)
+2018-12-05T10:31:05.0632713+07:00 0HLIQC3NVO3N7:00000001 [INF] Executed DbCommand ("16"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[DateCreated], [t].[Id], [t].[Id0], [p.ProductCategory.Products].[Active], COALESCE([p.ProductCategory.Products].[Age], 0) AS [Age], [p.ProductCategory.Products].[CategoryId], [p.ProductCategory.Products].[Code], [p.ProductCategory.Products].[Content], [p.ProductCategory.Products].[DateCreated] AS [DateCreated0], [p.ProductCategory.Products].[DateModified], [p.ProductCategory.Products].[Description], CAST(COALESCE([p.ProductCategory.Products].[HomeFlag], 0) AS bit) AS [HomeFlag], [p.ProductCategory.Products].[Id] AS [Id1], [p.ProductCategory.Products].[ImageDetail], [p.ProductCategory.Products].[ImageThumbs], [p.ProductCategory.Products].[Info], COALESCE([p.ProductCategory.Products].[LanguageId], 0) AS [LanguageId], [p.ProductCategory.Products].[Name], CAST(COALESCE([p.ProductCategory.Products].[New], 0) AS bit) AS [New], [p.ProductCategory.Products].[NotePrice], [p.ProductCategory.Products].[Parameter], [p.ProductCategory.Products].[Price], [p.ProductCategory.Products].[PriceSale], CAST(COALESCE([p.ProductCategory.Products].[ProductSale], 0) AS bit) AS [ProductSale], [p.ProductCategory.Products].[Sale], [p.ProductCategory.Products].[SeoAlias], [p.ProductCategory.Products].[SeoDescription], [p.ProductCategory.Products].[SeoKeyWords], [p.ProductCategory.Products].[SeoTitle], [p.ProductCategory.Products].[Size], [p.ProductCategory.Products].[SortOrder], [p.ProductCategory.Products].[Status], [p.ProductCategory.Products].[Tag], CAST(COALESCE([p.ProductCategory.Products].[Vat], 0) AS bit) AS [Vat], COALESCE([p.ProductCategory.Products].[ViewCount], 0) AS [ViewCount], [p.ProductCategory.Products].[Warranty]
+FROM [Products] AS [p.ProductCategory.Products]
+INNER JOIN (
+    SELECT [p0].[DateCreated], [p0].[Id], [p.ProductCategory0].[Id] AS [Id0]
+    FROM [Products] AS [p0]
+    INNER JOIN [ProductCategories] AS [p.ProductCategory0] ON [p0].[CategoryId] = [p.ProductCategory0].[Id]
+    ORDER BY [p0].[DateCreated] DESC, [p0].[Id], [p.ProductCategory0].[Id]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t] ON [p.ProductCategory.Products].[CategoryId] = [t].[Id0]
+ORDER BY [t].[DateCreated] DESC, [t].[Id], [t].[Id0], [p.ProductCategory.Products].[Id]" (0723d8ff)
+2018-12-05T10:31:05.1239287+07:00 0HLIQC3NVO3N5:00000005 [INF] Executed DbCommand ("30"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [t1].[ParentId], [t1].[Id], [t1].[Id0], [x.Products.ProductTags].[Id] AS [Id1], [x.Products.ProductTags].[ProductId], CASE
+    WHEN [x.Products.ProductTags].[TagId] IS NULL
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END, [x.Products.ProductTags].[TagId]
+FROM [ProductTags] AS [x.Products.ProductTags]
+INNER JOIN (
+    SELECT [t0].[ParentId], [t0].[Id], [x.Products0].[Id] AS [Id0]
+    FROM [Products] AS [x.Products0]
+    INNER JOIN (
+        SELECT [x1].[ParentId], [x1].[Id]
+        FROM [ProductCategories] AS [x1]
+    ) AS [t0] ON [x.Products0].[CategoryId] = [t0].[Id]
+) AS [t1] ON [x.Products.ProductTags].[ProductId] = [t1].[Id0]
+ORDER BY [t1].[ParentId], [t1].[Id], [t1].[Id0]" (0723d8ff)
+2018-12-05T10:31:05.1321275+07:00 0HLIQC3NVO3N7:00000001 [INF] Executed DbCommand ("38"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t1].[DateCreated], [t1].[Id], [t1].[Id0], [t1].[Id1], [p.ProductCategory.Products.ProductTags].[Id] AS [Id2], [p.ProductCategory.Products.ProductTags].[ProductId], CASE
+    WHEN [p.ProductCategory.Products.ProductTags].[TagId] IS NULL
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END, [p.ProductCategory.Products.ProductTags].[TagId]
+FROM [ProductTags] AS [p.ProductCategory.Products.ProductTags]
+INNER JOIN (
+    SELECT [t0].[DateCreated], [t0].[Id], [t0].[Id0], [p.ProductCategory.Products0].[Id] AS [Id1]
+    FROM [Products] AS [p.ProductCategory.Products0]
+    INNER JOIN (
+        SELECT [p1].[DateCreated], [p1].[Id], [p.ProductCategory1].[Id] AS [Id0]
+        FROM [Products] AS [p1]
+        INNER JOIN [ProductCategories] AS [p.ProductCategory1] ON [p1].[CategoryId] = [p.ProductCategory1].[Id]
+        ORDER BY [p1].[DateCreated] DESC, [p1].[Id], [p.ProductCategory1].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t0] ON [p.ProductCategory.Products0].[CategoryId] = [t0].[Id0]
+) AS [t1] ON [p.ProductCategory.Products.ProductTags].[ProductId] = [t1].[Id1]
+ORDER BY [t1].[DateCreated] DESC, [t1].[Id], [t1].[Id0], [t1].[Id1]" (0723d8ff)
+2018-12-05T10:31:05.1556914+07:00 0HLIQC3NVO3N5:00000005 [INF] Executed action method "NetCore.Areas.Admin.Controllers.ProductController.GetAllCategories (NetCore)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 249.087ms. (50a9e262)
+2018-12-05T10:31:05.1627291+07:00 0HLIQC3NVO3N5:00000005 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NetCore.Application.ViewModels.Product.ProductCategoryViewModel, NetCore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2018-12-05T10:31:05.1645515+07:00 0HLIQC3NVO3N7:00000001 [INF] Executed DbCommand ("9"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t2].[DateCreated], [t2].[Id], [p.ProductTags].[Id] AS [Id0], [p.ProductTags].[ProductId], CASE
+    WHEN [p.ProductTags].[TagId] IS NULL
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END, [p.ProductTags].[TagId]
+FROM [ProductTags] AS [p.ProductTags]
+INNER JOIN (
+    SELECT [p2].[DateCreated], [p2].[Id]
+    FROM [Products] AS [p2]
+    INNER JOIN [ProductCategories] AS [p.ProductCategory2] ON [p2].[CategoryId] = [p.ProductCategory2].[Id]
+    ORDER BY [p2].[DateCreated] DESC, [p2].[Id]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t2] ON [p.ProductTags].[ProductId] = [t2].[Id]
+ORDER BY [t2].[DateCreated] DESC, [t2].[Id]" (0723d8ff)
+2018-12-05T10:31:05.1774545+07:00 0HLIQC3NVO3N7:00000001 [INF] Executed action method "NetCore.Areas.Admin.Controllers.ProductController.GetAllPaging (NetCore)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 763.9619ms. (50a9e262)
+2018-12-05T10:31:05.1816642+07:00 0HLIQC3NVO3N7:00000001 [INF] Executing ObjectResult, writing value of type '"NetCore.Utilities.Dtos.PagedResult`1[[NetCore.Application.ViewModels.Product.ProductViewModel, NetCore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2018-12-05T10:31:05.2409394+07:00 0HLIQC3NVO3N5:00000005 [INF] Executed action "NetCore.Areas.Admin.Controllers.ProductController.GetAllCategories (NetCore)" in 733.535ms (afa2e885)
+2018-12-05T10:31:05.2465467+07:00 0HLIQC3NVO3N7:00000001 [INF] Executed action "NetCore.Areas.Admin.Controllers.ProductController.GetAllPaging (NetCore)" in 963.5021ms (afa2e885)
+2018-12-05T10:31:05.2619422+07:00 0HLIQC3NVO3N5:00000005 [INF] Request finished in 1443.1325ms 200 application/json; charset=utf-8 (791a596a)
+2018-12-05T10:31:05.2645169+07:00 0HLIQC3NVO3N7:00000001 [INF] Request finished in 1002.6318ms 200 application/json; charset=utf-8 (791a596a)
+2018-12-05T10:31:05.5109528+07:00 0HLIQC3NVO3N7:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin/product/getAllpaging?categoryId=&keyword=&page=1&pageSize=10   (ca22a1cb)
+2018-12-05T10:31:05.5231895+07:00 0HLIQC3NVO3N5:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/images/user.png   (ca22a1cb)
+2018-12-05T10:31:05.6984723+07:00 0HLIQC3NVO3N7:00000002 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Product\"}". Executing action "NetCore.Areas.Admin.Controllers.ProductController.GetAllPaging (NetCore)" (a44c0341)
+2018-12-05T10:31:05.7074923+07:00 0HLIQC3NVO3N5:00000006 [INF] Request finished in 19.9567ms 404  (791a596a)
+2018-12-05T10:31:05.7083961+07:00 0HLIQC3NVO3N7:00000002 [INF] Authorization was successful. (0d575a54)
+2018-12-05T10:31:05.7127682+07:00 0HLIQC3NVO3N7:00000002 [INF] Executing action method "NetCore.Areas.Admin.Controllers.ProductController.GetAllPaging (NetCore)" with arguments (["", "", "1", "10"]) - Validation state: Valid (4e3479ed)
+2018-12-05T10:31:05.7427397+07:00 0HLIQC3NVO3N7:00000002 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=NetCore.Data.EF " (9958f5bb)
+2018-12-05T10:31:05.7566752+07:00 0HLIQC3NVO3N7:00000002 [INF] Executed DbCommand ("11"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [p]" (0723d8ff)
+2018-12-05T10:31:05.7622762+07:00 0HLIQC3NVO3N7:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Active], COALESCE([p].[Age], 0) AS [Age], [p].[CategoryId], [p].[Code], [p].[Content], [p].[DateCreated], [p].[DateModified], [p].[Description], CAST(COALESCE([p].[HomeFlag], 0) AS bit) AS [HomeFlag0], [p].[Id], [p].[ImageDetail], [p].[ImageThumbs], [p].[Info], COALESCE([p].[LanguageId], 0) AS [LanguageId0], [p].[Name], CAST(COALESCE([p].[New], 0) AS bit) AS [New], [p].[NotePrice], [p].[Parameter], [p].[Price], [p].[PriceSale], CASE
+    WHEN [p].[CategoryId] IS NULL
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END, [p.ProductCategory].[Active] AS [Active0], [p.ProductCategory].[Content] AS [Content0], [p.ProductCategory].[DateCreated] AS [DateCreated0], [p.ProductCategory].[DateModified] AS [DateModified0], [p.ProductCategory].[Description] AS [Description0], [p.ProductCategory].[HomeFlag], [p.ProductCategory].[Icon], [p.ProductCategory].[Image], [p.ProductCategory].[LanguageId], [p.ProductCategory].[Name] AS [Name0], [p.ProductCategory].[ParentId], [p.ProductCategory].[SeoAlias], [p.ProductCategory].[SeoDescription], [p.ProductCategory].[SeoKeyWords], [p.ProductCategory].[SeoTitle], [p.ProductCategory].[SortOrder], CAST(COALESCE([p].[ProductSale], 0) AS bit) AS [ProductSale], [p].[Sale], [p].[SeoAlias] AS [SeoAlias0], [p].[SeoDescription] AS [SeoDescription0], [p].[SeoKeyWords] AS [SeoKeyWords0], [p].[SeoTitle] AS [SeoTitle0], [p].[Size], [p].[SortOrder] AS [SortOrder0], [p].[Status], [p].[Tag], CAST(COALESCE([p].[Vat], 0) AS bit) AS [Vat], COALESCE([p].[ViewCount], 0) AS [ViewCount], [p].[Warranty], [p.ProductCategory].[Id]
+FROM [Products] AS [p]
+INNER JOIN [ProductCategories] AS [p.ProductCategory] ON [p].[CategoryId] = [p.ProductCategory].[Id]
+ORDER BY [p].[DateCreated] DESC, [p].[Id], [p.ProductCategory].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2018-12-05T10:31:05.7746606+07:00 0HLIQC3NVO3N7:00000002 [INF] Executed DbCommand ("3"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[DateCreated], [t].[Id], [t].[Id0], [p.ProductCategory.Products].[Active], COALESCE([p.ProductCategory.Products].[Age], 0) AS [Age], [p.ProductCategory.Products].[CategoryId], [p.ProductCategory.Products].[Code], [p.ProductCategory.Products].[Content], [p.ProductCategory.Products].[DateCreated] AS [DateCreated0], [p.ProductCategory.Products].[DateModified], [p.ProductCategory.Products].[Description], CAST(COALESCE([p.ProductCategory.Products].[HomeFlag], 0) AS bit) AS [HomeFlag], [p.ProductCategory.Products].[Id] AS [Id1], [p.ProductCategory.Products].[ImageDetail], [p.ProductCategory.Products].[ImageThumbs], [p.ProductCategory.Products].[Info], COALESCE([p.ProductCategory.Products].[LanguageId], 0) AS [LanguageId], [p.ProductCategory.Products].[Name], CAST(COALESCE([p.ProductCategory.Products].[New], 0) AS bit) AS [New], [p.ProductCategory.Products].[NotePrice], [p.ProductCategory.Products].[Parameter], [p.ProductCategory.Products].[Price], [p.ProductCategory.Products].[PriceSale], CAST(COALESCE([p.ProductCategory.Products].[ProductSale], 0) AS bit) AS [ProductSale], [p.ProductCategory.Products].[Sale], [p.ProductCategory.Products].[SeoAlias], [p.ProductCategory.Products].[SeoDescription], [p.ProductCategory.Products].[SeoKeyWords], [p.ProductCategory.Products].[SeoTitle], [p.ProductCategory.Products].[Size], [p.ProductCategory.Products].[SortOrder], [p.ProductCategory.Products].[Status], [p.ProductCategory.Products].[Tag], CAST(COALESCE([p.ProductCategory.Products].[Vat], 0) AS bit) AS [Vat], COALESCE([p.ProductCategory.Products].[ViewCount], 0) AS [ViewCount], [p.ProductCategory.Products].[Warranty]
+FROM [Products] AS [p.ProductCategory.Products]
+INNER JOIN (
+    SELECT [p0].[DateCreated], [p0].[Id], [p.ProductCategory0].[Id] AS [Id0]
+    FROM [Products] AS [p0]
+    INNER JOIN [ProductCategories] AS [p.ProductCategory0] ON [p0].[CategoryId] = [p.ProductCategory0].[Id]
+    ORDER BY [p0].[DateCreated] DESC, [p0].[Id], [p.ProductCategory0].[Id]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t] ON [p.ProductCategory.Products].[CategoryId] = [t].[Id0]
+ORDER BY [t].[DateCreated] DESC, [t].[Id], [t].[Id0], [p.ProductCategory.Products].[Id]" (0723d8ff)
+2018-12-05T10:31:05.7820449+07:00 0HLIQC3NVO3N7:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t1].[DateCreated], [t1].[Id], [t1].[Id0], [t1].[Id1], [p.ProductCategory.Products.ProductTags].[Id] AS [Id2], [p.ProductCategory.Products.ProductTags].[ProductId], CASE
+    WHEN [p.ProductCategory.Products.ProductTags].[TagId] IS NULL
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END, [p.ProductCategory.Products.ProductTags].[TagId]
+FROM [ProductTags] AS [p.ProductCategory.Products.ProductTags]
+INNER JOIN (
+    SELECT [t0].[DateCreated], [t0].[Id], [t0].[Id0], [p.ProductCategory.Products0].[Id] AS [Id1]
+    FROM [Products] AS [p.ProductCategory.Products0]
+    INNER JOIN (
+        SELECT [p1].[DateCreated], [p1].[Id], [p.ProductCategory1].[Id] AS [Id0]
+        FROM [Products] AS [p1]
+        INNER JOIN [ProductCategories] AS [p.ProductCategory1] ON [p1].[CategoryId] = [p.ProductCategory1].[Id]
+        ORDER BY [p1].[DateCreated] DESC, [p1].[Id], [p.ProductCategory1].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t0] ON [p.ProductCategory.Products0].[CategoryId] = [t0].[Id0]
+) AS [t1] ON [p.ProductCategory.Products.ProductTags].[ProductId] = [t1].[Id1]
+ORDER BY [t1].[DateCreated] DESC, [t1].[Id], [t1].[Id0], [t1].[Id1]" (0723d8ff)
+2018-12-05T10:31:05.7989524+07:00 0HLIQC3NVO3N7:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t2].[DateCreated], [t2].[Id], [p.ProductTags].[Id] AS [Id0], [p.ProductTags].[ProductId], CASE
+    WHEN [p.ProductTags].[TagId] IS NULL
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END, [p.ProductTags].[TagId]
+FROM [ProductTags] AS [p.ProductTags]
+INNER JOIN (
+    SELECT [p2].[DateCreated], [p2].[Id]
+    FROM [Products] AS [p2]
+    INNER JOIN [ProductCategories] AS [p.ProductCategory2] ON [p2].[CategoryId] = [p.ProductCategory2].[Id]
+    ORDER BY [p2].[DateCreated] DESC, [p2].[Id]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t2] ON [p.ProductTags].[ProductId] = [t2].[Id]
+ORDER BY [t2].[DateCreated] DESC, [t2].[Id]" (0723d8ff)
+2018-12-05T10:31:05.8102111+07:00 0HLIQC3NVO3N7:00000002 [INF] Executed action method "NetCore.Areas.Admin.Controllers.ProductController.GetAllPaging (NetCore)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 93.675ms. (50a9e262)
+2018-12-05T10:31:05.8153355+07:00 0HLIQC3NVO3N7:00000002 [INF] Executing ObjectResult, writing value of type '"NetCore.Utilities.Dtos.PagedResult`1[[NetCore.Application.ViewModels.Product.ProductViewModel, NetCore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2018-12-05T10:31:05.8304245+07:00 0HLIQC3NVO3N7:00000002 [INF] Executed action "NetCore.Areas.Admin.Controllers.ProductController.GetAllPaging (NetCore)" in 124.7252ms (afa2e885)
+2018-12-05T10:31:05.8456033+07:00 0HLIQC3NVO3N7:00000002 [INF] Request finished in 327.3855ms 200 application/json; charset=utf-8 (791a596a)
+2018-12-05T10:31:06.0644795+07:00 0HLIQC3NVO3N7:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/images/user.png   (ca22a1cb)
+2018-12-05T10:31:06.0792988+07:00 0HLIQC3NVO3N7:00000003 [INF] Request finished in 32.3998ms 404  (791a596a)
+2018-12-05T11:26:29.6720700+07:00 0HLIQC3NVO3N8:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Product/GetById?id=2   (ca22a1cb)
+2018-12-05T11:26:29.7023166+07:00 0HLIQC3NVO3N8:00000001 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=NetCore.Data.EF " (9958f5bb)
+2018-12-05T11:26:29.8113741+07:00 0HLIQC3NVO3N8:00000001 [INF] Executed DbCommand ("15"ms) [Parameters=["@__get_Item_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Active], [e].[Avatar], [e].[Balance], [e].[BirthDay], [e].[ConcurrencyStamp], [e].[DateCreated], [e].[DateModified], [e].[Email], [e].[EmailConfirmed], [e].[FullName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2018-12-05T11:26:29.8526630+07:00 0HLIQC3NVO3N8:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@__user_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2018-12-05T11:26:29.8613147+07:00 0HLIQC3NVO3N8:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-12-05T11:26:29.8688062+07:00 0HLIQC3NVO3N8:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-05T11:26:29.8765328+07:00 0HLIQC3NVO3N8:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__role_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0" (0723d8ff)
+2018-12-05T11:26:29.8803632+07:00 0HLIQC3NVO3N8:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-12-05T11:26:29.9041637+07:00 0HLIQC3NVO3N8:00000001 [INF] Route matched with "{area = \"Admin\", action = \"GetById\", controller = \"Product\"}". Executing action "NetCore.Areas.Admin.Controllers.ProductController.GetById (NetCore)" (a44c0341)
+2018-12-05T11:26:29.9067018+07:00 0HLIQC3NVO3N8:00000001 [INF] Authorization was successful. (0d575a54)
+2018-12-05T11:26:29.9110531+07:00 0HLIQC3NVO3N8:00000001 [INF] Executing action method "NetCore.Areas.Admin.Controllers.ProductController.GetById (NetCore)" with arguments (["2"]) - Validation state: Valid (4e3479ed)
+2018-12-05T11:26:29.9407665+07:00 0HLIQC3NVO3N8:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [x].[Id], [x].[Active], [x].[Age], [x].[CategoryId], [x].[Code], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[ImageDetail], [x].[ImageThumbs], [x].[Info], [x].[LanguageId], [x].[Name], [x].[New], [x].[NotePrice], [x].[Parameter], [x].[Price], [x].[PriceSale], [x].[ProductSale], [x].[Sale], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeyWords], [x].[SeoTitle], [x].[Size], [x].[SortOrder], [x].[Status], [x].[Tag], [x].[Vat], [x].[ViewCount], [x].[Warranty]
+FROM [Products] AS [x]
+WHERE [x].[Id] = @__id_0" (0723d8ff)
+2018-12-05T11:26:30.1472848+07:00 0HLIQC3NVO3N8:00000001 [INF] Executed action method "NetCore.Areas.Admin.Controllers.ProductController.GetById (NetCore)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 234.2608ms. (50a9e262)
+2018-12-05T11:26:30.1522374+07:00 0HLIQC3NVO3N8:00000001 [INF] Executing ObjectResult, writing value of type '"NetCore.Application.ViewModels.Product.ProductViewModel"'. (8a1b66c8)
+2018-12-05T11:26:30.1600491+07:00 0HLIQC3NVO3N8:00000001 [INF] Executed action "NetCore.Areas.Admin.Controllers.ProductController.GetById (NetCore)" in 249.4968ms (afa2e885)
+2018-12-05T11:26:30.1651900+07:00 0HLIQC3NVO3N8:00000001 [INF] Request finished in 493.8842ms 200 application/json; charset=utf-8 (791a596a)
+2018-12-05T11:26:30.1926111+07:00 0HLIQC3NVO3N8:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/ProductCategory/GetAll   (ca22a1cb)
+2018-12-05T11:26:30.1969813+07:00 0HLIQC3NVO3N8:00000002 [INF] Route matched with "{area = \"Admin\", action = \"GetAll\", controller = \"ProductCategory\"}". Executing action "NetCore.Areas.Admin.Controllers.ProductCategoryController.GetAll (NetCore)" (a44c0341)
+2018-12-05T11:26:30.2029239+07:00 0HLIQC3NVO3N8:00000002 [INF] Authorization was successful. (0d575a54)
+2018-12-05T11:26:30.2060256+07:00 0HLIQC3NVO3N8:00000002 [INF] Executing action method "NetCore.Areas.Admin.Controllers.ProductCategoryController.GetAll (NetCore)" - Validation state: Valid (dad538d7)
+2018-12-05T11:26:30.2116822+07:00 0HLIQC3NVO3N8:00000002 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=NetCore.Data.EF " (9958f5bb)
+2018-12-05T11:26:30.2200964+07:00 0HLIQC3NVO3N8:00000002 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Active], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[Icon], [x].[Id], [x].[Image], [x].[LanguageId], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeyWords], [x].[SeoTitle], [x].[SortOrder]
+FROM [ProductCategories] AS [x]
+ORDER BY [x].[ParentId], [x].[Id]" (0723d8ff)
+2018-12-05T11:26:30.2287252+07:00 0HLIQC3NVO3N8:00000002 [INF] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[ParentId], [t].[Id], [x.Products].[Active], COALESCE([x.Products].[Age], 0) AS [Age], [x.Products].[CategoryId], [x.Products].[Code], [x.Products].[Content], [x.Products].[DateCreated], [x.Products].[DateModified], [x.Products].[Description], CAST(COALESCE([x.Products].[HomeFlag], 0) AS bit) AS [HomeFlag], [x.Products].[Id] AS [Id0], [x.Products].[ImageDetail], [x.Products].[ImageThumbs], [x.Products].[Info], COALESCE([x.Products].[LanguageId], 0) AS [LanguageId], [x.Products].[Name], CAST(COALESCE([x.Products].[New], 0) AS bit) AS [New], [x.Products].[NotePrice], [x.Products].[Parameter], [x.Products].[Price], [x.Products].[PriceSale], CAST(COALESCE([x.Products].[ProductSale], 0) AS bit) AS [ProductSale], [x.Products].[Sale], [x.Products].[SeoAlias], [x.Products].[SeoDescription], [x.Products].[SeoKeyWords], [x.Products].[SeoTitle], [x.Products].[Size], [x.Products].[SortOrder], [x.Products].[Status], [x.Products].[Tag], CAST(COALESCE([x.Products].[Vat], 0) AS bit) AS [Vat], COALESCE([x.Products].[ViewCount], 0) AS [ViewCount], [x.Products].[Warranty]
+FROM [Products] AS [x.Products]
+INNER JOIN (
+    SELECT [x0].[ParentId], [x0].[Id]
+    FROM [ProductCategories] AS [x0]
+) AS [t] ON [x.Products].[CategoryId] = [t].[Id]
+ORDER BY [t].[ParentId], [t].[Id], [x.Products].[Id]" (0723d8ff)
+2018-12-05T11:26:30.2417515+07:00 0HLIQC3NVO3N8:00000002 [INF] Executed DbCommand ("10"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [t1].[ParentId], [t1].[Id], [t1].[Id0], [x.Products.ProductTags].[Id] AS [Id1], [x.Products.ProductTags].[ProductId], CASE
+    WHEN [x.Products.ProductTags].[TagId] IS NULL
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END, [x.Products.ProductTags].[TagId]
+FROM [ProductTags] AS [x.Products.ProductTags]
+INNER JOIN (
+    SELECT [t0].[ParentId], [t0].[Id], [x.Products0].[Id] AS [Id0]
+    FROM [Products] AS [x.Products0]
+    INNER JOIN (
+        SELECT [x1].[ParentId], [x1].[Id]
+        FROM [ProductCategories] AS [x1]
+    ) AS [t0] ON [x.Products0].[CategoryId] = [t0].[Id]
+) AS [t1] ON [x.Products.ProductTags].[ProductId] = [t1].[Id0]
+ORDER BY [t1].[ParentId], [t1].[Id], [t1].[Id0]" (0723d8ff)
+2018-12-05T11:26:30.2543884+07:00 0HLIQC3NVO3N8:00000002 [INF] Executed action method "NetCore.Areas.Admin.Controllers.ProductCategoryController.GetAll (NetCore)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 36.2317ms. (50a9e262)
+2018-12-05T11:26:30.2599660+07:00 0HLIQC3NVO3N8:00000002 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NetCore.Application.ViewModels.Product.ProductCategoryViewModel, NetCore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2018-12-05T11:26:30.2710033+07:00 0HLIQC3NVO3N8:00000002 [INF] Executed action "NetCore.Areas.Admin.Controllers.ProductCategoryController.GetAll (NetCore)" in 63.7081ms (afa2e885)
+2018-12-05T11:26:30.3281703+07:00 0HLIQC3NVO3N8:00000002 [INF] Request finished in 84.7039ms 200 application/json; charset=utf-8 (791a596a)

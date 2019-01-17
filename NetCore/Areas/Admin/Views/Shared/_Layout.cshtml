@@ -11,15 +11,19 @@
     <!-- Bootstrap -->
 
     <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/vendor/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css" rel="stylesheet" />
     <!-- Font Awesome -->
     <link href="~/vendor/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <!-- NProgress -->
     <link href="~/vendor/nprogress/nprogress.css" rel="stylesheet" />
+
     <!-- bootstrap-daterangepicker -->
     <link href="~/vendor/daterangepicker/daterangepicker.css" rel="stylesheet" />
-
+    <link href="~/vendor/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" rel="stylesheet" />
     <link href="~/vendor/ckeditor/skins/moono/editor.css" rel="stylesheet" /> <!-- Custom Theme Style -->
+    <link href="~/vendor/switchery/standalone/switchery.css" rel="stylesheet" />
     <link href="~/admin-side/css/custom.css" rel="stylesheet" />
+
     @RenderSection("Styles", required: false)
 </head>
 <body class="nav-md">
@@ -157,7 +161,7 @@
             <!-- footer content -->
             <footer>
                 <div class="pull-right">
-                    Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+                    Gentelella - Bootstrap Admin Template by <a href="#" title="">Colorlib</a>
                 </div>
                 <div class="clearfix"></div>
             </footer>
@@ -169,15 +173,16 @@
     <script src="~/vendor/jquery-easyui/js/jquery.min.js"></script>
     <!-- Bootstrap -->
     <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/vendor/bootstrap-switch/dist/js/bootstrap-switch.js"></script>
 
     <!-- FastClick -->
     <script src="~/vendor/fastclick/lib/fastclick.js"></script>
+    <script src="~/vendor/switchery/standalone/switchery.js"></script>
     <!-- NProgress -->
     <script src="~/vendor/nprogress/nprogress.js"></script>
     <!-- Chart.js -->
     <script src="~/vendor/chart.js/dist/Chart.js"></script>
     <!-- jQuery Sparklines -->
-    <script src="~/vendor/jquery-sparkline/jquery.sparkline.js"></script>
     <!-- Flot -->
     @*<script src="../vendors/Flot/jquery.flot.js"></script>
         <script src="../vendors/Flot/jquery.flot.pie.js"></script>
@@ -191,6 +196,7 @@
     <!-- DateJS -->
     @*<script src="../vendors/DateJS/build/date.js"></script>*@
     <!-- bootstrap-daterangepicker -->
+    <script src="~/vendor/bootstrap-tagsinput/dist/bootstrap-tagsinput.js"></script>
     <script src="~/vendor/jquery-validation/dist/jquery.validate.js"></script>
     <script src="~/vendor/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
     <script src="~/vendor/moment/moment.js"></script>
@@ -201,8 +207,10 @@
     <script src="~/vendor/bootbox/bootbox.js"></script>
     <script src="~/vendor/ckeditor/ckeditor.js"></script>
     <script src="~/app/shared/netcore.js"></script>
-    <!-- Custom Theme Scripts -->
+     <!-- Custom Theme Scripts -->
     <script src="~/admin-side/js/custom.js"></script>
+
+
     @RenderSection("Scripts", required: false)
 </body>
 </html>

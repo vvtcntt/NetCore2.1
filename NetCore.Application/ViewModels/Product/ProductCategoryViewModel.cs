@@ -20,7 +20,7 @@ namespace NetCore.Application.ViewModels.Product
         public DateTime DateModified { set; get; }
    
         public int LanguageId { set; get; }
-        public Status Status { set; get; }
+        public Active Active { set; get; }
         public int SortOrder { set; get; }
         public string SeoTitle { set; get; }
         public string SeoAlias { set; get; }

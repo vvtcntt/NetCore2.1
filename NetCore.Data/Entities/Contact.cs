@@ -32,6 +32,6 @@ namespace NetCore.Data.Entites
         public double? Lat { set; get; }
 
         public double? Lng { set; get; }
-        public Status Status { set; get; }
+        public Active Active { set; get; }
      }
 }

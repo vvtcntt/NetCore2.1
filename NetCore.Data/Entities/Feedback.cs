@@ -24,6 +24,6 @@ namespace NetCore.Data.Entites
 
          public DateTime DateCreated { set; get; }
         public DateTime DateModified { set; get; }
-        public Status Status { set; get; }
+        public Active Active { set; get; }
     }
 }

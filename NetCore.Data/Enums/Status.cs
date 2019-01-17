@@ -6,7 +6,8 @@ namespace NetCore.Data.Enums
 {
    public enum Status
     {
-        InActive,
-        Active
+        Ready,
+        wait,
+        over
     }
 }

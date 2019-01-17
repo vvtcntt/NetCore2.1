@@ -20,7 +20,7 @@ namespace NetCore.Application.ViewModels.System
         public string Address { get; set; }
         public string PhoneNumber { set; get; }
         public string Avatar { get; set; }
-        public Status Status { get; set; }
+        public Active Active { get; set; }
 
         public string Gender { get; set; }
 

@@ -11,12 +11,12 @@ using System.Text;
 namespace NetCore.Data.Entites
 {
     [Table("Bills")]
-    public class Bill : DomainEntity<int>, ISwitchable, IDateTracking
+    public class Bill : DomainEntity<int>, ISwitchable,ISwitchStatus, IDateTracking
     {
         public Bill() { }
 
         public Bill(string customerName, string customerAddress, string customerMobile, string customerMessage,
-            BillStatus billStatus, PaymentMethod paymentMethod, Status status, Guid? customerId)
+            BillStatus billStatus, PaymentMethod paymentMethod,Active active, Status status, Guid? customerId)
         {
             CustomerName = customerName;
             CustomerAddress = customerAddress;
@@ -24,12 +24,13 @@ namespace NetCore.Data.Entites
             CustomerMessage = customerMessage;
             BillStatus = billStatus;
             PaymentMethod = paymentMethod;
-            Status = status;
+            Status = status; Active = active;
+
             CustomerId = customerId;
         }
 
         public Bill(int id, string customerName, string customerAddress, string customerMobile, string customerMessage,
-           BillStatus billStatus, PaymentMethod paymentMethod, Status status, Guid? customerId)
+           BillStatus billStatus, PaymentMethod paymentMethod, Active active, Status status, Guid? customerId)
         {
             Id = id;
             CustomerName = customerName;
@@ -40,6 +41,7 @@ namespace NetCore.Data.Entites
             PaymentMethod = paymentMethod;
             Status = status;
             CustomerId = customerId;
+            Active = active;
         }
         [Required]
         [MaxLength(256)]
@@ -59,12 +61,13 @@ namespace NetCore.Data.Entites
         public BillStatus BillStatus { set; get; }
         public DateTime DateCreated { set; get; }
         public DateTime DateModified { set; get; }
-        [DefaultValue(Status.Active)]
-        public Status Status { set; get; } = Status.Active;
+        [DefaultValue(Active.Active)]
+        public Active Active { set; get; } = Active.Active;
         [StringLength(450)]
         public Guid? CustomerId { set; get; }
         [ForeignKey("CustomerId")]
         public virtual AppUser User { set; get; }
         public virtual ICollection<BillDetail> BillDetails { set; get; }
+        public Status Status { set; get; }
     }
 }

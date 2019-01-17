@@ -22,18 +22,18 @@ namespace NetCore.Areas.Admin.Components
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var roles = ((ClaimsPrincipal)User).getSpecificClaim("Roles");
-            List<FunctionViewModel> functions;
-            if (roles.Split(";").Contains(CommonConstants.AppRole.AdminRole))
-            {
-                functions = await _functionService.GetAll(string.Empty);
-            }
-            else
-            {
-                string role = roles.ToString();
-                //TODO: Get by permission
-                functions = new List<FunctionViewModel>();
-            }
+          var roles = ((ClaimsPrincipal)User).getSpecificClaim("Roles");
+          List<FunctionViewModel> functions;
+            //if (roles.Split(";").Contains(CommonConstants.AppRole.AdminRole))
+            //{
+            functions = await _functionService.GetAll(string.Empty);
+            //}
+            //else
+            //{
+            //string role = roles.ToString();
+            //TODO: Get by permission
+            //functions = new List<FunctionViewModel>();
+            //}
             return View(functions);
         }
     }

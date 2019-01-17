@@ -59,7 +59,7 @@ namespace NetCore.Application.Implementation
 
         public Task<List<FunctionViewModel>> GetAll(string filter)
         {
-            var query = _functionRepository.FindAll(x => x.Status == Status.Active);
+            var query = _functionRepository.FindAll(x => x.Active == Active.Active);
             if (!string.IsNullOrEmpty(filter))
                 query = query.Where(x => x.Name.Contains(filter));
             return query.OrderBy(x => x.ParentId).ProjectTo<FunctionViewModel>().ToListAsync();

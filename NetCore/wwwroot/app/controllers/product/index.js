@@ -2,13 +2,18 @@
     var quantityManagenment = new QuantityManagement();
     var imageManagement = new ImageManagement();
     var wholePriceManagement = new WholePriceManagement();
-
     this.initialize = function () {
-        loadCategories(); loadData(); registerEvents(); registerControls();
-
+        $('input[name="my-checkbox"]').on('switchChange.bootstrapSwitch', function (event, state) {
+            event.preventDefault();         
+        });
+        loadCategories();
+        loadData();
+        registerEvents();
+        registerControls();       
         quantityManagenment.initialize();
         imageManagement.initialize();
         wholePriceManagement.initialize();
+        initTreeDropDownCategory();
     }
     function registerControls() {
         CKEDITOR.replace('txtContM', {});
@@ -31,6 +36,20 @@
 
     }
     function registerEvents() {
+        $('input[name="my-checkbox"]').on('switchChange.bootstrapSwitch', function (event, state) {
+            event.preventDefault();
+          });         
+        $('#ddlCategoryIdM').combotree({
+            select: function (event, ui) {
+                console.log("test thử thôi nhé");
+            } 
+        });
+        $("#ddlCategoryIdM").combobox({
+            change: function () {
+                alert($(this).val());
+            }
+        });
+
         $('#ddlShowPage').on('change', function () {
             netcore.config.pageSize = $(this).val();
             netcore.config.pageIndex = 1;
@@ -46,7 +65,8 @@
         });
         $('#btnCreate').off('click').on('click', function () {
             resetFormMaintainance();
-          initTreeDropDownCategory();
+            initTreeDropDownCategory($("#ddlCategory").val());
+
             $('#modal-add-edit').modal('show');
         });
         $('#btnSelectImg').on('click', function () {
@@ -77,7 +97,7 @@
             });
         });
         $('body').on('click', '.btnEdit', function (e) {
-            resetFormMaintainance();
+            //resetFormMaintainance();
             e.preventDefault();
             var that = $(this).data('id');
             loadDetails(that);
@@ -139,13 +159,141 @@
                 },
                 error: function () {
                     netcore.notify('Has an error in progress', 'error');
-                    tedu.stopLoading();
+                    netcore.stopLoading();
                 }
             });
         });
+
+        $('body').on('change', '.btnEditPrice', function (e) {
+            e.preventDefault();
+            var that = $(this).data('id');
+            $('#hidId').val(that);
+            var price = $(this).val();
+            $.ajax({
+                url: '/Admin/Product/updateFast',
+                type: 'POST',
+                data: { id: that, price: price, priceSale: null, sortOrd: null, status: null, productSale: null,homeFlag:null },
+                dataType: "json",
+                success: function (data) {
+                    $(this).val(netcore.formatNumber(price, 0));
+                    netcore.notify('Update Price success', 'success');
+                }
+            });
+            return false;
+        });
+        $('body').on('change', '.btnEditPriceSale', function (e) {
+            e.preventDefault();
+            var that = $(this).data('id');
+            $('#hidId').val(that);
+            var priceSale = $(this).val();
+            $.ajax({
+                url: '/Admin/Product/updateFast',
+                type: 'POST',
+                data: { id: that, price: null, priceSale: priceSale, sortOrd: null, active: null, productSale: null, homeFlag: null },
+                dataType: "json",
+                success: function (data) {
+                     netcore.notify('Update Price Sale success', 'success');
+                }
+            });
+            return false;
+        });
+        $('body').on('change', '.btnEditSortOrd', function (e) {
+            e.preventDefault();
+            var that = $(this).data('id');
+            $('#hidId').val(that);
+            var sortOrd = $(this).val();
+            $.ajax({
+                url: '/Admin/Product/updateFast',
+                type: 'POST',
+                data: { id: that, price: null, priceSale: null, sortOrd: sortOrd, active: null, productSale: null, homeFlag: null },
+                dataType: "json",
+                success: function (data) {
+                     netcore.notify('Update SordOrd success', 'success');
+                }
+            });
+            return false;
+        });
+        $('body').on('click', '.btnActive', function (e) {
+            e.preventDefault();
+            var that = $(this).data('id');
+            var that1 = $(this).attr("title");
+            if (that1 == 1) {
+                $(this).html("");
+                $(this).append(netcore.updateStatus(that1));
+                $(this).attr('title', '0');
+            }
+            else {
+                $(this).html("");
+                $(this).append(netcore.updateStatus(that1));
+                $(this).attr('title', '1');
+            }
+            $('#hidId').val(that);
+             $.ajax({
+                url: '/Admin/Product/updateFast',
+                type: 'POST',
+                 data: { id: that, price: null, priceSale: null, sortOrd: null, active: that, productSale: null, homeFlag: null },
+                dataType: "json",
+                success: function (data) {
+                    netcore.notify('Update Active success', 'success');
+                }
+            });
+            return false;
+        });
+        $('body').on('click', '.btnProductSale', function (e) {
+            e.preventDefault();
+            var that = $(this).data('id');
+            var that1 = $(this).attr("title");
+            if (that1 == 'true') {
+                $(this).html("");
+                $(this).append(netcore.UpdateValueBool(that1));
+                $(this).attr('title', 'false');
+            }
+            else {
+                $(this).html("");
+                $(this).append(netcore.UpdateValueBool(that1));
+                $(this).attr('title', 'true');
+            }
+            $('#hidId').val(that);
+            $.ajax({
+                url: '/Admin/Product/updateFast',
+                type: 'POST',
+                data: { id: that, price: null, priceSale: null, sortOrd: null, active: null, productSale: true, homeFlag: null },
+                dataType: "json",
+                success: function (data) {
+                    netcore.notify('Update ProductSale success', 'success');
+                }
+            });
+            return false;
+        });
+        $('body').on('click', '.btnHomeFlag', function (e) {
+            e.preventDefault();
+            var that = $(this).data('id');
+            var that1 = $(this).attr("title");
+            if (that1 == 'true') {
+                $(this).html("");
+                $(this).append(netcore.UpdateValueBool(that1));
+                $(this).attr('title', 'false');
+            }
+            else {
+                $(this).html("");
+                $(this).append(netcore.UpdateValueBool(that1));
+                $(this).attr('title', 'true');
+            }
+            $('#hidId').val(that);
+            $.ajax({
+                url: '/Admin/Product/updateFast',
+                type: 'POST',
+                data: { id: that, price: null, priceSale: null, sortOrd: null, active: null, productSale: null, homeFlag: true },
+                dataType: "json",
+                success: function (data) {
+                    netcore.notify('Update Home Flag success', 'success');
+                }
+            });
+            return false;
+        });
     }
-    function saveProduct() {
-      
+   
+    function saveProduct() {      
         var categoryId = $('#ddlCategoryIdM').combotree('getValue');
         var id = parseInt($('#hidIdM').val());
         var name = $('#txtNameM').val();
@@ -156,9 +304,9 @@
         var ord = $('#txtOrderM').val();
         var imageDetail = $('#txtImageM').val();
         var info = $('#txtInfoM').val();
-        var keywordMeta = $('#txtMetakeywordM').val();
-        var desctiptionMeta = $('#txtMetaDescriptionM').val();
-        var titleMeta = $('#txtSeoPageTitleM').val();
+        var keywordMeta = $('#txtSeoKeywordM').val();
+        var desctiptionMeta = $('#txtSeoDescriptionM').val();
+        var titleMeta = $('#txtSeoTitleM').val();
         var tag = $('#txtTagM').val();
         var size = $('#txtSizeM').val();
         var sale = $('#txtSaleM').val();
@@ -168,7 +316,8 @@
         var price = $('#txtPriceM').val();
         var priceSale = $('#txtPriceSaleM').val();
         var homeFlag = $('#chkHomeFlag').prop('checked');
-        var status = $('#chkStatusM').prop('checked') == true ? 1 : 0;
+        var check = $('#chkStatusM').bootstrapSwitch('state');
+        var status = $('#chkStatusM').prop('checked')== true ? 1 : 0;
         var productNew = $('#chkNewM').prop('checked');
         var productSale = $('#chkSale').prop('checked');
 
@@ -182,7 +331,7 @@
                 Code: code,
                 Description: description,
                 Content: content,
-                Ord: ord,
+                SortOrder: ord,
                 HomeFlag: homeFlag,
                 ImageDetail: imageDetail,
                 ImageThumbs: 'chưa có',
@@ -199,9 +348,9 @@
                 Status: status,
                 New: productNew,
                 ProductSale: productSale,
-                TitleMeta: titleMeta,
-                KeywordMeta: keywordMeta,
-                DescriptionMeta: desctiptionMeta
+                SeoTitle: titleMeta,
+                SeoKeyWords: keywordMeta,
+                SeoDescription: desctiptionMeta
             },
             dataType: "json",
             beforeSend: function () {
@@ -212,7 +361,8 @@
                 $('#modal-add-edit').modal('hide');
                 resetFormMaintainance();
                 netcore.stopLoading();
-                loadData(true);
+                loadCategories(categoryId);
+                  loadData(true);
             },
             error: function () {
                 netcore.notify('Has an error in update progress', 'error');
@@ -260,25 +410,31 @@
                 $('#txtCodeM').val(data.Code);
                 $('#txtDescM').val(data.Description);
                 $('#txtOrderM').val(data.sortOrder);
-                $('#txtImageM').val(data.imageDetail);
+                $('#txtImageM').val(data.ImageDetail);
                 $('#txtInfoM').val(data.Info);
                 CKEDITOR.instances.txtContM.setData(data.Content);
                 $('#txtMetakeywordM').val(data.SeoKeyword);
-                $('#txtMetaDescriptionM').val(data.SeoDescription);
+                $('#txtSeoDescriptionM').val(data.SeoDescription);
                 $('#txtSeoPageTitleM').val(data.SeoTitle);
-                $('#txtTagM').val(data.Tag);
+                $("#txtTagM").tagsinput(data.Tag);
+
                 $('#txtSizeM').val(data.Size);
                 $('#txtSaleM').val(data.Sale);
                 $('#txtAgeM').val(data.Age);
                 $('#txtWanM').val(data.Warranty);
-                $('#txtNotePM').val(data.NotePrice);
+                $('#txtNotePM').val(data.NotePrice); 
+                $('#txtOrderM').val(data.SortOrder);
                 $('#txtPriceM').val(data.Price);
                 $('#txtPriceSaleM').val(data.PriceSale);
-                $('#chkHomeFlag').prop('checked', data.HomeFlag);
-                $('#ckStatusM').prop('checked', data.Status);
-                $('#chkNewM').prop('checked', data.New);
-                $('#chkSale').prop('checked', data.ProductSale);
+                $('#chkHomeFlag').bootstrapSwitch('state', data.HomeFlag);
+                $('#chkStatusM').bootstrapSwitch('state', netcore.getTrueFalse(data.Status));
+                $('#chkNewM').bootstrapSwitch('state', data.New);
+                $('#chkSale').bootstrapSwitch('state', data.ProductSale);
+                $('#txtSeoTitleM').val(data.SeoTitle);
+                $('#txtSeoDescriptionM').val(data.SeoDescription);
+                $('#txtSeoKeywordM').val(data.SeoKeyWords);
                 $('#modal-add-edit').modal('show');
+
                 netcore.stopLoading();
             },
             error: function (status) {
@@ -295,14 +451,15 @@
         $('#txtDescM').val('');
         $('#txtOrderM').val('');
         CKEDITOR.instances.txtContM.setData('');
-
         $('#txtImageM').val('');
         $('#txtInfoM').val('');
-        $('#txtMetakeywordM').val('');
-        $('#txtMetaDescriptionM').val('');
-        $('#txtSeoPageTitleM').val('');
+        $('#txtSeoKeywordM').val('');
+        $('#txtSeoDescriptionM').val('');
+        $('#txtSeoTitleM').val('');
         $('#txtSeoAliasM').val('');
-        $('#txtTagM').val('');
+        $("#txtTagM").tagsinput('thiệp vũ');
+
+
         $('#txtSizeM').val('');
         $('#txtSaleM').val('');
         $('#txtAgeM').val('');
@@ -310,10 +467,11 @@
         $('#txtNotePM').val('');
         $('#txtPriceM').val('');
         $('#txtPriceSaleM').val('');
-        $('#chkHomeFlag').prop('checked', true);
-        $('#chkStatusM').prop('checked', true);
-        $('#chkNewM').prop('checked', true);
-        $('#chkSale').prop('checked', true);
+        $('#chkStatusM').bootstrapSwitch('state', true);
+        $('#chkHomeFlag').bootstrapSwitch('state', false);
+        $('#chkNewM').bootstrapSwitch('state', false);
+        $('#chkSale').bootstrapSwitch('state', false);
+ 
     }
     function initTreeDropDownCategory(selectedId) {
         $.ajax({
@@ -349,7 +507,7 @@
             }
         });
     }
-    function loadCategories() {
+    function loadCategories(id) {
         $.ajax({
             type: 'GET',
             data: {
@@ -363,7 +521,13 @@
             success: function (response) {
                 var render = "<option value='' >--Chọn danh mục--</option>";
                 $.each(response, function (i, item) {
-                    render += "<option value='" + item.id + "'> " + item.Name + "</option>";
+                    if (item.Id == id) {
+                        render += "<option value='" + item.Id + "' selected> " + item.Name + "</option>";
+                    }
+                    else {
+
+                    } render += "<option value='" + item.Id + "'> " + item.Name + "</option>";
+                    
                 });
                 $('#ddlCategory').html(render);
             },
@@ -380,7 +544,7 @@
         $.ajax({
             type: 'GET',
             data: {
-                categoryId: null,
+                categoryId: ddlCategory,
                 keyword: $('#txtKeyword').val(),
                 page: netcore.config.pageIndex,
                 pageSize: netcore.config.pageSize
@@ -395,8 +559,15 @@
                         ImageThumbs: item.ImageThumbs == null ? '<img src="/admin-site/images/user.png" width=25' : '<img src="' + item.ImageThumbs + '" width=25>',
                         CategoryName: item.ProductCategory.Name,
                         Price: netcore.formatNumber(item.Price, 0),
-                        DateCreated: netcore.dateTimeFormatJson(item.DateCreated),
-                        Status: netcore.getStatus(item.Status)
+                        PriceSale: netcore.formatNumber(item.PriceSale, 0),
+                        SortOrder: item.SortOrder,
+                        Actives: item.Active,
+                        Active: netcore.getStatus(item.Active, item.Id),
+                        ProductSales: item.ProductSale,
+                        ProductSale: netcore.getValueBool(item.ProductSale, item.Id),
+                        HomeFlags: item.HomeFlag,
+                        HomeFlag: netcore.getValueBool(item.HomeFlag, item.Id)
+
                     });
                    
                 });
@@ -404,6 +575,8 @@
                 $('#lblTotalRecords').text(response.RowCount);
                 if (render != '') {
                     $('#tbl-content').html(render);
+                    $('input[name="my-checkbox"]').bootstrapSwitch();
+                     
                 }
                 wrapPaging(response.RowCount, function () {
                     loadData();

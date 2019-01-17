@@ -200,5 +200,13 @@ namespace NetCore.Areas.Admin.Controllers
             }
             return new OkObjectResult(fileUrl);
         }
+        [HttpPost]
+        public IActionResult updateFast(int id, decimal?price, decimal?priceSale,int?sortOrd, int?active, bool?productSale,bool?homeFlag)
+        {
+            _productService.UpdateFast(id, price, priceSale, sortOrd, active, productSale, homeFlag);
+            _productService.Save();
+             return new OkObjectResult(id);
+             
+        }
     }
 }

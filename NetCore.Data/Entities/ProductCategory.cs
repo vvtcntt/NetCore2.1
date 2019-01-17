@@ -19,7 +19,7 @@ namespace NetCore.Data.Entites
         public ProductCategory(string name,int? parentId,string description,string content,string image,string icon, bool? homeFlag,
             int sortOder,DateTime dateCreated, 
             DateTime dateModified,string tileMeta,string keyworkMeta,string descriptionMeta,
-            string seoAlias, int languageId,Status status)
+            string seoAlias, int languageId,Active active)
         {
             Name = name;
             ParentId = parentId;
@@ -36,7 +36,7 @@ namespace NetCore.Data.Entites
             SeoDescription = descriptionMeta;
             SeoAlias = seoAlias;
             LanguageId = languageId;
-            Status = status;
+            Active = active;
         }
         public string Name { get; set; }
         public int? ParentId { get; set; }
@@ -54,7 +54,7 @@ namespace NetCore.Data.Entites
        
         [StringLength(255)]
          public int LanguageId { set; get; }
-        public Status Status { set; get; }
+        public Active Active { set; get; }
         public virtual ICollection<Product> Products { set; get; }
         public int SortOrder  { set; get; }
         public string SeoTitle  { set; get; }

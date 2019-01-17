@@ -114,9 +114,9 @@
 
 
                         <div class="form-group">
-                            <label for="txtSeoPageTitleM" class="col-sm-2 control-label no-padding-right">SEO Title</label>
+                            <label for="txtSeoTitleM" class="col-sm-2 control-label no-padding-right">SEO Title</label>
                             <div class="col-sm-10">
-                                <input type="text" name="txtSeoPageTitleM" class="form-control" id="txtSeoPageTitleM">
+                                <input type="text" name="txtSeoTitleM" class="form-control" id="txtSeoTitleM">
                             </div>
                         </div>
 
@@ -129,33 +129,38 @@
                         <div class="form-group">
                             <label for="txtSeoDescriptionM" class="col-sm-2 control-label no-padding-right">SEO Description</label>
                             <div class="col-sm-10">
-                                <textarea rows="3" name="txtSeoDescriptionM" class="form-control" id="txtSeoDescriptionM"></textarea>
+                                <textarea rows="3" name="txtSeoDescription" class="form-control" id="txtSeoDescriptionM"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="txtTagM" class="col-sm-2 control-label no-padding-right">Seo Tag</label>
                             <div class="col-sm-10">
-                                <textarea rows="3" name="txtTagM" class="form-control" id="txtTagM"></textarea>
-                            </div>
+                                <input type="text"  name="txtTagM" class="form-control" id="txtTagM" style="min-width:80%" />
+
+                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
+                            <label for="sdsd" class="col-sm-2 control-label no-padding-right">Điều khiển</label>
+
+                            <div class="col-sm-10">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" checked="checked" id="chkStatusM">
-                                        <span class="text">Status</span>
+                                        <input id="chkStatusM" type="checkbox" data-size="mini" name="my-checkbox">
+                                                                                @*<input id="chkStatus" type="checkbox" data-size="mini" name="my-checkbox">*@
+
+                                        <span class="text" style="text-align:center; margin:2px; display:block">Kích hoạt</span>
                                     </label>
                                     <label>
-                                        <input type="checkbox" id="chkNewM">
-                                        <span class="text">Product New</span>
+                                        <input id="chkNewM" type="checkbox" data-size="mini" name="my-checkbox">
+                                        <span class="text" style="text-align:center; margin:2px; display:block">Sản phẩm mới</span>
                                     </label>
                                     <label>
-                                        <input type="checkbox" id="chkSale">
-                                        <span class="text">Product Sale</span>
+                                        <input id="chkSale" type="checkbox" data-size="mini" name="my-checkbox">
+                                        <span class="text" style="text-align:center; margin:2px; display:block">Sản phẩm khuyến mại</span>
                                     </label>
                                     <label>
-                                        <input type="checkbox" id="chkHomeFlag">
-                                        <span class="text">Home Flag</span>
+                                        <input id="chkHomeFlag" type="checkbox" data-size="mini" name="my-checkbox">
+                                        <span class="text" style="text-align:center; margin:2px; display:block">Hiện ngoài trang chủ</span>
                                     </label>
 
                                 </div>

@@ -7,6 +7,6 @@ namespace NetCore.Data.Interfaces
 {
     public interface ISwitchable
     {
-        Status Status { set; get; }
+        Active Active { set; get; }
     }
 }

@@ -28,7 +28,11 @@
     "ckeditor": "~4.10.0",
     "jquery-treegrid": "~0.3.0",
     "bootstrap-datepicker": "~1.8.0",
-    "jquery-validation": "~1.18.0"
+    "jquery-validation": "~1.18.0",
+    "switchery": "~0.0.2",
+    "bootstrap-tagsinput": "~0.7.1",
+    "bootstrap-switch": "~3.3.4"
+
 
   }
 }

@@ -54,7 +54,7 @@ namespace NetCore.Application.Implementation
 
         public List<ProductCategoryViewModel> GetAllByParentId(int parentId)
         {
-            return _productCategoryRepository.FindAll(x=>x.Status==Status.Active && x.ParentId==parentId).OrderBy(x => x.ParentId).ProjectTo<ProductCategoryViewModel>().ToList();
+            return _productCategoryRepository.FindAll(x=>x.Active== Active.Active && x.ParentId==parentId).OrderBy(x => x.ParentId).ProjectTo<ProductCategoryViewModel>().ToList();
         }
 
         public ProductCategoryViewModel GetById(int id)

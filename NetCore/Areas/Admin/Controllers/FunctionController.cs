@@ -122,7 +122,7 @@ namespace NetCore.Areas.Admin.Controllers
                 {
                     _functionService.ReOrder(sourceId, targetId);
                     _functionService.Save();
-                    return new OkObjectResult(sourceId);
+                    return new OkResult();
                 }
             }
         }

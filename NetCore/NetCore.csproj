@@ -113,6 +113,37 @@
     <Content Include="node_modules\bootstrap-daterangepicker\website.css" />
     <Content Include="node_modules\bootstrap-daterangepicker\website\index.html" />
     <Content Include="node_modules\bootstrap-daterangepicker\website\website.css" />
+    <Content Include="node_modules\bootstrap-switch\bower.json" />
+    <Content Include="node_modules\bootstrap-switch\composer.json" />
+    <Content Include="node_modules\bootstrap-switch\dist\css\bootstrap2\bootstrap-switch.css" />
+    <Content Include="node_modules\bootstrap-switch\dist\css\bootstrap2\bootstrap-switch.min.css" />
+    <Content Include="node_modules\bootstrap-switch\dist\css\bootstrap3\bootstrap-switch.css" />
+    <Content Include="node_modules\bootstrap-switch\dist\css\bootstrap3\bootstrap-switch.min.css" />
+    <Content Include="node_modules\bootstrap-switch\docs\404.html" />
+    <Content Include="node_modules\bootstrap-switch\docs\css\highlight.css" />
+    <Content Include="node_modules\bootstrap-switch\docs\css\main.css" />
+    <Content Include="node_modules\bootstrap-switch\docs\documentation-2.html" />
+    <Content Include="node_modules\bootstrap-switch\docs\events.html" />
+    <Content Include="node_modules\bootstrap-switch\docs\examples.html" />
+    <Content Include="node_modules\bootstrap-switch\docs\index.html" />
+    <Content Include="node_modules\bootstrap-switch\docs\methods.html" />
+    <Content Include="node_modules\bootstrap-switch\docs\options.html" />
+    <Content Include="node_modules\bootstrap-switch\package.json" />
+    <Content Include="node_modules\bootstrap-switch\src\docs\harp.json" />
+    <Content Include="node_modules\bootstrap-switch\src\docs\public\css\highlight.css" />
+    <Content Include="node_modules\bootstrap-tagsinput\bootstrap-tagsinput.jquery.json" />
+    <Content Include="node_modules\bootstrap-tagsinput\bower.json" />
+    <Content Include="node_modules\bootstrap-tagsinput\dist\bootstrap-tagsinput-typeahead.css" />
+    <Content Include="node_modules\bootstrap-tagsinput\dist\bootstrap-tagsinput.css" />
+    <Content Include="node_modules\bootstrap-tagsinput\examples\assets\app.css" />
+    <Content Include="node_modules\bootstrap-tagsinput\examples\assets\cities.json" />
+    <Content Include="node_modules\bootstrap-tagsinput\examples\assets\citynames.json" />
+    <Content Include="node_modules\bootstrap-tagsinput\examples\bootstrap-2.3.2.html" />
+    <Content Include="node_modules\bootstrap-tagsinput\examples\index.html" />
+    <Content Include="node_modules\bootstrap-tagsinput\package.json" />
+    <Content Include="node_modules\bootstrap-tagsinput\src\bootstrap-tagsinput-typeahead.css" />
+    <Content Include="node_modules\bootstrap-tagsinput\src\bootstrap-tagsinput.css" />
+    <Content Include="node_modules\bootstrap-tagsinput\test\index.html" />
     <Content Include="node_modules\chart.js\book.json" />
     <Content Include="node_modules\chart.js\bower.json" />
     <Content Include="node_modules\chart.js\composer.json" />
@@ -1747,6 +1778,11 @@
     <Content Include="node_modules\nprogress\nprogress.css" />
     <Content Include="node_modules\nprogress\package.json" />
     <Content Include="node_modules\nprogress\test\component.html" />
+    <Content Include="node_modules\switchery\bower.json" />
+    <Content Include="node_modules\switchery\component.json" />
+    <Content Include="node_modules\switchery\package.json" />
+    <Content Include="node_modules\switchery\standalone\switchery.css" />
+    <Content Include="node_modules\switchery\switchery.css" />
     <Content Include="node_modules\twbs-pagination\bower.json" />
     <Content Include="node_modules\twbs-pagination\examples\bootstrap-v4.html" />
     <Content Include="node_modules\twbs-pagination\examples\index.html" />
@@ -1760,11 +1796,13 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="7.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="4.0.1" />
+    <PackageReference Include="CKSource.CKFinder.Connector.Core" Version="3.4.4" />
     <PackageReference Include="EPPlus.Core" Version="1.5.4" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="2.1.2" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" PrivateAssets="All" />
     <PackageReference Include="Serilog.Extensions.Logging.File" Version="1.1.0" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="1.0.0-beta0005" />
   </ItemGroup>
 
   <ItemGroup>
@@ -2000,6 +2038,99 @@
     <None Include="node_modules\bootstrap-daterangepicker\README.md" />
     <None Include="node_modules\bootstrap-daterangepicker\website.js" />
     <None Include="node_modules\bootstrap-daterangepicker\website\website.js" />
+    <None Include="node_modules\bootstrap-switch\.babelrc" />
+    <None Include="node_modules\bootstrap-switch\.npmignore" />
+    <None Include="node_modules\bootstrap-switch\CHANGELOG.md" />
+    <None Include="node_modules\bootstrap-switch\CNAME" />
+    <None Include="node_modules\bootstrap-switch\CONTRIBUTING.md" />
+    <None Include="node_modules\bootstrap-switch\dist\js\bootstrap-switch.js" />
+    <None Include="node_modules\bootstrap-switch\dist\js\bootstrap-switch.min.js" />
+    <None Include="node_modules\bootstrap-switch\docs\CNAME" />
+    <None Include="node_modules\bootstrap-switch\docs\js\highlight.js" />
+    <None Include="node_modules\bootstrap-switch\docs\js\main.js" />
+    <None Include="node_modules\bootstrap-switch\karma.conf.js" />
+    <None Include="node_modules\bootstrap-switch\LICENSE" />
+    <None Include="node_modules\bootstrap-switch\README.md" />
+    <None Include="node_modules\bootstrap-switch\src\docs\public\404.jade" />
+    <None Include="node_modules\bootstrap-switch\src\docs\public\CNAME" />
+    <None Include="node_modules\bootstrap-switch\src\docs\public\css\main.less" />
+    <None Include="node_modules\bootstrap-switch\src\docs\public\documentation-2.jade" />
+    <None Include="node_modules\bootstrap-switch\src\docs\public\events.jade" />
+    <None Include="node_modules\bootstrap-switch\src\docs\public\examples.jade" />
+    <None Include="node_modules\bootstrap-switch\src\docs\public\index.jade" />
+    <None Include="node_modules\bootstrap-switch\src\docs\public\js\highlight.js" />
+    <None Include="node_modules\bootstrap-switch\src\docs\public\js\main.js" />
+    <None Include="node_modules\bootstrap-switch\src\docs\public\methods.jade" />
+    <None Include="node_modules\bootstrap-switch\src\docs\public\options.jade" />
+    <None Include="node_modules\bootstrap-switch\src\docs\public\_layout.jade" />
+    <None Include="node_modules\bootstrap-switch\src\js\bootstrap-switch.js" />
+    <None Include="node_modules\bootstrap-switch\src\js\bootstrap-switch.test.js" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap2\bootstrap-switch.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap2\build.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap2\mixins.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap2\variables.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\bootstrap-switch.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\build.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\mixins.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\mixins\alerts.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\mixins\background-variant.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\mixins\border-radius.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\mixins\buttons.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\mixins\center-block.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\mixins\clearfix.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\mixins\forms.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\mixins\gradients.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\mixins\grid-framework.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\mixins\grid.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\mixins\hide-text.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\mixins\image.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\mixins\labels.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\mixins\list-group.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\mixins\nav-divider.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\mixins\nav-vertical-align.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\mixins\opacity.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\mixins\pagination.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\mixins\panels.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\mixins\progress-bar.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\mixins\reset-filter.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\mixins\reset-text.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\mixins\resize.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\mixins\responsive-visibility.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\mixins\size.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\mixins\tab-focus.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\mixins\table-row.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\mixins\text-emphasis.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\mixins\text-overflow.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\mixins\vendor-prefixes.less" />
+    <None Include="node_modules\bootstrap-switch\src\less\bootstrap3\variables.less" />
+    <None Include="node_modules\bootstrap-switch\yarn.lock" />
+    <None Include="node_modules\bootstrap-tagsinput\.npmignore" />
+    <None Include="node_modules\bootstrap-tagsinput\.travis.yml" />
+    <None Include="node_modules\bootstrap-tagsinput\dist\bootstrap-tagsinput-angular.js" />
+    <None Include="node_modules\bootstrap-tagsinput\dist\bootstrap-tagsinput-angular.min.js" />
+    <None Include="node_modules\bootstrap-tagsinput\dist\bootstrap-tagsinput-angular.min.js.map" />
+    <None Include="node_modules\bootstrap-tagsinput\dist\bootstrap-tagsinput.js" />
+    <None Include="node_modules\bootstrap-tagsinput\dist\bootstrap-tagsinput.less" />
+    <None Include="node_modules\bootstrap-tagsinput\dist\bootstrap-tagsinput.min.js" />
+    <None Include="node_modules\bootstrap-tagsinput\dist\bootstrap-tagsinput.min.js.map" />
+    <None Include="node_modules\bootstrap-tagsinput\dist\bootstrap-tagsinput.zip" />
+    <None Include="node_modules\bootstrap-tagsinput\examples\assets\app.js" />
+    <None Include="node_modules\bootstrap-tagsinput\examples\assets\app_bs2.js" />
+    <None Include="node_modules\bootstrap-tagsinput\examples\assets\app_bs3.js" />
+    <None Include="node_modules\bootstrap-tagsinput\Gruntfile.js" />
+    <None Include="node_modules\bootstrap-tagsinput\karma.conf.js" />
+    <None Include="node_modules\bootstrap-tagsinput\LICENSE" />
+    <None Include="node_modules\bootstrap-tagsinput\README.md" />
+    <None Include="node_modules\bootstrap-tagsinput\src\bootstrap-tagsinput-angular.js" />
+    <None Include="node_modules\bootstrap-tagsinput\src\bootstrap-tagsinput.js" />
+    <None Include="node_modules\bootstrap-tagsinput\test\bootstrap-tagsinput-angular.tests.js" />
+    <None Include="node_modules\bootstrap-tagsinput\test\bootstrap-tagsinput\events.tests.js" />
+    <None Include="node_modules\bootstrap-tagsinput\test\bootstrap-tagsinput\input_with_object_items.tests.js" />
+    <None Include="node_modules\bootstrap-tagsinput\test\bootstrap-tagsinput\input_with_string_items.tests.js" />
+    <None Include="node_modules\bootstrap-tagsinput\test\bootstrap-tagsinput\reproduced_bugs.tests.js" />
+    <None Include="node_modules\bootstrap-tagsinput\test\bootstrap-tagsinput\select_with_object_items.tests.js" />
+    <None Include="node_modules\bootstrap-tagsinput\test\bootstrap-tagsinput\select_with_string_items.tests.js" />
+    <None Include="node_modules\bootstrap-tagsinput\test\helpers.js" />
     <None Include="node_modules\chart.js\.editorconfig" />
     <None Include="node_modules\chart.js\.eslintignore" />
     <None Include="node_modules\chart.js\.eslintrc.yml" />
@@ -8426,6 +8557,12 @@
     <None Include="node_modules\nprogress\nprogress.js" />
     <None Include="node_modules\nprogress\Readme.md" />
     <None Include="node_modules\nprogress\test\test.js" />
+    <None Include="node_modules\switchery\.npmignore" />
+    <None Include="node_modules\switchery\examples\browserify.js" />
+    <None Include="node_modules\switchery\Makefile" />
+    <None Include="node_modules\switchery\README.md" />
+    <None Include="node_modules\switchery\standalone\switchery.js" />
+    <None Include="node_modules\switchery\switchery.js" />
     <None Include="node_modules\twbs-pagination\.npmignore" />
     <None Include="node_modules\twbs-pagination\Gruntfile.js" />
     <None Include="node_modules\twbs-pagination\jquery.twbsPagination.js" />
@@ -8463,6 +8600,12 @@
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
     <Content Update="Areas\Admin\Views\_ViewStart.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Shared\Components\MainMenu\Default.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Shared\Components\MobileMenu\Default.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
   </ItemGroup>

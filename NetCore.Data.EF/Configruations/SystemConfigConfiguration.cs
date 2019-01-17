@@ -12,6 +12,7 @@ namespace NetCore.Data.EF.Configruations
         public override void Configure(EntityTypeBuilder<Config> entity)
         {
             entity.Property(c => c.Id).HasMaxLength(255).IsRequired();
+            //entity.Property(t => t.UserMail).HasMaxLength(100);
             // etc.
         }
     }

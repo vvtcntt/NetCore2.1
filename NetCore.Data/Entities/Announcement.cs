@@ -33,6 +33,6 @@ namespace NetCore.Data.Entites
         public virtual ICollection<AnnouncementUser> AnnouncementUsers { get; set; }
         public DateTime DateCreated { set; get; }
         public DateTime DateModified { set; get; }
-        public Status Status { set; get; }
+        public Active Active { set; get; }
     }
 }

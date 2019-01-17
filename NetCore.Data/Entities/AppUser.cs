@@ -13,7 +13,7 @@ namespace NetCore.Data.Entites
     {
         public AppUser() { }
         public AppUser(Guid id, string fullName, string userName,
-            string email, string phoneNumber, string avatar, Status status)
+            string email, string phoneNumber, string avatar, Active active)
         {
             Id = id;
             FullName = fullName;
@@ -21,7 +21,7 @@ namespace NetCore.Data.Entites
             Email = email;
             PhoneNumber = phoneNumber;
             Avatar = avatar;
-            Status = status;
+            Active = active;
         }
         public string FullName { get; set; }
 
@@ -33,6 +33,6 @@ namespace NetCore.Data.Entites
 
         public DateTime DateCreated { get; set; }
         public DateTime DateModified { get; set; }
-        public Status Status { get; set; }
+        public Active Active { get; set; }
     }
 }

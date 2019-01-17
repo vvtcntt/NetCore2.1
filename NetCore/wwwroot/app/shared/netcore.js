@@ -104,11 +104,53 @@
             $('.dv-loading')
                 .addClass('hide');
     },
-    getStatus: function (status) {
-        if (status == 1)
-            return '<span class="badge bg-green">Kích hoạt</span>';
+    getStatus: function (status, id) {
+        if (status == 1) {
+            return '<i class="fa fa-check-circle-o" aria-hidden="true" data-id="' + id + '" style="color:#04881a; font-size:16px"></i>';
+
+        }
         else
-            return '<span class="badge bg-red">Khoá</span>';
+            return '<i class="fa fa-lock" aria-hidden="true" data-id="' + id +'" style="color:#e70e0e; font-size:16px; text-align:center"></i>';
+
+    },
+    updateStatus: function (status, id) {
+        if (status == 1) {
+            return '<i class="fa fa-lock" aria-hidden="true" data-id="' + id + '" style="color:#e70e0e; font-size:16px; text-align:center"></i>';
+          
+
+        }
+        else
+            return '<i class="fa fa-check-circle-o" aria-hidden="true" data-id="' + id + '" style="color:#04881a; font-size:16px"></i>';
+
+    },
+    getValueBool: function (status, id) {
+        if (status == true) {
+            return '<i class="fa fa-check-circle-o" aria-hidden="true" data-id="' + id + '" style="color:#04881a; font-size:16px"></i>';
+
+        }
+        else
+            return '<i class="fa fa-lock" aria-hidden="true" data-id="' + id + '" style="color:#e70e0e; font-size:16px; text-align:center"></i>';
+
+    },
+    UpdateValueBool: function (status, id) {
+        if (status == 'true') {
+            return '<i class="fa fa-lock" aria-hidden="true" data-id="' + id + '" style="color:#e70e0e; font-size:16px; text-align:center"></i>';
+
+
+        }
+        else
+            return '<i class="fa fa-check-circle-o" aria-hidden="true" data-id="' + id + '" style="color:#04881a; font-size:16px"></i>';
+
+    },
+    getTrueFalse: function (status) {
+        if (status == 1) {
+            return true;
+
+        }
+        else
+
+            return false;
+
     },
     formatNumber: function (number, precision) {
         if (!isFinite(number)) {
@@ -133,7 +175,34 @@
             }
         }
         return roots;
+    },
+    UploadImage: function (Link,output) {
+        var fileUpload = $(Link).get(0);
+        var files = fileUpload.files;
+        var data = new FormData();
+        var Root = "";
+        for (var i = 0; i < files.length; i++) {
+            data.append(files[i].name, files[i]);
+        }
+        $.ajax({
+            type: "POST",
+            url: "/Admin/Upload/UploadImage",
+            contentType: false,
+            processData: false,
+            data: data,
+            success: function (path) {
+                $(output).val(path);
+                Root = path;
+                return path;
+
+            },
+            error: function () {
+                netcore.notify('There was error uploading files!', 'error');
+            }
+        });
+        return Root;
     }
+    
 }
 $(document).ajaxSend(function (e, xhr, options) {
     if (options.type.toUpperCase() == "POST" || options.type.toUpperCase() == "PUT") {
