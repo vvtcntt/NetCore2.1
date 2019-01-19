@@ -22,7 +22,10 @@ namespace NetCore.Application.ViewModels.News
         public string SeoAlias { set; get; }
         public string SeoKeyWords { set; get; }
         public string SeoDescription { set; get; }
+        public string Tag { set; get; }
+
         public int SortOrder { set; get; }
         public Active Active { set; get; }
+        public NewsTagViewModel NewsTags { set; get; }
     }
 }

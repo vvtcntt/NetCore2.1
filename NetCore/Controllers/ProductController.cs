@@ -14,7 +14,7 @@ namespace NetCore.Controllers
             return View();
         }
         [Route("{alias}-c.{id}.html")]
-        public IActionResult catalog(int id, string keyword,int?pageSize, string sortBy,int page=1)
+        public IActionResult category(int id,int?pageSize, string sortBy,int page=1)
         {
             return View();
         }

@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NetCore.Data.Entites
-{ [Table("News")]
+{ [Table("Images")]
     public class Image : DomainEntity<int>, INameable,ISortable, ISwitchable
     {
         public string Name { set; get; }
@@ -18,9 +18,10 @@ namespace NetCore.Data.Entites
         public bool? TypeLink { set; get; }
         [StringLength(200)]
         public string Url { set; get; }
+        public string Type { get; set; }
+
         public Active Active { set; get; }
         [ForeignKey("CategoryId")]
-        public virtual ImageCategory ImageCategories { set; get; }
         public int SortOrder { set; get; }
     }
 }

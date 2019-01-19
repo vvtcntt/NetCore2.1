@@ -318,5 +318,15 @@ namespace NetCore.Application.Implementation
                 _productRepository.Update(product);
             }
         }
+
+        public List<ProductViewModel> GetHotProduct(int top)
+        {
+            return _productRepository.FindAll(x => x.Active == Active.Active && x.ProductSale==true).ProjectTo<ProductViewModel>().Take(top).ToList();
+        }
+
+        public List<ProductViewModel> GetLastest(int top)
+        {
+            return _productRepository.FindAll(x => x.Active == Active.Active && x.HomeFlag == true).ProjectTo<ProductViewModel>().Take(top).ToList();
+        }
     }
 }

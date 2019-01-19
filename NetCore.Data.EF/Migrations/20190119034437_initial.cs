@@ -170,7 +170,10 @@ namespace NetCore.Data.EF.Migrations
                     Port = table.Column<int>(nullable: true),
                     TimeOut = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: true),
                     Coppy = table.Column<bool>(nullable: true),
-                    Status = table.Column<bool>(nullable: true)
+                    Status = table.Column<bool>(nullable: true),
+                    TitleMeta = table.Column<string>(type: "varchar(255)", maxLength: 250, nullable: true),
+                    KeywordMeta = table.Column<string>(type: "varchar(500)", maxLength: 500, nullable: true),
+                    DescriptionMeta = table.Column<string>(type: "varchar(500)", maxLength: 250, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -233,6 +236,26 @@ namespace NetCore.Data.EF.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Images",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(nullable: true),
+                    CategoryId = table.Column<int>(nullable: false),
+                    ImageLink = table.Column<string>(maxLength: 200, nullable: true),
+                    TypeLink = table.Column<bool>(nullable: true),
+                    Url = table.Column<string>(maxLength: 200, nullable: true),
+                    Type = table.Column<string>(nullable: true),
+                    Active = table.Column<int>(nullable: false),
+                    SortOrder = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Images", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Languages",
                 columns: table => new
                 {
@@ -245,6 +268,27 @@ namespace NetCore.Data.EF.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Languages", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "NewsCategories",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Active = table.Column<int>(nullable: false),
+                    Name = table.Column<string>(nullable: true),
+                    Alias = table.Column<string>(nullable: true),
+                    Description = table.Column<string>(maxLength: 250, nullable: true),
+                    SortOrder = table.Column<int>(nullable: false),
+                    SeoTitle = table.Column<string>(nullable: true),
+                    SeoAlias = table.Column<string>(nullable: true),
+                    SeoKeyWords = table.Column<string>(nullable: true),
+                    SeoDescription = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_NewsCategories", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -503,6 +547,40 @@ namespace NetCore.Data.EF.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "News",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    DateCreated = table.Column<DateTime>(nullable: false),
+                    DateModified = table.Column<DateTime>(nullable: false),
+                    Name = table.Column<string>(nullable: true),
+                    CategoryId = table.Column<int>(nullable: true),
+                    Description = table.Column<string>(maxLength: 200, nullable: true),
+                    Content = table.Column<string>(nullable: true),
+                    ViewCount = table.Column<int>(nullable: true),
+                    ViewHomes = table.Column<bool>(nullable: true),
+                    Image = table.Column<string>(maxLength: 200, nullable: true),
+                    SeoTitle = table.Column<string>(nullable: true),
+                    SeoAlias = table.Column<string>(nullable: true),
+                    SeoKeyWords = table.Column<string>(nullable: true),
+                    SeoDescription = table.Column<string>(nullable: true),
+                    Tag = table.Column<string>(nullable: true),
+                    SortOrder = table.Column<int>(nullable: false),
+                    Active = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_News", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_News_NewsCategories_CategoryId",
+                        column: x => x.CategoryId,
+                        principalTable: "NewsCategories",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Products",
                 columns: table => new
                 {
@@ -571,6 +649,33 @@ namespace NetCore.Data.EF.Migrations
                         principalTable: "Announcements",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "NewsTags",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    NewsId = table.Column<int>(nullable: false),
+                    TagId = table.Column<string>(maxLength: 50, nullable: true),
+                    ProductId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_NewsTags", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_NewsTags_News_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "News",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_NewsTags_Tags_TagId",
+                        column: x => x.TagId,
+                        principalTable: "Tags",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -819,6 +924,21 @@ namespace NetCore.Data.EF.Migrations
                 column: "CustomerId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_News_CategoryId",
+                table: "News",
+                column: "CategoryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_NewsTags_ProductId",
+                table: "NewsTags",
+                column: "ProductId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_NewsTags_TagId",
+                table: "NewsTags",
+                column: "TagId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Permissions_FunctionId",
                 table: "Permissions",
                 column: "FunctionId");
@@ -927,7 +1047,13 @@ namespace NetCore.Data.EF.Migrations
                 name: "Feedbacks");
 
             migrationBuilder.DropTable(
+                name: "Images");
+
+            migrationBuilder.DropTable(
                 name: "Languages");
+
+            migrationBuilder.DropTable(
+                name: "NewsTags");
 
             migrationBuilder.DropTable(
                 name: "Permissions");
@@ -957,6 +1083,9 @@ namespace NetCore.Data.EF.Migrations
                 name: "Bills");
 
             migrationBuilder.DropTable(
+                name: "News");
+
+            migrationBuilder.DropTable(
                 name: "Functions");
 
             migrationBuilder.DropTable(
@@ -976,6 +1105,9 @@ namespace NetCore.Data.EF.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "NewsCategories");
 
             migrationBuilder.DropTable(
                 name: "ProductCategories");

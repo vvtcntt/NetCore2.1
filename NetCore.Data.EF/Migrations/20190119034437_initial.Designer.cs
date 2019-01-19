@@ -10,7 +10,7 @@ using NETCORE.Data.EF;
 namespace NetCore.Data.EF.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20181115022009_initial")]
+    [Migration("20190119034437_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -440,6 +440,10 @@ namespace NetCore.Data.EF.Migrations
 
                     b.Property<bool?>("Coppy");
 
+                    b.Property<string>("DescriptionMeta")
+                        .HasColumnType("varchar(500)")
+                        .HasMaxLength(250);
+
                     b.Property<string>("Email")
                         .HasMaxLength(100);
 
@@ -475,6 +479,10 @@ namespace NetCore.Data.EF.Migrations
                         .IsRequired()
                         .HasMaxLength(250);
 
+                    b.Property<string>("KeywordMeta")
+                        .HasColumnType("varchar(500)")
+                        .HasMaxLength(500);
+
                     b.Property<string>("Mobile")
                         .HasMaxLength(100);
 
@@ -493,6 +501,10 @@ namespace NetCore.Data.EF.Migrations
                     b.Property<string>("TimeOut")
                         .HasColumnType("varchar(50)")
                         .HasMaxLength(50);
+
+                    b.Property<string>("TitleMeta")
+                        .HasColumnType("varchar(255)")
+                        .HasMaxLength(250);
 
                     b.Property<string>("UserMail")
                         .HasMaxLength(100);
@@ -589,6 +601,35 @@ namespace NetCore.Data.EF.Migrations
                     b.ToTable("Functions");
                 });
 
+            modelBuilder.Entity("NetCore.Data.Entites.Image", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Active");
+
+                    b.Property<int>("CategoryId");
+
+                    b.Property<string>("ImageLink")
+                        .HasMaxLength(200);
+
+                    b.Property<string>("Name");
+
+                    b.Property<int>("SortOrder");
+
+                    b.Property<string>("Type");
+
+                    b.Property<bool?>("TypeLink");
+
+                    b.Property<string>("Url")
+                        .HasMaxLength(200);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Images");
+                });
+
             modelBuilder.Entity("NetCore.Data.Entites.Language", b =>
                 {
                     b.Property<string>("Id")
@@ -605,6 +646,83 @@ namespace NetCore.Data.EF.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Languages");
+                });
+
+            modelBuilder.Entity("NetCore.Data.Entites.News", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Active");
+
+                    b.Property<int?>("CategoryId");
+
+                    b.Property<string>("Content");
+
+                    b.Property<DateTime>("DateCreated");
+
+                    b.Property<DateTime>("DateModified");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(200);
+
+                    b.Property<string>("Image")
+                        .HasMaxLength(200);
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("SeoAlias");
+
+                    b.Property<string>("SeoDescription");
+
+                    b.Property<string>("SeoKeyWords");
+
+                    b.Property<string>("SeoTitle");
+
+                    b.Property<int>("SortOrder");
+
+                    b.Property<string>("Tag");
+
+                    b.Property<int?>("ViewCount");
+
+                    b.Property<bool?>("ViewHomes");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("News");
+                });
+
+            modelBuilder.Entity("NetCore.Data.Entites.NewsCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Active");
+
+                    b.Property<string>("Alias");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(250);
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("SeoAlias");
+
+                    b.Property<string>("SeoDescription");
+
+                    b.Property<string>("SeoKeyWords");
+
+                    b.Property<string>("SeoTitle");
+
+                    b.Property<int>("SortOrder");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("NewsCategories");
                 });
 
             modelBuilder.Entity("NetCore.Data.Entites.Permission", b =>
@@ -872,6 +990,28 @@ namespace NetCore.Data.EF.Migrations
                     b.ToTable("Tags");
                 });
 
+            modelBuilder.Entity("NetCore.Data.Entities.NewsTag", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("NewsId");
+
+                    b.Property<int>("ProductId");
+
+                    b.Property<string>("TagId")
+                        .HasMaxLength(50);
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("TagId");
+
+                    b.ToTable("NewsTags");
+                });
+
             modelBuilder.Entity("NetCore.Data.Entities.ProductQuantity", b =>
                 {
                     b.Property<int>("Id")
@@ -1009,6 +1149,13 @@ namespace NetCore.Data.EF.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("NetCore.Data.Entites.News", b =>
+                {
+                    b.HasOne("NetCore.Data.Entites.NewsCategory", "NewsCategories")
+                        .WithMany("News")
+                        .HasForeignKey("CategoryId");
+                });
+
             modelBuilder.Entity("NetCore.Data.Entites.Permission", b =>
                 {
                     b.HasOne("NetCore.Data.Entites.Function", "Function")
@@ -1060,6 +1207,18 @@ namespace NetCore.Data.EF.Migrations
 
                     b.HasOne("NetCore.Data.Entites.Tag", "Tag")
                         .WithMany("ProductTags")
+                        .HasForeignKey("TagId");
+                });
+
+            modelBuilder.Entity("NetCore.Data.Entities.NewsTag", b =>
+                {
+                    b.HasOne("NetCore.Data.Entites.News", "News")
+                        .WithMany("NewsTags")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("NetCore.Data.Entites.Tag", "Tag")
+                        .WithMany()
                         .HasForeignKey("TagId");
                 });
 

@@ -6,6 +6,7 @@ using System.Text;
 using NetCore.Data.Enums;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using NetCore.Data.Entities;
 
 namespace NetCore.Data.Entites
 {
@@ -25,14 +26,16 @@ namespace NetCore.Data.Entites
         public bool? ViewHomes { set; get; }
         [StringLength(200)]
 
-        public string Image { set; get; }
+        public string Image{ set; get; }
         [ForeignKey("CategoryId")]
         public virtual NewsCategory NewsCategories { set; get; }
         public string SeoTitle  { set; get; }
         public string SeoAlias  { set; get; }
         public string SeoKeyWords  { set; get; }
         public string SeoDescription  { set; get; }
+        public string Tag { set; get; }
         public int SortOrder  { set; get; }
         public Active Active { set; get; }
+        public virtual ICollection<NewsTag> NewsTags { set; get; }
     }
 }

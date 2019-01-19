@@ -32,6 +32,9 @@ namespace NETCORE.Data.EF
         public DbSet<Config> Configs { set; get; }
         public DbSet<Contact> Contacts { set; get; }
         public DbSet<Feedback> Feedbacks { set; get; }
+        public DbSet<Image> Images { set; get; }
+        public DbSet<News> News { set; get; }
+
         public DbSet<Product> Products { set; get; }
         public DbSet<ProductCategory> ProductCategories { set; get; }
         public DbSet<ProductColor> ProductColors { set; get; }
@@ -44,6 +47,8 @@ namespace NETCORE.Data.EF
         public DbSet<Permission> Permissions { set; get; }
         public DbSet<ProductQuantity> ProductQuantitys { set; get; }
         public DbSet<WholePrice> WholePrices { set; get; }
+        public DbSet<NewsTag> NewsTags { set; get; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             #region Identity Config

@@ -9,7 +9,10 @@ namespace NetCore.Utilities.Constants
         public const string DefaultFooterId = "DefaultFooterId";
         public const string AdminRole = "Admin";
          public const string ProductTag = "Product";
+        public const string NewsTag = "News";
         public const string BlogTag = "Blog";
+        public const string ImageSlide = "ImageSlide";
+
         public class AppRole
         {
             public const string AdminRole = "Admin";

@@ -24,5 +24,8 @@ namespace NetCore.Application.Interfaces
         List<ProductImageViewModel> GetImages(int productId);
         void AddWholePrice(int productId, List<WholePriceViewModel> wholePrice);
         List<WholePriceViewModel> GetWholePrices (int productId);
+        List<ProductViewModel> GetHotProduct(int top);
+        List<ProductViewModel> GetLastest(int top);
+
     }
 }

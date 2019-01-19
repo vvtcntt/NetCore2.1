@@ -90,6 +90,9 @@ namespace NetCore
             services.AddTransient<IProductImageRepository, ProductImageRepository>();
             services.AddTransient<IWholePriceRepository, WholePriceRepository>();
             services.AddTransient<IConfigRepository, ConfigRepository>();
+            services.AddTransient<INewsTagRepository, NewsTagRepository>();
+            services.AddTransient<INewsRepository, NewsRepository>();
+            services.AddTransient<IImageRepository, ImageRepository>();
 
             //Service
             services.AddTransient<IProductCategoryService, ProductCategoryService>();
@@ -97,6 +100,8 @@ namespace NetCore
             services.AddTransient<IFunctionService, FunctionService>();
             services.AddTransient<IBillService, BillService>();
             services.AddTransient<IConfigService, ConfigService>();
+            services.AddTransient<INewsService, NewsService>();
+            services.AddTransient<IImageService, ImageService>();
 
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IRoleService, RoleService>();

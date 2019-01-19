@@ -8611,6 +8611,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Views\Product\" />
     <Folder Include="wwwroot\lib\ckfinder\App_Data\" />
     <Folder Include="wwwroot\lib\ckfinder\src\CKFinder.Connector.Plugin.DiskQuota\bin\Debug\" />
     <Folder Include="wwwroot\lib\ckfinder\src\CKFinder.Connector.Plugin.DiskQuota\obj\Debug\TempPE\" />
